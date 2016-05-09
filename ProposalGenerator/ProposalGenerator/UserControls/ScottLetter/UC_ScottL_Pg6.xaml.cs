@@ -20,9 +20,57 @@ namespace ProposalGenerator
     /// </summary>
     public partial class ScottL_Pg6 : UserControl
     {
+        int ClosingTypeIndex = 0;
+        int TermsTypeIndex = 0;
+
         public ScottL_Pg6()
         {
             InitializeComponent();
+        }
+
+        public ScottL_Pg6(bool ignore, DataManager myData)
+        {
+            InitializeComponent();
+            forceCombosLoad();
+            for(int i = 0; i < SigSelect.Items.Count; i++)
+            {
+                ComboBoxItem temp = SigSelect.Items[i] as ComboBoxItem;
+
+                if (temp.Content.ToString() == myData.SigCloser)
+                {
+                    SigSelect.SelectedIndex = i;
+                }
+            }
+            for(int i = 1; i < ClosingSelection.Items.Count; i++)
+            {
+                string temp = ClosingSelection.Items[i] as string;
+                if(temp == myData.ClosingType)
+                {
+                    ClosingTypeIndex = i;
+                }
+            }
+            for(int i = 0; i < TermsSelection.Items.Count; i++)
+            {
+                string temp = TermsSelection.Items[i] as string;
+                if(temp == myData.TermsType)
+                {
+                    TermsTypeIndex = i;
+                }
+            }
+
+            RetainerAmount.Text = myData.retainerAmount.ToString();
+
+        }
+
+        private void forceCombosLoad()
+        {
+            ClosingSelection.ItemsSource = new ClosingTypes().myList;
+            ClosingSelection.SelectedIndex = 0;
+
+            List<string> newList = new List<string>();
+            newList.Add("Short"); newList.Add("Long");
+            TermsSelection.ItemsSource = newList;
+            TermsSelection.SelectedIndex = 0;
         }
 
         private void ComboBox_ClosingSelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -34,7 +82,7 @@ namespace ProposalGenerator
         {
             ComboBox box = sender as ComboBox;
             box.ItemsSource = new ClosingTypes().myList;
-            box.SelectedIndex = 0;
+            box.SelectedIndex = ClosingTypeIndex;
         }
 
         private void ComboBox_TermsSelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -48,7 +96,7 @@ namespace ProposalGenerator
             List<string> newList = new List<string>();
             newList.Add("Short"); newList.Add("Long");
             box.ItemsSource = newList;
-            box.SelectedIndex = 0;
+            box.SelectedIndex = TermsTypeIndex;
         }
 
         #region buttons
@@ -94,6 +142,19 @@ namespace ProposalGenerator
             DataManager myData;
             myParent = MetroWindow.GetWindow(this) as PageSwitcher;
             myData = myParent.myData;
+
+            myData.PAGE6VISIT = true;
+            myData.SigCloser = ((ComboBoxItem)SigSelect.SelectedItem).Content.ToString();
+            myData.ClosingType = ClosingSelection.SelectedItem.ToString();
+            myData.TermsType = TermsSelection.SelectedItem.ToString();
+            if (RetainerAmount.Text != null && RetainerAmount.Text != "")
+            {
+                myData.retainerAmount = float.Parse(RetainerAmount.Text);
+            }
+            else
+            {
+                myData.retainerAmount = 50;
+            }
             Switcher.Switch(new ScottL_Pg5(false, myData));
         }
         #endregion

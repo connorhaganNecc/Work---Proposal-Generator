@@ -62,6 +62,7 @@ namespace ProposalGenerator
 
         private void saveTask()
         {
+            HandleReplacementTags();
             myList.myTasks[currIndex].fee = taskFee.Text;
             myList.myTasks[currIndex].Header = taskHeader.Text;
         }
@@ -340,6 +341,17 @@ namespace ProposalGenerator
             while(myList.myTasks[currIndex].Body.Contains(ReplacementTags.getTownTag()))
             {
                 myList.myTasks[currIndex].Body = myList.myTasks[currIndex].Body.Replace(ReplacementTags.getTownTag(), myData.PropertyLocation.town);
+            }
+            while (myList.myTasks[currIndex].Body.Contains(ReplacementTags.getSepticOrSitePlanTag()))
+            {
+                if(myData.ProposalType == "Septic Repair")
+                {
+                    myList.myTasks[currIndex].Body = myList.myTasks[currIndex].Body.Replace(ReplacementTags.getSepticOrSitePlanTag(), "septic repair plan");
+                }
+                else
+                {
+                    myList.myTasks[currIndex].Body = myList.myTasks[currIndex].Body.Replace(ReplacementTags.getSepticOrSitePlanTag(), "site plan");
+                }
             }
         }
 

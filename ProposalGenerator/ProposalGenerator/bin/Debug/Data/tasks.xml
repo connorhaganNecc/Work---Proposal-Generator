@@ -3,6 +3,13 @@
   <myTasks>
     <TaskStructure>
       <ID>0</ID>
+      <tags />
+      <serviceItemNum>0</serviceItemNum>
+      <Header />
+      <Body />
+    </TaskStructure>
+    <TaskStructure>
+      <ID>0</ID>
       <rtftext>{\rtf1\ansi\ansicpg1252\uc1\htmautsp\deff2{\fonttbl{\f0\fcharset0 Times New Roman;}{\f2\fcharset0 Segoe UI, Lucida Sans Unicode, Verdana;}{\f3\fcharset0 Leelawadee;}{\f4\fcharset0 Segoe UI, Lucida Sans Unicode, V;}}{\colortbl\red0\green0\blue0;\red255\green255\blue255;}\loch\hich\dbch\pard\plain\ltrpar\itap0{\lang1033\fs18\f2\cf0 \cf0\ql{\fs22\f3 {\ltrch We anticipate this project requiring the services as indicated, however, at times issues arise which required additional services.  When and if these circumstances arise we will be happy to supplement this proposal with tasks and costs.}\li0\ri0\sa0\sb0\fi0\qj\par}
 {\f4 \li0\ri0\sa0\sb0\fi0\ql\par}
 {\f2 {\ltrch }\li0\ri0\sa0\sb0\fi0\ql\par}
@@ -67,6 +74,7 @@ We shall present the project at two regularly scheduled Conservation Commission 
 {\f3 {\ltrch This fee includes our attendance at 1 Planning Board meeting at which we will have the plan endorsed. Our fee does not include the Town filing fee.}\li0\ri0\sa0\sb0\fi0\ql\par}
 {\f3 \li0\ri0\sa0\sb0\fi0\ql\par}
 {\f3 {\ltrch Note: Any meeting or site visit time over 2 hours will be charged at a rate of $125/hour.}\li0\ri0\sa0\sb0\fi0\ql\par}
+{\f3 \li0\ri0\sa0\sb0\fi0\ql\par}
 {\f3 \li0\ri0\sa0\sb0\fi0\ql\par}
 {\f2 {\ltrch }\li0\ri0\sa0\sb0\fi0\ql\par}
 }
@@ -160,10 +168,9 @@ Our fee &lt;UNDER&gt;does not&lt;/UNDER&gt; include the cost of the postage to n
     <TaskStructure>
       <ID>0</ID>
       <rtftext>{\rtf1\ansi\ansicpg1252\uc1\htmautsp\deff2{\fonttbl{\f0\fcharset0 Times New Roman;}{\f2\fcharset0 Segoe UI, Lucida Sans Unicode, Verdana;}{\f3\fcharset0 Leelawadee;}{\f4\fcharset0 Segoe UI, Lucida Sans Unicode, V;}}{\colortbl\red0\green0\blue0;\red255\green255\blue255;}\loch\hich\dbch\pard\plain\ltrpar\itap0{\lang1033\fs18\f2\cf0 \cf0\ql{\fs22\f3 {\ltrch The Building Inspector requires that a certified plan be submitted with your Building Permit application.  We refer to this plan as a Building Inspector plan which shows the proposed location of the house and all pertinent zoning offsets.}\li0\ri0\sa0\sb0\fi0\qj\par}
-{\fs22\f3 {\ltrch }\li0\ri0\sa0\sb0\fi0\qj\par}
+{\fs22\f3 \li0\ri0\sa0\sb0\fi0\qj\par}
 {\fs22\f3 {\ltrch &lt;FEE&gt;&lt;/FEE&gt;}\li0\ri0\sa0\sb0\fi0\qc\par}
 {\f4 \li0\ri0\sa0\sb0\fi0\ql\par}
-{\f2 {\ltrch }\li0\ri0\sa0\sb0\fi0\ql\par}
 }
 }</rtftext>
       <fee>175.00</fee>
@@ -670,9 +677,10 @@ Our fee &lt;UNDER&gt;does not&lt;/UNDER&gt; include the filing fee, cost of the 
     </TaskStructure>
     <TaskStructure>
       <ID>0</ID>
-      <rtftext>{\rtf1\ansi\ansicpg1252\uc1\htmautsp\deff2{\fonttbl{\f0\fcharset0 Times New Roman;}{\f2\fcharset0 Segoe UI, Lucida Sans Unicode, Verdana;}{\f3\fcharset0 Leelawadee;}}{\colortbl\red0\green0\blue0;\red255\green255\blue255;}\loch\hich\dbch\pard\plain\ltrpar\itap0{\lang1033\fs18\f2\cf0 \cf0\ql{\fs22\f3 {\ltrch We shall perform research at the Town Hall and Registry of Deeds in order to gather information on this property in the form of deeds and plans.  We will also research the Board of Health records for an as-built plan of your septic system.}\li0\ri0\sa0\sb0\fi0\qj\par}
+      <rtftext>{\rtf1\ansi\ansicpg1252\uc1\htmautsp\deff2{\fonttbl{\f0\fcharset0 Times New Roman;}{\f2\fcharset0 Segoe UI, Lucida Sans Unicode, Verdana;}{\f3\fcharset0 Leelawadee;}{\f4\fcharset0 Segoe UI, Lucida Sans Unicode, V;}}{\colortbl\red0\green0\blue0;\red255\green255\blue255;}\loch\hich\dbch\pard\plain\ltrpar\itap0{\lang1033\fs18\f2\cf0 \cf0\ql{\fs22\f3 {\ltrch We shall perform research at the Town Hall and Registry of Deeds in order to gather information on this property in the form of deeds and plans.  We will also research the Board of Health records for an as-built plan of your septic system.}\li0\ri0\sa0\sb0\fi0\qj\par}
 {\fs22\f3 \li0\ri0\sa0\sb0\fi0\qj\par}
 {\fs22\f3 {\ltrch &lt;FEE&gt;&lt;/FEE&gt;}\li0\ri0\sa0\sb0\fi0\qj\par}
+{\f4 \li0\ri0\sa0\sb0\fi0\ql\par}
 {\f2 {\ltrch }\li0\ri0\sa0\sb0\fi0\ql\par}
 }
 }</rtftext>
@@ -961,9 +969,10 @@ Please note that our services include preliminary research to obtain the record 
     </TaskStructure>
     <TaskStructure>
       <ID>0</ID>
-      <rtftext>{\rtf1\ansi\ansicpg1252\uc1\htmautsp\deff2{\fonttbl{\f0\fcharset0 Times New Roman;}{\f2\fcharset0 Segoe UI, Lucida Sans Unicode, Verdana;}{\f3\fcharset0 Calibri;}{\f4\fcharset0 Leelawadee;}}{\colortbl\red0\green0\blue0;\red255\green255\blue255;}\loch\hich\dbch\pard\plain\ltrpar\itap0{\lang1033\fs22\f3\cf0 \cf0\ql{\f4 {\ltrch We shall coordinate with DeRosa Environmental to delineate the edge of the wetland resource area as required by the state and town bylaws, and we shall prepare the required DEP Field Data Forms.}\li0\ri0\sa0\sb0\fi0\qj\par}
-{\f4 {\ltrch }\li0\ri0\sa0\sb0\fi0\qc\par}
-{\f4 {\ltrch &lt;FEE&gt;&lt;/FEE&gt;}\li0\ri0\sa0\sb0\fi0\qc\par}
+      <rtftext>{\rtf1\ansi\ansicpg1252\uc1\htmautsp\deff2{\fonttbl{\f0\fcharset0 Times New Roman;}{\f2\fcharset0 Segoe UI, Lucida Sans Unicode, Verdana;}{\f3\fcharset0 Leelawadee;}}{\colortbl\red0\green0\blue0;\red255\green255\blue255;}\loch\hich\dbch\pard\plain\ltrpar\itap0{\lang1033\fs18\f2\cf0 \cf0\ql{\fs22\f3 {\ltrch We shall coordinate with DeRosa Environmental to delineate the edge of the wetland resource area as required by the state and town bylaws, and we shall prepare the required DEP Field Data Forms.}\li0\ri0\sa0\sb0\fi0\qj\par}
+{\fs22\f3 \li0\ri0\sa0\sb0\fi0\qc\par}
+{\fs22\f3 {\ltrch &lt;FEE&gt;&lt;/FEE&gt;}\li0\ri0\sa0\sb0\fi0\qc\par}
+{\f2 {\ltrch }\li0\ri0\sa0\sb0\fi0\ql\par}
 }
 }</rtftext>
       <fee>550.00</fee>
@@ -972,7 +981,7 @@ Please note that our services include preliminary research to obtain the record 
         <string>Septic Repair</string>
       </tags>
       <serviceItemNum>700</serviceItemNum>
-      <Header>Wetland delineation (DeRosa)</Header>
+      <Header>Wetland delineation</Header>
       <Body>We shall coordinate with DeRosa Environmental to delineate the edge of the wetland resource area as required by the state and town bylaws, and we shall prepare the required DEP Field Data Forms.
 &lt;BLANK&gt;
 &lt;CENTER&gt;&lt;FEE&gt;&lt;/FEE&gt;&lt;/CENTER&gt;</Body>

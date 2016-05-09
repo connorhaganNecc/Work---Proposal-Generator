@@ -38,8 +38,7 @@ namespace ProposalGenerator
             SetupComboBox();
             ResetUnselect();
             ClearSelect();
-            currIndex = 0;
-            ItemSelector.SelectedIndex = currIndex;
+            currIndex = -1;
         }
 
         private void SetupComboBox()
@@ -222,6 +221,8 @@ namespace ProposalGenerator
         private void btn_NextPage(object sender, RoutedEventArgs e)
         {
             //Serialize Task List Here
+            myList.itemList[ItemSelector.SelectedIndex].name = TB_Name.Text;
+            myList.itemList[ItemSelector.SelectedIndex].text = TB_Text.Text;
             AdditionalItemsSerializer.SerializeList(myList);
             Switcher.Switch(new AddData());
         }
@@ -233,8 +234,13 @@ namespace ProposalGenerator
 
         private void ItemSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (currIndex > -1)
+            {
+                myList.itemList[currIndex].text = TB_Text.Text;
+                myList.itemList[currIndex].name = TB_Name.Text;
+            }
             TB_Name.Text = myList.itemList[ItemSelector.SelectedIndex].name;
-            TB_Text.Text = myList.itemList[ItemSelector.SelectedIndex].name;
+            TB_Text.Text = myList.itemList[ItemSelector.SelectedIndex].text;
             currIndex = ItemSelector.SelectedIndex;
             pullSelect();
             setupUnselect();

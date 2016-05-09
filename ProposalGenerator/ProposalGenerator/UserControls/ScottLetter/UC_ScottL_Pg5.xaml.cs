@@ -77,6 +77,7 @@ namespace ProposalGenerator
                 
                 
             }
+            startAdd("Any work not specifically described herein.");
         }
 
         private void startAdd(string text)
@@ -130,7 +131,15 @@ namespace ProposalGenerator
 
             myParent.myData.AdditServNotInc = AddServ;
             myParent.myData.PAGE5VISIT = true;
-            Switcher.Switch(new ScottL_Pg6());
+            if(!myData.PAGE6VISIT)
+            {
+                Switcher.Switch(new ScottL_Pg6());
+            }
+            else
+            {
+                Switcher.Switch(new ScottL_Pg6(false, myData));
+            }
+                
         }
         private void btn_Cancel(object sender, RoutedEventArgs e)
         {

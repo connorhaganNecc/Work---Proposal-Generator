@@ -197,15 +197,36 @@ namespace ProposalGenerator
         {
             Paragraph p1 = doc.InsertParagraph("Additional Services Not Included", false, FormattingTypes.DefaultBold());
             p1.Alignment = Alignment.both;
+            InsertBlankParagraph();
             Paragraph p = doc.InsertParagraph("At the request of the Client, the following additional services typically associated with a project of this type can be provided: ", false, FormattingTypes.DefaultParagraph());
             p.Alignment = Alignment.both;
+            InsertBlankParagraph();
+            Table tempTable = doc.InsertTable(inData.AdditServNotInc.Count, 3);
+            tempTable.Design = TableDesign.None;
+            for (int i = 0; i < tempTable.RowCount; i++)
+            {
+                tempTable.Rows[i].Cells[0].Width = 10;
+                tempTable.Rows[i].Cells[1].Width = 30;
+                tempTable.Rows[i].Cells[2].Width = 650;
+            }
             for (int i = 0; i < inData.AdditServNotInc.Count; i++)
             {
-                string writeString = indexToCharacter(i, false);
-                writeString = writeString + ".  " + inData.AdditServNotInc[i];
-                Paragraph temp = doc.InsertParagraph(writeString, false, FormattingTypes.DefaultParagraph());
-                temp.Alignment = Alignment.both;
+                string writeString = indexToCharacter(i, true);
+                tempTable.Rows[i].Cells[1].Paragraphs[0].InsertParagraphBeforeSelf(writeString +".", false, FormattingTypes.DefaultParagraph()).Alignment = Alignment.right;
+                
+                string myText = inData.AdditServNotInc[i];
+                myText = AdditionalServiceAutocomplete(myText, inData);
+                tempTable.Rows[i].Cells[2].Paragraphs[0].InsertParagraphBeforeSelf(myText, false, FormattingTypes.DefaultParagraph()).Alignment = Alignment.both;
             }
+        }
+        static string AdditionalServiceAutocomplete(string inText, DataManager inData)
+        {
+            while(inText.Contains(ReplacementTags.getTownTag()))
+            {
+                inText = inText.Replace(ReplacementTags.getTownTag(), inData.PropertyLocation.town);
+            }
+
+            return inText;
         }
 
 
@@ -886,6 +907,8 @@ namespace ProposalGenerator
 
             return value.Replace("\r\n", string.Empty).Replace("\n", string.Empty).Replace("\r", string.Empty).Replace(lineSeparator, string.Empty).Replace(paragraphSeparator, string.Empty);
         }
+
+        
 
         static public void ReplaceField(string field, string replaceText)
         {
