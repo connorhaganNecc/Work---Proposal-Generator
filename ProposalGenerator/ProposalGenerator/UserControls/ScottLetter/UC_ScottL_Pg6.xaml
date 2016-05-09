@@ -91,9 +91,14 @@
                 Next Page
             </Button>
             <Button Height="50" Padding="10" Margin="10" FontSize="12" HorizontalContentAlignment="Center"
-            DockPanel.Dock="Left" VerticalAlignment="top" HorizontalAlignment="Right" Grid.Column="2"
+            DockPanel.Dock="Left" VerticalAlignment="top" HorizontalAlignment="Right" Grid.Column="0"
                 Click="btn_Cancel">
                 Cancel
+            </Button>
+            <Button Height="50" Padding="10" Margin="10" FontSize="12" HorizontalContentAlignment="Center"
+            DockPanel.Dock="Left" VerticalAlignment="top" HorizontalAlignment="Right" Grid.Column="2"
+                Click="btn_Back">
+                Back
             </Button>
         </Grid>
     </Grid>

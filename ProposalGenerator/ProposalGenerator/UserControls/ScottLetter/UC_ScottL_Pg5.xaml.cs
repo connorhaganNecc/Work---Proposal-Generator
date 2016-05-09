@@ -35,9 +35,14 @@ namespace ProposalGenerator
             myData = inData;
             setupAddServ();
         }
-        public ScottL_Pg5(bool IGNORE, DataManager myData)
+        public ScottL_Pg5(bool IGNORE, DataManager inData)
         {
-
+            InitializeComponent();
+            myData = inData;
+            for(int i = 0; i < myData.AdditServNotInc.Count; i++)
+            {
+                startAdd(myData.AdditServNotInc[i]);
+            }
         }
 
         private void setupAddServ()
@@ -138,7 +143,18 @@ namespace ProposalGenerator
             DataManager myData = myParent.myData;
             myData.PAGE5VISIT = true;
 
-            if(myParent.myData.PAGE4VISIT)
+            List<string> AddServ = new List<string>();
+            for (int i = 0; i < currTextBox; i++)
+            {
+                TextBox foundBox = (TextBox)SP.FindName("addServ_" + i.ToString());
+                if (foundBox != null)
+                {
+                    AddServ.Add(foundBox.Text);
+                }
+            }
+            myData.AdditServNotInc = AddServ;
+
+            if (myParent.myData.PAGE4VISIT)
             {
                 Switcher.Switch(new ScottL_Pg4(false, myParent, myData));
             }

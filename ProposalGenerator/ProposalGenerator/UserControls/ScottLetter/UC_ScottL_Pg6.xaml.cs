@@ -88,6 +88,14 @@ namespace ProposalGenerator
         {
             Switcher.Switch(new MainWindow());
         }
+        private void btn_Back(object sender, RoutedEventArgs e)
+        {
+            PageSwitcher myParent;
+            DataManager myData;
+            myParent = MetroWindow.GetWindow(this) as PageSwitcher;
+            myData = myParent.myData;
+            Switcher.Switch(new ScottL_Pg5(false, myData));
+        }
         #endregion
 
         private void SigSelect_Loaded(object sender, RoutedEventArgs e)
