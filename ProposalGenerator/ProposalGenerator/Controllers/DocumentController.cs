@@ -206,13 +206,13 @@ namespace ProposalGenerator
             for (int i = 0; i < tempTable.RowCount; i++)
             {
                 tempTable.Rows[i].Cells[0].Width = 10;
-                tempTable.Rows[i].Cells[1].Width = 30;
+                tempTable.Rows[i].Cells[1].Width = 60;
                 tempTable.Rows[i].Cells[2].Width = 650;
             }
             for (int i = 0; i < inData.AdditServNotInc.Count; i++)
             {
                 string writeString = indexToCharacter(i, true);
-                tempTable.Rows[i].Cells[1].Paragraphs[0].InsertParagraphBeforeSelf(writeString +".", false, FormattingTypes.DefaultParagraph()).Alignment = Alignment.right;
+                tempTable.Rows[i].Cells[1].Paragraphs[0].InsertParagraphBeforeSelf(writeString +".", false, FormattingTypes.DefaultParagraph()).Alignment = Alignment.left;
                 
                 string myText = inData.AdditServNotInc[i];
                 myText = AdditionalServiceAutocomplete(myText, inData);
