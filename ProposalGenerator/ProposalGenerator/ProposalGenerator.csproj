@@ -1,0 +1,426 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6454CCDD-B851-4E05-AFD2-82B231603949}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProposalGenerator</RootNamespace>
+    <AssemblyName>ProposalGenerator</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocX">
+      <HintPath>..\packages\DocX.1.0.0.19\lib\net40\DocX.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro">
+      <HintPath>..\packages\MahApps.Metro.1.2.4.0\lib\net45\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.2.4.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Controllers\RTFConverter.cs" />
+    <Compile Include="Controllers\DocumentController.cs" />
+    <Compile Include="DataStructures\ClosingTypes.cs" />
+    <Compile Include="DataStructures\PresetP.cs" />
+    <Compile Include="DataStructures\ProposalTypes.cs" />
+    <Compile Include="DataStructures\DataManager.cs" />
+    <Compile Include="DataStructures\FormattingData.cs" />
+    <Compile Include="DataStructures\PassingData.cs" />
+    <Compile Include="DataStructures\Tags.cs" />
+    <Compile Include="DataStructures\TaskStructure.cs" />
+    <Compile Include="Data\Settings.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="DependencyProperties.cs" />
+    <Compile Include="PageSwitcher.xaml.cs">
+      <DependentUpon>PageSwitcher.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Serializers\Serializers.cs" />
+    <Compile Include="UserControls\AddData\AddAddItems.xaml.cs">
+      <DependentUpon>AddAddItems.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddData\EditTaskText.xaml.cs">
+      <DependentUpon>EditTaskText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddData\EditPreset.xaml.cs">
+      <DependentUpon>EditPreset.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddData\EditAddItems.xaml.cs">
+      <DependentUpon>EditAddItems.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Debug.xaml.cs">
+      <DependentUpon>Debug.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddData\EditTasks.xaml.cs">
+      <DependentUpon>EditTasks.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FinalSteps.xaml.cs">
+      <DependentUpon>FinalSteps.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JohnLetter\EditTaskTextJL.xaml.cs">
+      <DependentUpon>EditTaskTextJL.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JohnLetter\FinishingTasks.xaml.cs">
+      <DependentUpon>FinishingTasks.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JohnLetter\LastOptions.xaml.cs">
+      <DependentUpon>LastOptions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddData\NewTask.xaml.cs">
+      <DependentUpon>NewTask.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddData\AddData.xaml.cs">
+      <DependentUpon>AddData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Class1.cs" />
+    <Compile Include="UserControls\ProposalType.xaml.cs">
+      <DependentUpon>ProposalType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NewPageTemplate.xaml.cs">
+      <DependentUpon>NewPageTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ProposalTypePicker.xaml.cs">
+      <DependentUpon>ProposalTypePicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JohnLetter\OpeningArea.xaml.cs">
+      <DependentUpon>OpeningArea.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PropPg1old.xaml.cs">
+      <DependentUpon>PropPg1old.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JohnLetter\PropPg1.xaml.cs">
+      <DependentUpon>PropPg1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Switching\Switcher.cs" />
+    <Compile Include="Switching\ISwitchable.cs" />
+    <Compile Include="UserControls\JohnLetter\TaskPage.xaml.cs">
+      <DependentUpon>TaskPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ScottLetter\EditTaskTextSL.xaml.cs">
+      <DependentUpon>EditTaskTextSL.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ScottLetter\UC_ScottL_Pg6.xaml.cs">
+      <DependentUpon>UC_ScottL_Pg6.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ScottLetter\UC_ScottL_Pg5.xaml.cs">
+      <DependentUpon>UC_ScottL_Pg5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ScottLetter\UC_ScottL_Pg4.xaml.cs">
+      <DependentUpon>UC_ScottL_Pg4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ScottLetter\UC_ScottL_Pg3.xaml.cs">
+      <DependentUpon>UC_ScottL_Pg3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ScottLetter\UC_ScottL_Pg2.xaml.cs">
+      <DependentUpon>UC_ScottL_Pg2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ScottLetter\UC_ScottL_Pg1.xaml.cs">
+      <DependentUpon>UC_ScottL_Pg1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DebugTaskText.xaml.cs">
+      <DependentUpon>DebugTaskText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Settings\SettingsMain.xaml.cs">
+      <DependentUpon>SettingsMain.xaml</DependentUpon>
+    </Compile>
+    <Page Include="UserControls\AddData\AddAddItems.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\AddData\EditTaskText.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\AddData\EditPreset.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\AddData\EditAddItems.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Debug.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\AddData\EditTasks.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\FinalSteps.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\JohnLetter\EditTaskTextJL.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\JohnLetter\FinishingTasks.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\JohnLetter\LastOptions.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\AddData\NewTask.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\AddData\AddData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserControls\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="PageSwitcher.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ProposalType.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\NewPageTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\ProposalTypePicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\JohnLetter\OpeningArea.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\PropPg1old.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\JohnLetter\PropPg1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\JohnLetter\TaskPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ScottLetter\EditTaskTextSL.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\ScottLetter\UC_ScottL_Pg6.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\ScottLetter\UC_ScottL_Pg5.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\ScottLetter\UC_ScottL_Pg4.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\ScottLetter\UC_ScottL_Pg3.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\ScottLetter\UC_ScottL_Pg2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\ScottLetter\UC_ScottL_Pg1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\DebugTaskText.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Settings\SettingsMain.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Resource Include="Data\JohnLTasks.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Data\ShortTermCond.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\LongTermCond.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\ContactInfo.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\MarginSettings.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\HourlyFeeSchedule.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\MarginSettings.dotx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="REQ\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Data\ScottLTasks.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Data\tasks.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Icons\Editor\align-center.png" />
+    <Resource Include="Icons\Editor\align-justify.png" />
+    <Resource Include="Icons\Editor\align-right.png" />
+    <Resource Include="Icons\Editor\3d-bars.png" />
+    <Resource Include="Icons\Editor\align-left.png" />
+    <Resource Include="Icons\Editor\arrange.png" />
+    <Resource Include="Icons\Editor\bold-text.png" />
+    <Resource Include="Icons\Editor\borders.png" />
+    <Resource Include="Icons\Editor\brush.png" />
+    <Resource Include="Icons\Editor\bullets.png" />
+    <Resource Include="Icons\Editor\color.png" />
+    <Resource Include="Icons\Editor\columns.png" />
+    <Resource Include="Icons\Editor\edit-picture.png" />
+    <Resource Include="Icons\Editor\eye-dropper.png" />
+    <Resource Include="Icons\Editor\fill.png" />
+    <Resource Include="Icons\Editor\graphs.png" />
+    <Resource Include="Icons\Editor\grid.png" />
+    <Resource Include="Icons\Editor\highlight.png" />
+    <Resource Include="Icons\Editor\image-shadow.png" />
+    <Resource Include="Icons\Editor\insert-picture.png" />
+    <Resource Include="Icons\Editor\italics.png" />
+    <Resource Include="Icons\Editor\leading.png" />
+    <Resource Include="Icons\Editor\letter-color.png" />
+    <Resource Include="Icons\Editor\letter-glow-effect.png" />
+    <Resource Include="Icons\Editor\letter-shadow.png" />
+    <Resource Include="Icons\Editor\letter-size.png" />
+    <Resource Include="Icons\Editor\link.png" />
+    <Resource Include="Icons\Editor\magnifying-glass.png" />
+    <Resource Include="Icons\Editor\multimedia.png" />
+    <Resource Include="Icons\Editor\new-page.png" />
+    <Resource Include="Icons\Editor\numbering.png" />
+    <Resource Include="Icons\Editor\open-file.png" />
+    <Resource Include="Icons\Editor\page-break.png" />
+    <Resource Include="Icons\Editor\paragraph.png" />
+    <Resource Include="Icons\Editor\pen.png" />
+    <Resource Include="Icons\Editor\pencil.png" />
+    <Resource Include="Icons\Editor\pointer.png" />
+    <Resource Include="Icons\Editor\print.png" />
+    <Resource Include="Icons\Editor\quotes.png" />
+    <Resource Include="Icons\Editor\redo.png" />
+    <Resource Include="Icons\Editor\remove-right-frame.png" />
+    <Resource Include="Icons\Editor\ruler.png" />
+    <Resource Include="Icons\Editor\scissors.png" />
+    <Resource Include="Icons\Editor\spacing.png" />
+    <Resource Include="Icons\Editor\strike-through.png" />
+    <Resource Include="Icons\Editor\superscript.png" />
+    <Resource Include="Icons\Editor\swatches.png" />
+    <Resource Include="Icons\Editor\text-box.png" />
+    <Resource Include="Icons\Editor\text-in.png" />
+    <Resource Include="Icons\Editor\text-out.png" />
+    <Resource Include="Icons\Editor\type.png" />
+    <Resource Include="Icons\Editor\undelined.png" />
+    <Resource Include="Icons\Editor\undo.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

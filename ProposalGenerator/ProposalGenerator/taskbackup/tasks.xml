@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TaskList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <myTasks>
+    <TaskStructure>
+      <ID>0</ID>
+      <tags />
+      <Header>Additional services</Header>
+      <Body>We anticipate this project requiring the services as indicated, however, at times issues arise which required additional services.  When and if these circumstances arise we will be happy to supplement this proposal with tasks and costs.</Body>
+    </TaskStructure>
+    <TaskStructure>
+      <ID>0</ID>
+      <tags />
+      <Header>Alternative technology</Header>
+      <Body>If an alternative technology component is required as part of the system design we shall contact you prior to the commencement of any design work and will inform you of expected additional costs which would be shown as “extras” on your invoices.</Body>
+    </TaskStructure>
+    <TaskStructure>
+      <ID>0</ID>
+      <fee />
+      <tags />
+      <Header>Amend Order of Conditions</Header>
+      <Body>We shall prepare a request to the Conservation Commission to amend the existing Order of Conditions.  This request shall be submitted to the Conservation Commission and abutters will be notified of the hearing by certified mail/return receipt requested.
+&lt;FEE&gt;The fee for this service is $425.00&lt;/FEE&gt;
+Our fee does not include the filing fee, cost of the legal ad to be published in the local newspaper or the cost of postage to notify abutters; all of which will be reflected on your bill as an out of pocket expense.
+We shall present the project at two regularly scheduled Conservation Commission public hearings.
+&lt;FEE&gt;The fee for this service is $400.00&lt;/FEE&gt;
+&lt;NOTE&gt;Any meeting or site visit time over 2 hours will be charged at a rate of $125/hour, and any additional public hearings will be $200 (minimum).&lt;/NOTE&gt;</Body>
+    </TaskStructure>
+    <TaskStructure>
+      <ID>0</ID>
+      <tags />
+      <Header>Existing conditions (site plan)</Header>
+      <Body>We shall prepare an existing conditions plan of the property showing the lot lines, the topography of the lot, structures, pavement and visible utilities.  Attorney McCann can use this plan to accompany her permit application.
+&lt;FEE&gt;&lt;/FEE&gt;</Body>
+    </TaskStructure>
+    <TaskStructure>
+      <ID>0</ID>
+      <fee>950.00</fee>
+      <tags>
+        <string>LOMA Application</string>
+      </tags>
+      <Header>LOMA</Header>
+      <Body>&lt;BULLET&gt;
+We shall perform a topographic survey of your property to verify the lowest grade adjacent to the dwelling.  We will establish the required elevation benchmark system.
+We shall prepare the required LOMA application to remove the dwelling from the floodplain.  This application shall be submitted electronically.  A copy of the supporting data for the application will be forwarded to you electronically; if you would like hard copies please let us know.
+&lt;/BULLET&gt;</Body>
+    </TaskStructure>
+    <TaskStructure>
+      <ID>0</ID>
+      <fee />
+      <tags />
+      <Header>LOMA FP Elevation</Header>
+      <Body>&lt;NUMLIST&gt;
+We shall perform research at the Town Hall and Registry of Deeds in order to gather information on this property in the form of deeds and plans.
+&lt;/NUMLIST&gt;
+&lt;CENTER&gt;The fee for this service is $250.00&lt;/CENTER&gt;
+&lt;BLANK&gt;
+&lt;NUMLIST&gt;
+We shall perform field work on your site establishing existing elevations around your existing structure.  We shall also take photos as required in the LOMA application.  We will also establish a USGS elevation benchmark for our work.
+&lt;/NUMLIST&gt;
+&lt;CENTER&gt;The fee for this service is $450.00&lt;/CENTER&gt;
+&lt;BLANK&gt;
+&lt;NUMLIST&gt;
+We shall prepare a sketch plan showing the existing structure and the existing grades around the structure.
+&lt;/NUMLIST&gt;
+&lt;CENTER&gt;The fee for this service is $275.00&lt;/CENTER&gt;
+&lt;BLANK&gt;
+&lt;NUMLIST&gt;
+We shall prepare the LOMA online application to remove the structure from the 100 year floodplain.
+&lt;/NUMLIST&gt;
+&lt;DTAB&gt;The fee for this service shall be charged hourly at a rate of $135/hour.&lt;/DTAB&gt;
+&lt;DTAB&gt;We estimate a budget of $475.00.&lt;/DTAB&gt;</Body>
+    </TaskStructure>
+    <TaskStructure>
+      <ID>0</ID>
+      <fee />
+      <tags />
+      <Header>LOMA Zone AE</Header>
+      <Body>&lt;NUMLIST&gt;
+We shall perform field work on your site establishing existing elevations around your existing structure; we shall also take photos. We will establish a USGS elevation benchmark on the same datum as the FEMA maps.
+&lt;/NUMLIST&gt;
+&lt;CENTER&gt;The fee for this service is     $550.00&lt;/CENTER&gt;
+&lt;BLANK&gt;
+&lt;NUMLIST&gt;
+We shall prepare the LOMA application or eLOMA (if applicable) to remove the structure from the 100 year floodplain.
+&lt;/NUMLIST&gt;
+&lt;CENTER&gt;The fee for this service is    $600.00&lt;/CENTER&gt;</Body>
+    </TaskStructure>
+    <TaskStructure>
+      <ID>0</ID>
+      <fee />
+      <tags />
+      <Header>Notice of Intent</Header>
+      <Body>Our office shall prepare a Notice of Intent describing the work proposed within the buffer zone of the bordering vegetated wetlands.  This application will be filed with the Conservation Commission, abutters will be notified of the hearing by &lt;BOLD&gt;certified mail/return receipt requested OR CERTIFICATE OF MAILING (depends on the Town)&lt;/BOLD&gt;, we shall attend the public hearings (estimate of 2 hearings) and we shall conduct one site visit as scheduled by the Commission.
+&lt;FEE&gt;&lt;/FEE&gt;
+Our fee breakdown is as follows: 
+&lt;DTAB&gt;Notice of Intent………………..................………………….$725.00&lt;/DTAB&gt;
+&lt;DTAB&gt;Two public hearings $200 (minimum) /each……$400.00  &lt;/DTAB&gt;
+&lt;DTAB&gt;Site visit…………………………………………........................$200.00 (minimum)&lt;/DTAB&gt;
+&lt;BLANK&gt;
+&lt;NOTE&gt;Any meeting or site visit time over 2 hours will be charged at a rate of $125/hour.&lt;/NOTE&gt;
+&lt;BLANK&gt;
+Our fee &lt;UNDER&gt;does not&lt;/UNDER&gt; include the filing fee, cost of the legal ad to be published in the local newspaper or the cost of the postage to notify abutters; all which will be reflected on your bill as an out of pocket expense.
+&lt;BLANK&gt;
+Please be aware that it is routine that during the public hearing process comments made by Commission members and/or abutters may cause revisions to the design plans which do not substantially affect the intent of the design. If revisions are required that result in additional charges we will review same with you prior to revising the plan.  These revisions would be reflected as an extra on your invoice.
+&lt;BLANK&gt;
+Once the hearing is closed and the project is approved, the Commission will issue an Order of Conditions.  Once all of the site improvement work is completed, a request for a Certificate of Compliance (CoC) from the Commission is required.  While we cannot anticipate the full scope of the CoC at this time, since this has to be negotiated with the Commission during the permitting process, it should be noted that typically this process requires an as-built survey plan, engineering certificate, application, a meeting and a site walk.  Upon completion of the project, we can provide you with an estimate for this work.</Body>
+    </TaskStructure>
+    <TaskStructure>
+      <ID>0</ID>
+      <tags />
+      <Header>Research</Header>
+      <Body>We shall perform research at the Town Hall and Registry of Deeds in order to gather information on this property in the form of deeds and plans.  We will also research the Board of Health records for an as-built plan of your septic system.
+&lt;FEE&gt;&lt;/FEE&gt;</Body>
+    </TaskStructure>
+    <TaskStructure>
+      <ID>0</ID>
+      <tags />
+      <Header>Site Development Plan (SDP)</Header>
+      <Body>Our office shall prepare a Site Development Plan showing the lot lines, the topography of the lot, the wetland resource areas and all proposed improvements.  This plan will be submitted as part of the Notice of Intent application outlined in Task 5 below.  This plan can also be used for your Building Permit application.
+&lt;FEE&gt;&lt;/FEE&gt;</Body>
+    </TaskStructure>
+    <TaskStructure>
+      <ID>0</ID>
+      <fee />
+      <tags />
+      <Header>Soil Testing</Header>
+      <Body>We shall conduct percolation tests and deep hole observation test pits, in the presence of the Health Agent.  We shall complete the soil testing application and will ask that you provide the $%TOWNFEE% Town filing fee.  Prior to soil testing, the site shall be pre-marked for Dig Safe, and a trench permit will be obtained by the backhoe operator.
+&lt;FEE&gt;&lt;/FEE&gt;
+This fee is based on 4 hours of the soil evaluator’s time.  If more time is needed due to slower soils being present or the necessity to return to the site at a later date a fee of $100/hour for the soil evaluator will be charged thereafter.
+&lt;BLANK&gt;
+ A backhoe is needed to conduct these tests.  We shall hire a backhoe and will ask that their office bill you directly for their work.  The backhoe operator will rough grade the area of the yard that was disturbed for test holes, but no grass seed will be put down.
+&lt;BLANK&gt;
+ During the time we do the soil testing we will evaluate any wetlands which may impact our design.  We will provide you with a separate proposal for this work if filing with the Conservation Commission is required.
+&lt;BLANK&gt;
+Once the soil testing is completed we will prepare a preliminary design of your system.   At this time we will assess if any local waivers to the Board of Health Regulations or variances from Title 5 are needed.  We will make that assessment and will provide you with a separate proposal for this work, if required.</Body>
+    </TaskStructure>
+    <TaskStructure>
+      <ID>0</ID>
+      <fee />
+      <tags />
+      <Header>SSD (septic design repair)</Header>
+      <Body>Once the topographic information is compiled in our office we shall prepare the replacement Sanitary Disposal System Design in accordance with the local Board of Health Regulations and the State Environmental Code, Title 5.
+&lt;FEE&gt;&lt;/FEE&gt;
+&lt;BULLET&gt;
+At times a sieve analysis (conducted by a certified lab) is used in lieu of a percolation test due to saturated soil conditions on site.  If it is determined that a sieve analysis is required, then an additional $150/soil sample will be charged.  Generally 1-2 soil samples are required. 
+If an alternative technology component is required as part of the system design we shall contact you prior to the commencement of any design work and will inform you of expected additional costs which would be shown as “extras” on your invoices.
+If your installer requires us to layout the location of the septic system, prior to installation, an additional $330 will be charged.
+At times sanitary disposal systems involve pumping to the leaching facility.  If your system requires a pump an additional $250 will be charged.
+&lt;/BULLET&gt;
+Once this plan is complete we shall file an application with the Board of Health.  A filing fee of $%TOWNFEE% made payable to the Town is due upon submission of this application.</Body>
+    </TaskStructure>
+    <TaskStructure>
+      <ID>0</ID>
+      <tags />
+      <Header>Survey Extra</Header>
+      <Body>If property line monumentation is not found or the monumentation found does not match the record plans and additional work and research is needed we shall stop all work and notify you prior to performing any additional work.  All additional work will be charged at a rate of $125/hour.</Body>
+    </TaskStructure>
+    <TaskStructure>
+      <ID>0</ID>
+      <tags />
+      <Header>Topo</Header>
+      <Body>Our surveyors shall conduct a topographic mapping in sufficient detail to prepare a site plan.
+&lt;FEE&gt;&lt;/FEE&gt;
+If property line monumentation is not found or the monumentation found does not match the record plan and additional work and research is needed then you will be charged at a rate of $110/hour.</Body>
+    </TaskStructure>
+    <TaskStructure>
+      <ID>0</ID>
+      <tags />
+      <Header>Wetland delineation</Header>
+      <Body>We shall coordinate with DeRosa Environmental to delineate the edge of the wetland resource area as required by the state and town bylaws, and we shall prepare the required DEP Field Data Forms.
+&lt;FEE&gt;&lt;/FEE&gt;</Body>
+    </TaskStructure>
+  </myTasks>
+</TaskList>

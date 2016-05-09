@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SettingsData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TaskFileLoc>C:\Users\connor\Documents\Visual Studio 2013\Projects\ProposalGenerator\ProposalGenerator\bin\Debug\Data\tasks.xml</TaskFileLoc>
+  <DefaultOutputDirectory>C:\Users\connor\Documents\SampleProposalStuff</DefaultOutputDirectory>
+  <AddItemsFileLoc>C:\Users\connor\Documents\Visual Studio 2013\Projects\ProposalGenerator\ProposalGenerator\bin\Debug\Data\AddServices.xml</AddItemsFileLoc>
+</SettingsData>
