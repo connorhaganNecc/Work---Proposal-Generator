@@ -31,7 +31,9 @@ namespace ProposalGenerator
         }
         public ScottL_Pg5(DataManager inData)
         {
+            InitializeComponent();
             myData = inData;
+            setupAddServ();
         }
         public ScottL_Pg5(bool IGNORE, DataManager myData)
         {
@@ -51,10 +53,23 @@ namespace ProposalGenerator
                     {
                         if (myList.itemList[i].ignoreTaskTags[j] == myData.SelectedTasks.myTasks[k].Header)
                         {
-
+                            ignore = true;
                         }
                     }
                 }
+                for(int j = 0; j < myList.itemList[i].ignoreTypeTags.Count; j++)
+                {
+                    if (myList.itemList[i].ignoreTypeTags[j] == myData.ProposalType)
+                    {
+                        ignore = true;
+                    }
+                }
+                if(!ignore)
+                {
+                    startAdd(myList.itemList[i].text);
+                }
+
+                
                 
             }
         }

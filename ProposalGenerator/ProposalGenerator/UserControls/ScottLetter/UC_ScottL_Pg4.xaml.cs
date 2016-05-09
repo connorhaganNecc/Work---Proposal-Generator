@@ -426,7 +426,14 @@ namespace ProposalGenerator
                 myData.SelectedTasks = myList;
                 //myList.myTasks[currIndex - 1].Body = taskBody.Text;
                 //DocumentController.WriteLetterProposal(myData);
-                Switcher.Switch(new ScottL_Pg5());
+                if(!myData.PAGE5VISIT)
+                {
+                    Switcher.Switch(new ScottL_Pg5(myData));
+                }
+                else
+                {
+                    Switcher.Switch(new ScottL_Pg5(false,myData));
+                }
             }
         }
         private void btn_Cancel(object sender, RoutedEventArgs e)

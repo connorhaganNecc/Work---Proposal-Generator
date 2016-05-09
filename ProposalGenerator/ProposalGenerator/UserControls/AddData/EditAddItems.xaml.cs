@@ -61,6 +61,15 @@ namespace ProposalGenerator
             SelectedIgnoreType.ItemsSource = SelectedTypeTags;
         }
 
+        private void pullSelect()
+        {
+            SelectedTaskTags = myList.itemList[currIndex].ignoreTaskTags;
+            SelectedIgnoreTask.ItemsSource = SelectedTaskTags;
+
+            SelectedTypeTags = myList.itemList[currIndex].ignoreTypeTags;
+            SelectedIgnoreType.ItemsSource = SelectedTypeTags;
+        }
+
         private void ResetUnselect()
         {
             UnselectTaskTags = new List<string>();
@@ -79,6 +88,52 @@ namespace ProposalGenerator
 
         }
 
+        private void setupUnselect()
+        {
+            UnselectTaskTags = new List<string>();
+            UnselectTypeTags = new List<string>();
+
+            TaskList temp = TaskSerializer.DeserializeTaskList();
+            for (int i = 0; i < temp.myTasks.Count; i++)
+            {
+                bool fail = false;
+                for(int j = 0; j < SelectedTaskTags.Count; j++)
+                {
+                    if (temp.myTasks[i].Header == SelectedTaskTags[j])
+                    {
+                        fail = true;
+                    }
+                }
+                if(!fail)
+                {
+                    UnselectTaskTags.Add(temp.myTasks[i].Header);
+                }
+            }
+            UnselectTaskTags.Sort((x, y) => x.CompareTo(y));
+
+            UnselectedIgnoreTask.ItemsSource = UnselectTaskTags;
+
+            List<string> tempList = new ProposalTypes().myList;
+            for(int i = 0; i < tempList.Count; i++)
+            {
+                bool fail = false;
+                for (int j = 0; j < SelectedTypeTags.Count; j++)
+                {
+                    if(SelectedTypeTags[j] == tempList[i])
+                    {
+                        fail = true;
+                    }
+                }
+                if(!fail)
+                {
+                    UnselectTypeTags.Add(tempList[i]);
+                }
+            }
+            
+            
+            UnselectedIgnoreType.ItemsSource = UnselectTypeTags;
+        }
+
         private void btn_RemoveSelected(object sender, RoutedEventArgs e)
         {
             if (SelectedIgnoreTask.SelectedIndex >= 0)
@@ -95,6 +150,7 @@ namespace ProposalGenerator
 
                 SelectedIgnoreTask.ItemsSource = SelectedTaskTags;
                 UnselectedIgnoreTask.ItemsSource = UnselectTaskTags;
+                myList.itemList[currIndex].ignoreTypeTags = SelectedTaskTags;
             }
         }
         private void btn_AddSelected(object sender, RoutedEventArgs e)
@@ -113,6 +169,8 @@ namespace ProposalGenerator
 
                 SelectedIgnoreTask.ItemsSource = SelectedTaskTags;
                 UnselectedIgnoreTask.ItemsSource = UnselectTaskTags;
+
+                myList.itemList[currIndex].ignoreTypeTags = SelectedTaskTags;
             }
         }
         private void btn_RemoveSelected2(object sender, RoutedEventArgs e)
@@ -121,7 +179,7 @@ namespace ProposalGenerator
             {
                 string myString = SelectedIgnoreType.SelectedItem as string;
                 UnselectTypeTags.Add(myString);
-                SelectedTypeTags.RemoveAt(SelectedIgnoreTask.SelectedIndex);
+                SelectedTypeTags.RemoveAt(SelectedIgnoreType.SelectedIndex);
 
                 SelectedIgnoreType.ItemsSource = null;
                 UnselectedIgnoreType.ItemsSource = null;
@@ -131,6 +189,8 @@ namespace ProposalGenerator
 
                 SelectedIgnoreType.ItemsSource = SelectedTypeTags;
                 UnselectedIgnoreType.ItemsSource = UnselectTypeTags;
+
+                myList.itemList[currIndex].ignoreTypeTags = SelectedTypeTags;
             }
         }
         private void btn_AddSelected2(object sender, RoutedEventArgs e)
@@ -149,6 +209,8 @@ namespace ProposalGenerator
 
                 SelectedIgnoreType.ItemsSource = SelectedTypeTags;
                 UnselectedIgnoreType.ItemsSource = UnselectTypeTags;
+
+                myList.itemList[currIndex].ignoreTypeTags = SelectedTypeTags;
             }
         }
         #region buttons
@@ -173,8 +235,9 @@ namespace ProposalGenerator
         {
             TB_Name.Text = myList.itemList[ItemSelector.SelectedIndex].name;
             TB_Text.Text = myList.itemList[ItemSelector.SelectedIndex].name;
-            ResetUnselect();
-            ClearSelect();
+            currIndex = ItemSelector.SelectedIndex;
+            pullSelect();
+            setupUnselect();
         }
     }
 
