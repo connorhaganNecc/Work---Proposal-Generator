@@ -52,7 +52,7 @@ namespace ProposalGenerator
                     if (StringArray[i].Contains("\\'B7"))
                     {
                         index = StringArray[i].IndexOf("\\pntext");
-                        if (index != -1 && !useBullets && StringArray[i].Contains("\\'B7")) ;
+                        if (index != -1 && !useBullets && StringArray[i].Contains("\\'B7")) 
                         {
                             useBullets = true;
                             startBullets = i;

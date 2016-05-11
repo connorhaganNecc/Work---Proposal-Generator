@@ -195,28 +195,32 @@ namespace ProposalGenerator
 
         static void WriteSLServicesNotInc(DataManager inData)
         {
-            Paragraph p1 = doc.InsertParagraph("Additional Services Not Included", false, FormattingTypes.DefaultBold());
-            p1.Alignment = Alignment.both;
-            InsertBlankParagraph();
-            Paragraph p = doc.InsertParagraph("At the request of the Client, the following additional services typically associated with a project of this type can be provided: ", false, FormattingTypes.DefaultParagraph());
-            p.Alignment = Alignment.both;
-            InsertBlankParagraph();
-            Table tempTable = doc.InsertTable(inData.AdditServNotInc.Count, 3);
-            tempTable.Design = TableDesign.None;
-            for (int i = 0; i < tempTable.RowCount; i++)
+            if (inData.AdditServNotInc.Count > 0)
             {
-                tempTable.Rows[i].Cells[0].Width = 10;
-                tempTable.Rows[i].Cells[1].Width = 60;
-                tempTable.Rows[i].Cells[2].Width = 650;
-            }
-            for (int i = 0; i < inData.AdditServNotInc.Count; i++)
-            {
-                string writeString = indexToCharacter(i, true);
-                tempTable.Rows[i].Cells[1].Paragraphs[0].InsertParagraphBeforeSelf(writeString +".", false, FormattingTypes.DefaultParagraph()).Alignment = Alignment.left;
-                
-                string myText = inData.AdditServNotInc[i];
-                myText = AdditionalServiceAutocomplete(myText, inData);
-                tempTable.Rows[i].Cells[2].Paragraphs[0].InsertParagraphBeforeSelf(myText, false, FormattingTypes.DefaultParagraph()).Alignment = Alignment.both;
+
+                Paragraph p1 = doc.InsertParagraph("Additional Services Not Included", false, FormattingTypes.DefaultBold());
+                p1.Alignment = Alignment.both;
+                InsertBlankParagraph();
+                Paragraph p = doc.InsertParagraph("At the request of the Client, the following additional services typically associated with a project of this type can be provided: ", false, FormattingTypes.DefaultParagraph());
+                p.Alignment = Alignment.both;
+                InsertBlankParagraph();
+                Table tempTable = doc.InsertTable(inData.AdditServNotInc.Count, 3);
+                tempTable.Design = TableDesign.None;
+                for (int i = 0; i < tempTable.RowCount; i++)
+                {
+                    tempTable.Rows[i].Cells[0].Width = 10;
+                    tempTable.Rows[i].Cells[1].Width = 60;
+                    tempTable.Rows[i].Cells[2].Width = 650;
+                }
+                for (int i = 0; i < inData.AdditServNotInc.Count; i++)
+                {
+                    string writeString = indexToCharacter(i, true);
+                    tempTable.Rows[i].Cells[1].Paragraphs[0].InsertParagraphBeforeSelf(writeString + ".", false, FormattingTypes.DefaultParagraph()).Alignment = Alignment.left;
+
+                    string myText = inData.AdditServNotInc[i];
+                    myText = AdditionalServiceAutocomplete(myText, inData);
+                    tempTable.Rows[i].Cells[2].Paragraphs[0].InsertParagraphBeforeSelf(myText, false, FormattingTypes.DefaultParagraph()).Alignment = Alignment.both;
+                }
             }
         }
         static string AdditionalServiceAutocomplete(string inText, DataManager inData)

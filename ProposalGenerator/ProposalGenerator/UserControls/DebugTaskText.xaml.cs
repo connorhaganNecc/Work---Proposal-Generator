@@ -413,7 +413,6 @@ namespace ProposalGenerator
                 for (int i = 0; i < StringArray.Count; i++)
                 {
                     storedFormattedString += StringArray[i];
-                    storedFormattedString = storedFormattedString;
                     storedFormattedString = storedFormattedString.Replace("\\" + "ldblquote ", "\"");
                     storedFormattedString = storedFormattedString.Replace("\\rdblquote ", "\"");
                     storedFormattedString = storedFormattedString.Replace("\\tab", "    ");
