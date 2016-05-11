@@ -54,5 +54,14 @@ namespace ProposalGenerator
         {
             Application.Current.Shutdown();
         }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+
+            App.Current.Shutdown();
+        }
+
+
     }
 }

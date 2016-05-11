@@ -356,6 +356,7 @@ namespace ProposalGenerator
                     storedFormattedString = storedFormattedString.Replace("\\" + "endash ", "-");
                     storedFormattedString = storedFormattedString.Replace("\\rquote ", "'");
                     storedFormattedString = storedFormattedString.Replace("\\'85", "..");
+                    storedFormattedString = storedFormattedString.Replace("\\'a7", "§");
                     storedFormattedString = storedFormattedString.Replace("<CENTER></CENTER>", "<BLANK>");
                     if (i < StringArray.Count - 1)
                     {

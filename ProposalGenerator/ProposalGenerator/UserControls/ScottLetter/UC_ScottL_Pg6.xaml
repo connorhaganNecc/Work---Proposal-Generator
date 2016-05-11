@@ -84,7 +84,7 @@
                 <ColumnDefinition Width="100" />
                 <ColumnDefinition Width="150" />
             </Grid.ColumnDefinitions>
-            
+
             <Button Height="50" Padding="10" Margin="10" FontSize="12" HorizontalContentAlignment="Center"
             DockPanel.Dock="Left" VerticalAlignment="top" HorizontalAlignment="Right" Grid.Column="3"
                 Click="btn_NextPage">

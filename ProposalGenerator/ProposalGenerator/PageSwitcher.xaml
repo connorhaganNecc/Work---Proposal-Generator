@@ -10,7 +10,7 @@
         ShowMaxRestoreButton="False"
         ShowMinButton="False"
         Title="F0rmGEN" Height="800" Width="1000">
-
+        
 
     <Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>
