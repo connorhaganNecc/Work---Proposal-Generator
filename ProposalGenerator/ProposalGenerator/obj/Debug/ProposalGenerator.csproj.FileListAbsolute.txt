@@ -172,3 +172,5 @@ C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGe
 C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\obj\Debug\ProposalGenerator.g.resources
 C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\obj\Debug\ProposalGenerator.Properties.Resources.resources
 C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\obj\Debug\ProposalGenerator.csproj.GenerateResource.Cache
+C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\obj\Debug\UserControls\Contract\UC_ContractP_Pg1.baml
+C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\obj\Debug\UserControls\Contract\UC_ContractP_Pg1.g.cs

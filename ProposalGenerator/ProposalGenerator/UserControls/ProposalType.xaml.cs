@@ -41,6 +41,10 @@ namespace ProposalGenerator
         {
             Switcher.Switch(new ScottL_Pg1());
         }
+        private void btn_ContractProp(object sender, RoutedEventArgs e)
+        {
+            Switcher.Switch(new ContractP_Pg1());
+        }
         #endregion
     }
 

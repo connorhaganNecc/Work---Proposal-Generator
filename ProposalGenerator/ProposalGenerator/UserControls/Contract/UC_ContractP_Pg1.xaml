@@ -1,0 +1,278 @@
+﻿<UserControl x:Class="ProposalGenerator.ContractP_Pg1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        mc:Ignorable="d" 
+        d:DesignHeight="900" d:DesignWidth="900"
+        >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="100" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+
+        <!-- Start of panels and stuff -->
+
+        <!-- Content Grid -->
+        <Grid Grid.Column="1" Grid.Row="1">
+            <!-- This holds the three Info sections
+                 Property Located, Prepared for, and Submitted by-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Border Background="GhostWhite" BorderBrush="Silver" BorderThickness="2" CornerRadius="8,8,3,3" Grid.Row="0">
+                <Grid Grid.Row="0">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Content="_Proposal Type:" Target="{Binding ElementName=Combo}" FontSize="16" FontWeight="Bold"
+                           HorizontalAlignment="Right" VerticalAlignment="Center"
+                           Grid.Column="0" />
+
+                    <ComboBox Name="Combo"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Width="200"
+                    FontSize="16"
+                    Grid.Column="1"
+                    Loaded="ComboBox_Loaded"
+                    SelectionChanged="ComboBox_SelectionChanged" />
+
+                </Grid>
+            </Border>
+            <!-- Client Section -->
+            <Border Background="GhostWhite" BorderBrush="Silver" BorderThickness="2" CornerRadius="8,8,3,3" Grid.Row="2">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="150" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.Resources>
+                        <Style TargetType="{x:Type TextBox}">
+                            <Setter Property="Margin" Value="0,0,15,8" />
+                        </Style>
+                    </Grid.Resources>
+                    <TextBlock Grid.Row="0"  Grid.ColumnSpan="4" HorizontalAlignment="Center" 
+                           FontWeight="Bold" FontSize="16">Enter Client Info</TextBlock>
+                    
+                    <Label Content="Title"
+                           FontSize="14" HorizontalAlignment="Left"
+                       Grid.Row="1" Grid.Column="0" />
+                    <ComboBox Name="TitleBox" 
+                              Grid.Column="1" Grid.Row="1"
+                              Height="30"
+                              Loaded="TitleBox_Loaded"
+                            FontSize="14"
+                            HorizontalAlignment="Left" >
+                        <ComboBoxItem IsSelected="True">None</ComboBoxItem>
+                        <ComboBoxItem>Mr.</ComboBoxItem>
+                        <ComboBoxItem>Ms.</ComboBoxItem>
+                        <ComboBoxItem>Mrs.</ComboBoxItem>
+                    </ComboBox>
+                    <Label Content="First Name:" Target="{Binding ElementName=prepName}"
+                       FontSize="14" HorizontalAlignment="Left"
+                       Grid.Row="2" Grid.Column="0" />
+
+                    <TextBox Name="FNAME"  
+                         Grid.Row="2" Grid.Column="1"/>
+                    
+                    <Label Content="Last Name:" Target="{Binding ElementName=prepName}"
+                       FontSize="14" HorizontalAlignment="Right"
+                       Grid.Row="2" Grid.Column="2" />
+
+                    <TextBox Name="LNAME"  
+                         Grid.Row="2" Grid.Column="3"/>
+
+                    <Label Content="_Name(optional):" Target="{Binding ElementName=prepName}"
+                       FontSize="14" HorizontalAlignment="Left"
+                       Grid.Row="3" Grid.Column="0" />
+
+                    <TextBox Name="CO"  
+                         Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" />
+
+                    <Label Content="_Address:" Target="{Binding ElementName=prepAddress}"
+                       FontSize="14" HorizontalAlignment="Left"
+                       Grid.Row="4" Grid.Column="0" />
+
+                    <TextBox Name="prepAddress"  
+                         Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" />
+
+                    <Label Content="_Town:" Target="{Binding ElementName=prepTown}"
+                       FontSize="14" HorizontalAlignment="Left"
+                       Grid.Row="5" Grid.Column="0"/>
+
+                    <TextBox Name="prepTown" 
+                         Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="1"/>
+
+                    <Label Content="_State:" Target="{Binding ElementName=prepState}"
+                       FontSize="14" HorizontalAlignment="Right"
+                       Grid.Row="5" Grid.Column="2"/>
+
+                    <TextBox Name="prepState" 
+                         Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="1"/>
+
+                    <Label Content="_Zip:" Target="{Binding ElementName=prepZip}"
+                       FontSize="14" HorizontalAlignment="Left"
+                       Grid.Row="6" Grid.Column="0"/>
+
+                    <TextBox Name="prepZip" 
+                         Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="1"/>
+
+
+                </Grid>
+            </Border>
+            <Border Background="GhostWhite" BorderBrush="Silver" BorderThickness="2" CornerRadius="8,8,3,3"
+                    Grid.Row="4">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.Resources>
+                        <Style TargetType="{x:Type TextBox}">
+                            <Setter Property="Margin" Value="0,0,15,8" />
+                        </Style>
+                    </Grid.Resources>
+                    <TextBlock Grid.Row="0"  Grid.ColumnSpan="4" HorizontalAlignment="Center" 
+                           FontWeight="Bold" FontSize="16">Enter Property Location</TextBlock>
+                    <Label Content="_Same as Client" Target="{Binding ElementName=sameClientCheck}"
+                           FontSize="14" HorizontalAlignment="Left"
+                            Grid.Row="1" Grid.Column="0"/>
+                    <CheckBox Name="sameClientCheck"
+                              Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"
+                              Grid.Row="1" Grid.Column="1"/>
+                           
+                    <Label Content="_Address:" Target="{Binding ElementName=propAddress}"
+                           Name="propAddressLabel"
+                       FontSize="14" HorizontalAlignment="Left"
+                       Grid.Row="2" Grid.Column="0" />
+
+                    <TextBox Name="propAddress"  
+                         Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" />
+
+                    <Label Content="_Town:" Target="{Binding ElementName=propTown}"
+                           Name="propTownLabel"
+                       FontSize="14" HorizontalAlignment="Left"
+                       Grid.Row="3" Grid.Column="0"/>
+
+                    <TextBox Name="propTown" 
+                         Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"/>
+
+                    <Label Content="_Zip:" Target="{Binding ElementName=propZip}"
+                           Name="propZipLabel"
+                       FontSize="14" HorizontalAlignment="Left"
+                       Grid.Row="4" Grid.Column="0"/>
+
+                    <TextBox Name="propZip" 
+                         Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3"/>
+
+                    <!--<Label Content="_Assessor's Map:" Target="{Binding ElementName=propMap}"
+                       FontSize="14" HorizontalAlignment="Left"
+                       Grid.Row="4" Grid.Column="0"/>
+
+                    <TextBox Name="propMap" 
+                         Grid.Row="4" Grid.Column="1" />
+
+                    <Label Content="_Assessor's Lot:" Target="{Binding ElementName=propLot}"
+                       FontSize="14" HorizontalAlignment="Left"
+                       Grid.Row="5" Grid.Column="0"/>
+
+                    <TextBox Name="propLot" 
+                         Grid.Row="5" Grid.Column="1" />
+                    
+                    <Label Content="_Assessor's Block:" Target="{Binding ElementName=propBlock}"
+                       FontSize="14" HorizontalAlignment="Left"
+                       Grid.Row="6" Grid.Column="0"/>
+
+                    <TextBox Name="propBlock" 
+                         Grid.Row="6" Grid.Column="1" />-->
+
+                </Grid>
+                <!-- End Property Located -->
+            </Border>
+
+            <!-- Prepared for section -->
+
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+            </Grid>
+
+        </Grid>
+
+        <!-- Border Buttons -->
+        <DockPanel Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3">
+            <Button Height="50" Padding="10" Margin="10" FontSize="12" HorizontalContentAlignment="Center"
+                DockPanel.Dock="Top" VerticalAlignment="top" HorizontalAlignment="Right"
+                    Click="btn_ReturnToMain">
+                Return to Main Menu
+            </Button>
+        </DockPanel>
+
+        <Grid Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="150" />
+            </Grid.ColumnDefinitions>
+            
+            <Button Height="50" Padding="10" Margin="10" FontSize="12" HorizontalContentAlignment="Center"
+            DockPanel.Dock="Left" VerticalAlignment="top" HorizontalAlignment="Right" Grid.Column="3"
+                Click="btn_NextPage">
+                Next Page
+            </Button>
+            <Button Height="50" Padding="10" Margin="10" FontSize="12" HorizontalContentAlignment="Center"
+            DockPanel.Dock="Left" VerticalAlignment="top" HorizontalAlignment="Right" Grid.Column="0"
+                Click="btn_Cancel">
+                Cancel
+            </Button>
+        </Grid>
+
+
+
+    </Grid>
+</UserControl>

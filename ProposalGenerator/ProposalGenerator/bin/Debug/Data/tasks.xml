@@ -585,22 +585,24 @@ We shall prepare the LOMA application or eLOMA (if applicable) to remove the str
     </TaskStructure>
     <TaskStructure>
       <ID>0</ID>
-      <rtftext>{\rtf1\ansi\ansicpg1252\uc1\htmautsp\deff2{\fonttbl{\f0\fcharset0 Times New Roman;}{\f2\fcharset0 Segoe UI, Lucida Sans Unicode, Verdana;}{\f3\fcharset0 Calibri;}{\f4\fcharset0 Leelawadee;}}{\colortbl\red0\green0\blue0;\red255\green255\blue255;}\loch\hich\dbch\pard\plain\ltrpar\itap0{\lang1033\fs18\f2\cf0 \cf0\ql{\fs22\f4 {\ltrch Our office shall prepare a Notice of Intent describing the work proposed within the buffer zone of the bordering vegetated wetlands.  This application will be filed with the Conservation Commission, abutters will be notified of the hearing by }{\b\ltrch certified mail/return receipt requested OR CERTIFICATE OF MAILING (depends on the Town)}{\ltrch , we shall attend the public hearings (estimate of 2 hearings) and we shall conduct one site visit as scheduled by the Commission.}\li0\ri0\sa0\sb0\fi0\qj\par}
-{\fs22\f4 {\ltrch }\li359\ri0\sa0\sb0\fi0\qj\par}
-{\fs22\f4 {\ltrch &lt;FEE&gt;&lt;/FEE&gt;}\li0\ri0\sa0\sb0\fi0\qc\par}
-{\fs22\f4 {\ltrch }\li0\ri0\sa0\sb0\fi0\qc\par}
-{\fs22\f4 {\ltrch Our fee breakdown is as follows:}\li0\ri0\sa0\sb0\fi0\qj\par}
-{\fs22\f4 {\ltrch Notice of Intent...............................................................$725.00}\li0\ri0\sa0\sb0\fi300\qj\par}
-{\fs22\f4 {\ltrch Two public hearings $200 (minimum) /each.......$400.00}\li0\ri0\sa0\sb0\fi300\qj\par}
-{\fs22\f4 {\ltrch Site visit..............................................................................$200.00 (minimum)}\li0\ri0\sa0\sb0\fi300\qj\par}
+      <rtftext>{\rtf1\ansi\ansicpg1252\uc1\htmautsp\deff2{\fonttbl{\f0\fcharset0 Times New Roman;}{\f2\fcharset0 Segoe UI, Lucida Sans Unicode, Verdana;}{\f3\fcharset0 Leelawadee;}{\f4\fcharset0 Calibri;}{\f5\fcharset0 Segoe UI, Lucida Sans Unicode, V;}}{\colortbl\red0\green0\blue0;\red255\green255\blue255;}\loch\hich\dbch\pard\plain\ltrpar\itap0{\lang1033\fs18\f2\cf0 \cf0\ql{\fs22\f3 {\ltrch Our office shall prepare a Notice of Intent describing the work proposed within the buffer zone of the bordering vegetated wetlands.  This application will be filed with the Conservation Commission, abutters will be notified of the hearing by }{\b\ltrch certificate of mailing, }{\ltrch we shall attend the public hearings (estimate of 2 hearings) and we shall conduct one site visit as scheduled by the Commission.}\li0\ri0\sa0\sb0\fi0\qj\par}
+{\fs22\f3 \li359\ri0\sa0\sb0\fi0\qj\par}
+{\fs22\f3 {\ltrch &lt;FEE&gt;&lt;/FEE&gt;}\li0\ri0\sa0\sb0\fi0\qc\par}
 {\fs22\f3 \li0\ri0\sa0\sb0\fi0\qc\par}
-{\fs22\f4 {\b\ltrch Note: }{\ltrch Any meeting or site visit time over 2 hours will be charged at a rate of $125/hour.}\li0\ri0\sa0\sb0\fi0\qj\par}
-{\fs22\f4 {\ltrch }\li0\ri0\sa0\sb0\fi0\qj\par}
-{\fs22\f4 {\ltrch Our fee }{\ul\ltrch does not}{\ltrch  include the filing fee, cost of the legal ad to be published in the local newspaper or the cost of the postage to notify abutters; all which will be reflected on your bill as an out of pocket expense.}\li0\ri0\sa0\sb0\fi0\qj\par}
-{\fs22\f3 \li0\ri0\sa0\sb0\fi0\qc\par}
-{\fs22\f4 {\ltrch Please be aware that it is routine that during the public hearing process comments made by Commission members and/or abutters may cause revisions to the design plans which do not substantially affect the intent of the design. If revisions are required that result in additional charges we will review same with you prior to revising the plan. These revisions would be reflected as an extra on your invoice.}\li0\ri0\sa0\sb0\fi0\qj\par}
-{\fs22\f3 \li0\ri0\sa0\sb0\fi0\qc\par}
-{\fs22\f4 {\ltrch Once the hearing is closed and the project is approved, the Commission will issue an Order of Conditions.  Once all of the site improvement work is completed, a request for a Certificate of Compliance (CoC) from the Commission is required.  While we cannot anticipate the full scope of the CoC at this time, since this has to be negotiated with the Commission during the permitting process, it should be noted that typically this process requires an as-built survey plan, engineering certificate, application, a meeting and a site walk.  Upon completion of the project, we can provide you with an estimate for this work.}\li0\ri0\sa0\sb0\fi0\qj\par}
+{\fs22\f3 {\ltrch Our fee breakdown is as follows:}\li0\ri0\sa0\sb0\fi0\qj\par}
+{\fs22\f3 {\ltrch Notice of Intent...............................................................$725.00}\li0\ri0\sa0\sb0\fi300\qj\par}
+{\fs22\f3 {\ltrch Two public hearings $200 (minimum) /each.......$400.00}\li0\ri0\sa0\sb0\fi300\qj\par}
+{\fs22\f3 {\ltrch Site visit..............................................................................$200.00 (minimum)}\li0\ri0\sa0\sb0\fi300\qj\par}
+{\fs22\f4 \li0\ri0\sa0\sb0\fi0\qc\par}
+{\fs22\f3 {\b\ltrch Note: }{\ltrch Any meeting or site visit time over 2 hours will be charged at a rate of $125/hour.}\li0\ri0\sa0\sb0\fi0\qj\par}
+{\fs22\f3 \li0\ri0\sa0\sb0\fi0\qj\par}
+{\fs22\f3 {\ltrch Our fee }{\ul\ltrch does not}{\ltrch  include the filing fee, cost of the legal ad to be published in the local newspaper or the cost of the postage to notify abutters; all which will be reflected on your bill as an out of pocket expense.}\li0\ri0\sa0\sb0\fi0\qj\par}
+{\fs22\f4 \li0\ri0\sa0\sb0\fi0\qc\par}
+{\fs22\f3 {\ltrch Please be aware that it is routine that during the public hearing process comments made by Commission members and/or abutters may cause revisions to the design plans which do not substantially affect the intent of the design. If revisions are required that result in additional charges we will review same with you prior to revising the plan. These revisions would be reflected as an extra on your invoice.}\li0\ri0\sa0\sb0\fi0\qj\par}
+{\fs22\f4 \li0\ri0\sa0\sb0\fi0\qc\par}
+{\fs22\f3 {\ltrch Once the hearing is closed and the project is approved, the Commission will issue an Order of Conditions.  Once all of the site improvement work is completed, a request for a Certificate of Compliance (CoC) from the Commission is required.  While we cannot anticipate the full scope of the CoC at this time, since this has to be negotiated with the Commission during the permitting process, it should be noted that typically this process requires an as-built survey plan, engineering certificate, application, a meeting and a site walk.  Upon completion of the project, we can provide you with an estimate for this work.}\li0\ri0\sa0\sb0\fi0\qj\par}
+{\f5 \li0\ri0\sa0\sb0\fi0\ql\par}
+{\f5 \li0\ri0\sa0\sb0\fi0\ql\par}
 {\f2 {\ltrch }\li0\ri0\sa0\sb0\fi0\ql\par}
 }
 }</rtftext>
@@ -611,7 +613,7 @@ We shall prepare the LOMA application or eLOMA (if applicable) to remove the str
       </tags>
       <serviceItemNum>500</serviceItemNum>
       <Header>Notice of Intent</Header>
-      <Body>Our office shall prepare a Notice of Intent describing the work proposed within the buffer zone of the bordering vegetated wetlands.  This application will be filed with the Conservation Commission, abutters will be notified of the hearing by &lt;BOLD&gt;certified mail/return receipt requested OR CERTIFICATE OF MAILING (depends on the Town)&lt;/BOLD&gt;, we shall attend the public hearings (estimate of 2 hearings) and we shall conduct one site visit as scheduled by the Commission.
+      <Body>Our office shall prepare a Notice of Intent describing the work proposed within the buffer zone of the bordering vegetated wetlands.  This application will be filed with the Conservation Commission, abutters will be notified of the hearing by &lt;BOLD&gt;certificate of mailing, &lt;/BOLD&gt;we shall attend the public hearings (estimate of 2 hearings) and we shall conduct one site visit as scheduled by the Commission.
 &lt;TAB&gt;&lt;BLANK&gt;&lt;/TAB&gt;
 &lt;CENTER&gt;&lt;FEE&gt;&lt;/FEE&gt;&lt;/CENTER&gt;
 &lt;BLANK&gt;
@@ -775,6 +777,56 @@ If your system requires a pump chamber, the pumps and pump chamber have to be te
     </TaskStructure>
     <TaskStructure>
       <ID>0</ID>
+      <rtftext>{\rtf1\ansi\ansicpg1252\uc1\htmautsp\deff2{\fonttbl{\f0\fcharset0 Times New Roman;}{\f2\fcharset0 Segoe UI, Lucida Sans Unicode, Verdana;}{\f3\fcharset0 Calibri;}{\f4\fcharset0 Leelawadee;}}{\colortbl\red0\green0\blue0;\red255\green255\blue255;}
+{\*\listtable
+{\list\listtemplateid1\listhybrid
+{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\leveltemplateid5\'01\'b7}{\levelnumbers;}\fi-360\li720\lin720\jclisttab\tx720}
+{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\leveltemplateid6\'02\'01.;}{\levelnumbers\'01;}\fi-360\li1440\lin1440\jclisttab\tx1440}
+{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\leveltemplateid7\'02\'02.;}{\levelnumbers\'01;}\fi-360\li2160\lin2160\jclisttab\tx2160}
+{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\leveltemplateid8\'02\'03.;}{\levelnumbers\'01;}\fi-360\li2880\lin2880\jclisttab\tx2880}
+{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\leveltemplateid9\'02\'04.;}{\levelnumbers\'01;}\fi-360\li3600\lin3600\jclisttab\tx3600}
+{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\leveltemplateid10\'02\'05.;}{\levelnumbers\'01;}\fi-360\li4320\lin4320\jclisttab\tx4320}
+{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\leveltemplateid11\'02\'06.;}{\levelnumbers\'01;}\fi-360\li5040\lin5040\jclisttab\tx5040}
+{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\leveltemplateid12\'02\'07.;}{\levelnumbers\'01;}\fi-360\li5760\lin5760\jclisttab\tx5760}
+{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\leveltemplateid13\'02\'08.;}{\levelnumbers\'01;}\fi-360\li6480\lin6480\jclisttab\tx6480}
+{\listname ;}\listid1}}
+{\*\listoverridetable
+{\listoverride\listid1\listoverridecount0\ls1}
+}
+\loch\hich\dbch\pard\plain\ltrpar\itap0{\lang1033\fs18\f2\cf0 \cf0\ql{\fs22\f4 {\ltrch Once the topographic information is compiled in our office we shall prepare the replacement Sanitary Disposal System Design in accordance with the local Board of Health Regulations and the State Environmental Code, Title 5.}\li0\ri0\sa0\sb0\fi0\qj\par}
+{\fs22\f4 {\ltrch }\li0\ri0\sa0\sb0\fi0\qc\par}
+{\fs22\f4 {\ltrch &lt;FEE&gt;&lt;/FEE&gt;}\li0\ri0\sa0\sb0\fi0\qc\par}
+{\fs22\f4 {\ltrch }\li0\ri0\sa0\sb0\fi0\qc\par}
+{\fs22\f4 {\pntext \'B7\tab}{\*\pn\pnlvlblt\pnstart1{\pntxtb\'B7}}{\ltrch At times a sieve analysis (conducted by a certified lab) is used in lieu of a percolation test due to saturated soil conditions on site.  If it is determined that a sieve analysis is required, then an additional $150/soil sample will be charged.  Generally 1-2 soil samples are required.}\li855\ri0\sa240\sb0\jclisttab\tx855\fi-360\qj\par}
+{\fs22\f4 {\pntext \'B7\tab}{\*\pn\pnlvlblt\pnstart1{\pntxtb\'B7}}{\ltrch If an alternative technology component is required as part of the system design we shall contact you prior to the commencement of any design work and will inform you of expected additional costs which would be shown as \ldblquote extras\rdblquote  on your invoices.}\li855\ri0\sa240\sb0\jclisttab\tx855\fi-360\qj\par}
+{\fs22\f4 {\pntext \'B7\tab}{\*\pn\pnlvlblt\pnstart1{\pntxtb\'B7}}{\ltrch If your installer requires us to layout the location of the septic system, prior to installation, an additional $330 will be charged.}\li855\ri0\sa240\sb0\jclisttab\tx855\fi-360\qj\par}
+{\fs22\f4 {\pntext \'B7\tab}{\*\pn\pnlvlblt\pnstart1{\pntxtb\'B7}}{\ltrch At times sanitary disposal systems involve pumping to the leaching facility.  If your system requires a pump an additional $250 will be charged.}\li855\ri0\sa240\sb0\jclisttab\tx855\fi-360\qj\par}
+{\fs22\f4 {\ltrch Once this plan is complete we shall file an application with the Board of Health.  A filing fee of $%TOWNFEE% made payable to the Town is due upon submission of this application.}\li0\ri0\sa0\sb0\fi0\qj\par}
+{\f2 {\ltrch }\li0\ri0\sa0\sb0\fi0\ql\par}
+}
+}</rtftext>
+      <fee />
+      <tags>
+        <string>Site Plan</string>
+        <string>Scott SSD Repair</string>
+        <string>Septic Repair</string>
+      </tags>
+      <serviceItemNum>400</serviceItemNum>
+      <Header>Septic System Design Plan</Header>
+      <Body>Once the topographic information is compiled in our office we shall prepare the replacement Sanitary Disposal System Design in accordance with the local Board of Health Regulations and the State Environmental Code, Title 5.
+&lt;BLANK&gt;
+&lt;CENTER&gt;&lt;FEE&gt;&lt;/FEE&gt;&lt;/CENTER&gt;
+&lt;BLANK&gt;
+&lt;BULLET&gt;
+At times a sieve analysis (conducted by a certified lab) is used in lieu of a percolation test due to saturated soil conditions on site.  If it is determined that a sieve analysis is required, then an additional $150/soil sample will be charged.  Generally 1-2 soil samples are required.
+If an alternative technology component is required as part of the system design we shall contact you prior to the commencement of any design work and will inform you of expected additional costs which would be shown as "extras" on your invoices.
+If your installer requires us to layout the location of the septic system, prior to installation, an additional $330 will be charged.
+At times sanitary disposal systems involve pumping to the leaching facility.  If your system requires a pump an additional $250 will be charged.
+&lt;/BULLET&gt;
+Once this plan is complete we shall file an application with the Board of Health.  A filing fee of $%TOWNFEE% made payable to the Town is due upon submission of this application.</Body>
+    </TaskStructure>
+    <TaskStructure>
+      <ID>0</ID>
       <rtftext>{\rtf1\ansi\ansicpg1252\uc1\htmautsp\deff2{\fonttbl{\f0\fcharset0 Times New Roman;}{\f2\fcharset0 Segoe UI, Lucida Sans Unicode, Verdana;}{\f3\fcharset0 Calibri;}{\f4\fcharset0 Leelawadee;}}{\colortbl\red0\green0\blue0;\red255\green255\blue255;}\loch\hich\dbch\pard\plain\ltrpar\itap0{\lang1033\fs22\f3\cf0 \cf0\ql{\f4 {\ltrch Our office shall prepare a Site Development Plan showing the lot lines, the topography of the lot, the wetland resource areas and all proposed improvements.  This plan will be submitted as part of the Notice of Intent application outlined in Task 5 below.  This plan can also be used for your Building Permit application.}\li0\ri0\sa0\sb0\fi0\qj\par}
 {\f4 {\ltrch }\li0\ri0\sa0\sb0\fi0\qj\par}
 {\f4 {\ltrch &lt;FEE&gt;&lt;/FEE&gt;}\li0\ri0\sa0\sb0\fi0\qj\par}
@@ -826,56 +878,6 @@ A backhoe is needed to conduct these tests.  We shall hire a backhoe and will as
 During the time we do the soil testing we will evaluate any wetlands which may impact our design.  We will provide you with a separate proposal for this work if filing with the Conservation Commission is required.
 &lt;BLANK&gt;
 Once the soil testing is completed we will prepare a preliminary design of your system.   At this time we will assess if any local waivers to the Board of Health Regulations or variances from Title 5 are needed.  We will make that assessment and will provide you with a separate proposal for this work, if required.</Body>
-    </TaskStructure>
-    <TaskStructure>
-      <ID>0</ID>
-      <rtftext>{\rtf1\ansi\ansicpg1252\uc1\htmautsp\deff2{\fonttbl{\f0\fcharset0 Times New Roman;}{\f2\fcharset0 Segoe UI, Lucida Sans Unicode, Verdana;}{\f3\fcharset0 Calibri;}{\f4\fcharset0 Leelawadee;}}{\colortbl\red0\green0\blue0;\red255\green255\blue255;}
-{\*\listtable
-{\list\listtemplateid1\listhybrid
-{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\leveltemplateid5\'01\'b7}{\levelnumbers;}\fi-360\li720\lin720\jclisttab\tx720}
-{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\leveltemplateid6\'02\'01.;}{\levelnumbers\'01;}\fi-360\li1440\lin1440\jclisttab\tx1440}
-{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\leveltemplateid7\'02\'02.;}{\levelnumbers\'01;}\fi-360\li2160\lin2160\jclisttab\tx2160}
-{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\leveltemplateid8\'02\'03.;}{\levelnumbers\'01;}\fi-360\li2880\lin2880\jclisttab\tx2880}
-{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\leveltemplateid9\'02\'04.;}{\levelnumbers\'01;}\fi-360\li3600\lin3600\jclisttab\tx3600}
-{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\leveltemplateid10\'02\'05.;}{\levelnumbers\'01;}\fi-360\li4320\lin4320\jclisttab\tx4320}
-{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\leveltemplateid11\'02\'06.;}{\levelnumbers\'01;}\fi-360\li5040\lin5040\jclisttab\tx5040}
-{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\leveltemplateid12\'02\'07.;}{\levelnumbers\'01;}\fi-360\li5760\lin5760\jclisttab\tx5760}
-{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\leveltemplateid13\'02\'08.;}{\levelnumbers\'01;}\fi-360\li6480\lin6480\jclisttab\tx6480}
-{\listname ;}\listid1}}
-{\*\listoverridetable
-{\listoverride\listid1\listoverridecount0\ls1}
-}
-\loch\hich\dbch\pard\plain\ltrpar\itap0{\lang1033\fs18\f2\cf0 \cf0\ql{\fs22\f4 {\ltrch Once the topographic information is compiled in our office we shall prepare the replacement Sanitary Disposal System Design in accordance with the local Board of Health Regulations and the State Environmental Code, Title 5.}\li0\ri0\sa0\sb0\fi0\qj\par}
-{\fs22\f4 {\ltrch }\li0\ri0\sa0\sb0\fi0\qc\par}
-{\fs22\f4 {\ltrch &lt;FEE&gt;&lt;/FEE&gt;}\li0\ri0\sa0\sb0\fi0\qc\par}
-{\fs22\f4 {\ltrch }\li0\ri0\sa0\sb0\fi0\qc\par}
-{\fs22\f4 {\pntext \'B7\tab}{\*\pn\pnlvlblt\pnstart1{\pntxtb\'B7}}{\ltrch At times a sieve analysis (conducted by a certified lab) is used in lieu of a percolation test due to saturated soil conditions on site.  If it is determined that a sieve analysis is required, then an additional $150/soil sample will be charged.  Generally 1-2 soil samples are required.}\li855\ri0\sa240\sb0\jclisttab\tx855\fi-360\qj\par}
-{\fs22\f4 {\pntext \'B7\tab}{\*\pn\pnlvlblt\pnstart1{\pntxtb\'B7}}{\ltrch If an alternative technology component is required as part of the system design we shall contact you prior to the commencement of any design work and will inform you of expected additional costs which would be shown as \ldblquote extras\rdblquote  on your invoices.}\li855\ri0\sa240\sb0\jclisttab\tx855\fi-360\qj\par}
-{\fs22\f4 {\pntext \'B7\tab}{\*\pn\pnlvlblt\pnstart1{\pntxtb\'B7}}{\ltrch If your installer requires us to layout the location of the septic system, prior to installation, an additional $330 will be charged.}\li855\ri0\sa240\sb0\jclisttab\tx855\fi-360\qj\par}
-{\fs22\f4 {\pntext \'B7\tab}{\*\pn\pnlvlblt\pnstart1{\pntxtb\'B7}}{\ltrch At times sanitary disposal systems involve pumping to the leaching facility.  If your system requires a pump an additional $250 will be charged.}\li855\ri0\sa240\sb0\jclisttab\tx855\fi-360\qj\par}
-{\fs22\f4 {\ltrch Once this plan is complete we shall file an application with the Board of Health.  A filing fee of $%TOWNFEE% made payable to the Town is due upon submission of this application.}\li0\ri0\sa0\sb0\fi0\qj\par}
-{\f2 {\ltrch }\li0\ri0\sa0\sb0\fi0\ql\par}
-}
-}</rtftext>
-      <fee />
-      <tags>
-        <string>Site Plan</string>
-        <string>Scott SSD Repair</string>
-        <string>Septic Repair</string>
-      </tags>
-      <serviceItemNum>400</serviceItemNum>
-      <Header>SSD (septic design repair)</Header>
-      <Body>Once the topographic information is compiled in our office we shall prepare the replacement Sanitary Disposal System Design in accordance with the local Board of Health Regulations and the State Environmental Code, Title 5.
-&lt;BLANK&gt;
-&lt;CENTER&gt;&lt;FEE&gt;&lt;/FEE&gt;&lt;/CENTER&gt;
-&lt;BLANK&gt;
-&lt;BULLET&gt;
-At times a sieve analysis (conducted by a certified lab) is used in lieu of a percolation test due to saturated soil conditions on site.  If it is determined that a sieve analysis is required, then an additional $150/soil sample will be charged.  Generally 1-2 soil samples are required.
-If an alternative technology component is required as part of the system design we shall contact you prior to the commencement of any design work and will inform you of expected additional costs which would be shown as "extras" on your invoices.
-If your installer requires us to layout the location of the septic system, prior to installation, an additional $330 will be charged.
-At times sanitary disposal systems involve pumping to the leaching facility.  If your system requires a pump an additional $250 will be charged.
-&lt;/BULLET&gt;
-Once this plan is complete we shall file an application with the Board of Health.  A filing fee of $%TOWNFEE% made payable to the Town is due upon submission of this application.</Body>
     </TaskStructure>
     <TaskStructure>
       <ID>0</ID>
@@ -947,7 +949,7 @@ Once this plan is complete we shall file an application with the Board of Health
         <string>Septic Repair</string>
       </tags>
       <serviceItemNum>300</serviceItemNum>
-      <Header>Topo</Header>
+      <Header>Topographic mapping</Header>
       <Body>Our surveyors shall conduct a topographic mapping in sufficient detail to prepare a %SEPTORSP%.
 &lt;BLANK&gt;
 &lt;CENTER&gt;The fee for this service is     $850.00&lt;/CENTER&gt;
@@ -964,16 +966,17 @@ Please note that our services include preliminary research to obtain the record 
       <fee />
       <tags />
       <serviceItemNum>300</serviceItemNum>
-      <Header>Topo (Aerial)</Header>
+      <Header>Topographic mapping (Aerial)</Header>
       <Body>We shall produce a topographic mapping of the site by aerial survey which would be performed by Col-East, Inc.   We shall provide horizontal and vertical control for the development of the topographic plans.
 &lt;BLANK&gt;
 &lt;CENTER&gt;The fee for this service is     $&lt;/CENTER&gt;</Body>
     </TaskStructure>
     <TaskStructure>
       <ID>0</ID>
-      <rtftext>{\rtf1\ansi\ansicpg1252\uc1\htmautsp\deff2{\fonttbl{\f0\fcharset0 Times New Roman;}{\f2\fcharset0 Segoe UI, Lucida Sans Unicode, Verdana;}{\f3\fcharset0 Leelawadee;}}{\colortbl\red0\green0\blue0;\red255\green255\blue255;}\loch\hich\dbch\pard\plain\ltrpar\itap0{\lang1033\fs18\f2\cf0 \cf0\ql{\fs22\f3 {\ltrch We shall coordinate with DeRosa Environmental to delineate the edge of the wetland resource area as required by the state and town bylaws, and we shall prepare the required DEP Field Data Forms.}\li0\ri0\sa0\sb0\fi0\qj\par}
+      <rtftext>{\rtf1\ansi\ansicpg1252\uc1\htmautsp\deff2{\fonttbl{\f0\fcharset0 Times New Roman;}{\f2\fcharset0 Segoe UI, Lucida Sans Unicode, Verdana;}{\f3\fcharset0 Leelawadee;}{\f4\fcharset0 Segoe UI, Lucida Sans Unicode, V;}}{\colortbl\red0\green0\blue0;\red255\green255\blue255;}\loch\hich\dbch\pard\plain\ltrpar\itap0{\lang1033\fs18\f2\cf0 \cf0\ql{\fs22\f3 {\ltrch We shall coordinate with DeRosa Environmental to delineate the edge of the wetland resource area as required by the state and town bylaws, and we shall prepare the required DEP Field Data Forms.}\li0\ri0\sa0\sb0\fi0\qj\par}
 {\fs22\f3 \li0\ri0\sa0\sb0\fi0\qc\par}
 {\fs22\f3 {\ltrch &lt;FEE&gt;&lt;/FEE&gt;}\li0\ri0\sa0\sb0\fi0\qc\par}
+{\f4 \li0\ri0\sa0\sb0\fi0\ql\par}
 {\f2 {\ltrch }\li0\ri0\sa0\sb0\fi0\ql\par}
 }
 }</rtftext>
@@ -983,7 +986,7 @@ Please note that our services include preliminary research to obtain the record 
         <string>Septic Repair</string>
       </tags>
       <serviceItemNum>700</serviceItemNum>
-      <Header>Wetland delineation</Header>
+      <Header>Wetland Delineation</Header>
       <Body>We shall coordinate with DeRosa Environmental to delineate the edge of the wetland resource area as required by the state and town bylaws, and we shall prepare the required DEP Field Data Forms.
 &lt;BLANK&gt;
 &lt;CENTER&gt;&lt;FEE&gt;&lt;/FEE&gt;&lt;/CENTER&gt;</Body>

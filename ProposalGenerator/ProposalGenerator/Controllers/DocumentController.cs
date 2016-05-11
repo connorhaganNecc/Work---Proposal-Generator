@@ -651,9 +651,9 @@ namespace ProposalGenerator
                 else if (myTagType == TagType.Note)
                 {
                     Paragraph newPara = doc.InsertParagraph("Note: ", false, FormattingTypes.InfoLineFormat());
+                    newPara.IndentationBefore = .63f;
                     newPara.InsertText(result[i], false, FormattingTypes.DefaultParagraph());
                     HandleFormatting(newPara, FormattingTypes.DefaultParagraph());
-                    newPara.IndentationBefore = .63f;
                     newPara.Alignment = Alignment.both;
                 }
                 else if (myTagType == TagType.Blank)

@@ -94,6 +94,9 @@
     <Compile Include="UserControls\AddData\EditAddItems.xaml.cs">
       <DependentUpon>EditAddItems.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Contract\UC_ContractP_Pg1.xaml.cs">
+      <DependentUpon>UC_ContractP_Pg1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Debug.xaml.cs">
       <DependentUpon>Debug.xaml</DependentUpon>
     </Compile>
@@ -182,6 +185,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControls\AddData\EditAddItems.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Contract\UC_ContractP_Pg1.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -353,7 +360,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="REQ\" />
-    <Folder Include="UserControls\Contract\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Data\ScottLTasks.xml">

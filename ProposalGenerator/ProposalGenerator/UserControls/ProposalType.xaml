@@ -21,6 +21,7 @@
         <StackPanel Grid.Row="1" Grid.Column="1" Width="200" HorizontalAlignment="Center">
             <!--<Button Click="btn_JohnLProp">John Letter Proposal</Button>-->
             <Button Click="btn_ScottLProp" Visibility="Visible" >Letter Proposal</Button>
+            <Button Click="btn_ContractProp" Visibility="Hidden" >Contract Proposal</Button>
         </StackPanel>
 
         <!-- Border Buttons -->

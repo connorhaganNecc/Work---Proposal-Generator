@@ -19,19 +19,19 @@ namespace ProposalGenerator
     /// <summary>
     /// Interaction logic for PropPg1.xaml
     /// </summary>
-    public partial class ScottL_Pg1 : UserControl, ISwitchable
+    public partial class ContractP_Pg1 : UserControl, ISwitchable
     {
         PageSwitcher myParent;
         DataManager myData;
         int comboStartIndex;
         int titleStartIndex;
-        public ScottL_Pg1()
+        public ContractP_Pg1()
         {
             comboStartIndex = -1;
             InitializeComponent();
         }
 
-        public ScottL_Pg1(bool IGNORE, DataManager myData)
+        public ContractP_Pg1(bool IGNORE, DataManager myData)
         {
             comboStartIndex = -1;
             InitializeComponent();

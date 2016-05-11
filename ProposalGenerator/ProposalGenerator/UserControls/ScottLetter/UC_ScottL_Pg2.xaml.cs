@@ -24,15 +24,22 @@ namespace ProposalGenerator
         PageSwitcher myParent;
         DataManager myData;
 
-        public ScottL_Pg2()
+        public ScottL_Pg2(DataManager myData)
         {
             
             InitializeComponent();
             CustomRE.Visibility = Visibility.Hidden;
             ReLabel.Visibility = Visibility.Hidden;
-            CustomArea.Text = "The Morin-Cameron Group, Inc. is pleased to provide you with this proposal for engineering and surveying services, in connection with the above referenced lot, for the terms and conditions contained herewith. ";
-            
-              
+            if(myData.ProposalType != "Septic Repair")
+            {
+                CustomArea.Text = "The Morin-Cameron Group, Inc. is pleased to provide you with this proposal for engineering and surveying services, in connection with the above referenced lot, for the terms and conditions contained herewith. ";
+            }
+            else
+            {
+                CustomArea.Text = "The Morin-Cameron Group, Inc. is pleased to provide you with this proposal for engineering and surveying services, in connectgion with the replacement of the septic system at your proerpty, for the terms and conditions contained herewith.";
+                CustomArea.Text += "\n\nIt was a pleasure speaking with you the other day regarding your existing septic system. Based on our discussion you have indicated that your septic system failed a Title 5 inspection and, therefore, needs to be replaced.";
+            }
+
         }
         public ScottL_Pg2(bool IGNORE, DataManager myData)
         {
