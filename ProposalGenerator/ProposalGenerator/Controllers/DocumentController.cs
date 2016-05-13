@@ -734,12 +734,17 @@ namespace ProposalGenerator
 
             int currLevel = 0;
 
-            doc.InsertParagraph("I.\tEXISTING CONDITIONS SURVEY AND PLAN", false, FormattingTypes.DefaultBold());
+            if(ContractTasklistContainsServiceNumber(myData.myTaskList, 300))
+            {
+                doc.InsertParagraph("I.\tEXISTING CONDITIONS SURVEY AND PLAN", false, FormattingTypes.DefaultBold());
+            }
+
+            doc.InsertParagraph("I.   EXISTING CONDITIONS SURVEY AND PLAN", false, FormattingTypes.DefaultBold());
             currLevel++;
-            Paragraph t1 = doc.InsertParagraph("MCG will perform a property line and existing conditions survey plan including the following:", false, FormattingTypes.DefaultParagraph());
-            t1.IndentationBefore = 1f + (.25f * currLevel);
-            Paragraph t2 = doc.InsertParagraph("•   Perform research at the Registry of Deeds and City Hall offices.");
-            t2.IndentationBefore = 1f + (.25f * currLevel);
+            Paragraph t1 = doc.InsertParagraph("     MCG will perform a property line and existing conditions survey plan including the following:", false, FormattingTypes.DefaultParagraph());
+            
+            Paragraph t2 = doc.InsertParagraph("     " + bulletChar() + "   Perform research at the Registry of Deeds and City Hall offices.");
+            ///t2.IndentationBefore = 1f + (.25f * currLevel);
 
 
         }
@@ -1559,6 +1564,18 @@ namespace ProposalGenerator
                     return "null";
             }
         }
+
+        static public bool ContractTasklistContainsServiceNumber(ContractTaskList inList, int inNum)
+        {
+            for(int i = 0; i < inList.myTasks.Count; i++)
+            {
+                if(inList.myTasks[i].serviceItemNum == inNum)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         static public string GetFilename()
         {
             return fileName;
@@ -1566,6 +1583,11 @@ namespace ProposalGenerator
         static public void ClearFilename()
         {
             fileName = "null";
+        }
+
+        static public string bulletChar()
+        {
+            return "•";
         }
 
         static public string ServiceNumToTitle(int serviceNum)
