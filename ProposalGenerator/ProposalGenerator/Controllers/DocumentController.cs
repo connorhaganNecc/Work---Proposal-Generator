@@ -731,7 +731,7 @@ namespace ProposalGenerator
         {
             Paragraph header = doc.InsertParagraph("SCOPE OF SERVICES", false, FormattingTypes.DefaultBold());
             header.FontSize(12);
-
+            InsertBlankParagraph;
             int currLevel = 0;
 
             if(ContractTasklistContainsServiceNumber(myData.myTaskList, 300))
