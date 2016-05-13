@@ -720,10 +720,28 @@ namespace ProposalGenerator
 
             WriteContractAssumptions(myData);
             //Write tasks
+            WriteContractTasks(myData);
             SaveDocument();
 
 
             return true;
+        }
+
+        static public void WriteContractTasks(ContractDataManager myData)
+        {
+            Paragraph header = doc.InsertParagraph("SCOPE OF SERVICES", false, FormattingTypes.DefaultBold());
+            header.FontSize(12);
+
+            int currLevel = 0;
+
+            doc.InsertParagraph("I.\tEXISTING CONDITIONS SURVEY AND PLAN", false, FormattingTypes.DefaultBold());
+            currLevel++;
+            Paragraph t1 = doc.InsertParagraph("MCG will perform a property line and existing conditions survey plan including the following:", false, FormattingTypes.DefaultParagraph());
+            t1.IndentationBefore = 1f + (.25f * currLevel);
+            Paragraph t2 = doc.InsertParagraph("•   Perform research at the Registry of Deeds and City Hall offices.");
+            t2.IndentationBefore = 1f + (.25f * currLevel);
+
+
         }
 
         static public void WriteContractAssumptions(ContractDataManager myData)
@@ -741,10 +759,11 @@ namespace ProposalGenerator
 
             for(int i = 0; i < bulletList.Items.Count; i++)
             {
-                bulletList.Items[i].IndentationHanging += .25f;
+                //bulletList.Items[i].IndentationHanging += .53f + .53f;
+                //bulletList.Items[i].IndentationFirstLine = .27f;
+                bulletList.Items[i].IndentationBefore = 1f + .27f;
             }
-
-
+            doc.InsertList(bulletList);
         }
 
         static public void WriteContractProjectDescription(ContractDataManager inData)
@@ -1548,6 +1567,32 @@ namespace ProposalGenerator
         {
             fileName = "null";
         }
+
+        static public string ServiceNumToTitle(int serviceNum)
+        {
+            if(serviceNum == 300 || serviceNum == 300.00)
+            {
+                return "EXISTING CONDITIONS SURVEY AND PLAN";
+            }
+            else if(serviceNum == 400 || serviceNum == 400.00)
+            {
+                return "DESIGN DEVELOPMENT";
+            }
+            else if(serviceNum == 500 || serviceNum == 500.00)
+            {
+                return "PERMITTING";
+            }
+            else if(serviceNum == 600 || serviceNum == 600.00)
+            {
+                return "PROJECT MEETINGS & PREPARATION";
+            }
+            else
+            {
+                return "null";
+            }
+
+        }
+
         #endregion
 
         #region InitStuff
