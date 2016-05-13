@@ -31,11 +31,13 @@ namespace ProposalGenerator
     {
         public string map;
         public string lot;
+        public string block;
 
         override public void ToUpper()
         {
             map = map.ToUpper();
             lot = lot.ToUpper();
+            block = block.ToUpper();
             base.ToUpper();
         }
     }

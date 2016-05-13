@@ -97,19 +97,20 @@
                         <ComboBoxItem>Ms.</ComboBoxItem>
                         <ComboBoxItem>Mrs.</ComboBoxItem>
                     </ComboBox>
-                    <Label Content="First Name:" Target="{Binding ElementName=prepName}"
+                    <Label Content="Name:" Target="{Binding ElementName=prepName}"
                        FontSize="14" HorizontalAlignment="Left"
                        Grid.Row="2" Grid.Column="0" />
 
                     <TextBox Name="FNAME"  
-                         Grid.Row="2" Grid.Column="1"/>
+                         Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"/>
                     
                     <Label Content="Last Name:" Target="{Binding ElementName=prepName}"
                        FontSize="14" HorizontalAlignment="Right"
-                       Grid.Row="2" Grid.Column="2" />
+                       Grid.Row="2" Grid.Column="2" 
+                           Visibility="Hidden"/>
 
                     <TextBox Name="LNAME"  
-                         Grid.Row="2" Grid.Column="3"/>
+                         Grid.Row="2" Grid.Column="3" Visibility="Hidden"/>
 
                     <Label Content="_Name(optional):" Target="{Binding ElementName=prepName}"
                        FontSize="14" HorizontalAlignment="Left"
@@ -205,6 +206,30 @@
 
                     <TextBox Name="propZip" 
                          Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3"/>
+
+                    <Label Content="_ASSESSOR'S MAP:" Target="{Binding ElementName=propZip}"
+                           Name="propAssMapLabel"
+                       FontSize="14" HorizontalAlignment="Left"
+                       Grid.Row="5" Grid.Column="0"/>
+
+                    <TextBox Name="propAssMap" 
+                         Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3"/>
+
+                    <Label Content="_ASSESSOR'S BLOCK:" Target="{Binding ElementName=propZip}"
+                           Name="propAssBlockLabel"
+                       FontSize="14" HorizontalAlignment="Left"
+                       Grid.Row="6" Grid.Column="0"/>
+
+                    <TextBox Name="propAssBlock" 
+                         Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3"/>
+
+                    <Label Content="_ASSESSOR'S LOT:" Target="{Binding ElementName=propZip}"
+                           Name="propAssBlockLot"
+                       FontSize="14" HorizontalAlignment="Left"
+                       Grid.Row="7" Grid.Column="0"/>
+
+                    <TextBox Name="propAssLot" 
+                         Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3"/>
 
                     <!--<Label Content="_Assessor's Map:" Target="{Binding ElementName=propMap}"
                        FontSize="14" HorizontalAlignment="Left"

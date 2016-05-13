@@ -686,38 +686,103 @@ namespace ProposalGenerator
         #endregion
 
         #region ContractProposal
-        static public bool WriteContractProp(DataManager myData)
+        static public bool WriteContractProp(ContractDataManager myData)
         {
 
             if (fileName == "null")
             {
-                if (!OpenFileDialog())
+                if (!OpenFileDialogContract())
                 {
                     return false;
                 }
             }
 
-            SetupHeader(myData.PropertyLocation, myData.Client);
+            SetupHeader(myData.Property, myData.Client);
             InsertBlankParagraph();
             InsertBlankParagraph();
             InsertBlankParagraph();
             //Insert date here//
+            doc.InsertParagraph(DateTime.Now.ToString("MMMM dd, yyyy").ToUpper(), false, FormattingTypes.InfoLineFormat()).Alignment = Alignment.center;
+
             InsertBlankParagraph();
 
-            doc = PresetParagraphs.ContractProposalOpener(doc, myData.Client.LastName);
-
-            WriteCustomArea(myData.CustomParagraph);
+            //doc = PresetParagraphs.ContractProposalOpener(doc, myData.Client.LastName);
+            WriteContractOpener(myData);
+            //WriteCustomArea(myData.CustomParagraph);
             InsertBlankParagraph();
-            WriteAssumptions(myData.Assumptions);
+            //WriteAssumptions(myData.Assumptions);
 
+            WriteContractProjectDescription(myData);
+
+            myData.Assumptions.Add("The parcel is situated in the Industrial 1 (I-1) Zoning district.");
+            myData.Assumptions.Add("36 Crystal Street has a land area of 0.515 Acres according to record plans.");
+            myData.Assumptions.Add("The project will involve the design and permitting of an addition in accordance with the project description above.  The “Manufacturing and Repair” is allowed in the I-1 district in accordance with Section 300.3.5.2 of the Malden Zoning Ordinance (MZO).");
+
+            WriteContractAssumptions(myData);
             //Write tasks
-
+            SaveDocument();
 
 
             return true;
         }
+
+        static public void WriteContractAssumptions(ContractDataManager myData)
+        {
+            Paragraph head = doc.InsertParagraph("Assumptions", false, FormattingTypes.DefaultBold());
+            Paragraph start = doc.InsertParagraph("MCG has included the following assumptions in the formation of the scope of services and estimated fee:", false, FormattingTypes.DefaultParagraph());
+            start.Alignment = Alignment.both;
+
+            List bulletList = doc.AddList(listType: ListItemType.Bulleted);
+
+            for(int i = 0; i < myData.Assumptions.Count;i++)
+            {
+                doc.AddListItem(bulletList, myData.Assumptions[i]);
+            }
+
+            for(int i = 0; i < bulletList.Items.Count; i++)
+            {
+                bulletList.Items[i].IndentationHanging += .25f;
+            }
+
+
+        }
+
+        static public void WriteContractProjectDescription(ContractDataManager inData)
+        {
+            Paragraph l1 = doc.InsertParagraph("PROJECT DESCRIPTION", false, FormattingTypes.DefaultBold());
+
+            Paragraph l2 = doc.InsertParagraph(inData.CustomParagraph, false, FormattingTypes.DefaultParagraph());
+
+            l2.Alignment = Alignment.both;
+        }
+        static public void WriteContractOpener(ContractDataManager myData)
+        {
+            Paragraph p1 = doc.InsertParagraph("The Morin-Cameron Group, Inc. is pleased to provide you with this proposal for professional engineering services in connection with the above referenced lots, for the terms and conditions contained herewith.", false, FormattingTypes.DefaultParagraph());
+            p1.Alignment = Alignment.both;
+            p1.LineSpacingAfter = 6;
+
+            Paragraph p2 = doc.InsertParagraph("This Agreement contains Part I: description of the project, scope of services, compensation and timing of the services and Part II: Professional Services Terms and Conditions which together are the general terms of the engagement between ", false, FormattingTypes.DefaultParagraph());
+
+            p2.InsertText(myData.Client.FirstName, false, FormattingTypes.DefaultBold());
+            p2.InsertText(" hereinafter called the ", false, FormattingTypes.DefaultParagraph());
+            p2.InsertText("\"CLIENT,\"", false, FormattingTypes.DefaultBold());
+            p2.InsertText(" and ", false, FormattingTypes.DefaultParagraph());
+            p2.InsertText("The Morin-Cameron Group, Inc. (MCG).", false, FormattingTypes.DefaultBold());
+
+            p2.Alignment = Alignment.both;
+            p2.LineSpacingAfter = 6;
+        }
         static public void SetupHeader(AddressExData first, ContactData second)
         {
+            Paragraph p1 = doc.InsertParagraph("AGREEMENT FOR PROFESSIONAL SERVICES", false, FormattingTypes.DefaultParagraph());
+            p1.UnderlineStyle(UnderlineStyle.singleLine);
+            p1.Alignment = Alignment.center;
+            p1.Bold();
+            Paragraph p2 = doc.InsertParagraph("PREPARATION OF SITE PLANS AND PERMITTING", false, FormattingTypes.DefaultParagraph());
+            p2.Alignment = Alignment.center;
+            p2.Bold();
+            InsertBlankParagraph();
+
             WriteContractPropLoc(first);
             WriteContractPrepLoc(second);
             doc = PresetParagraphs.AddSubmittedBy(doc);
@@ -725,7 +790,6 @@ namespace ProposalGenerator
         }
         static public bool WriteContractPropLoc(AddressExData inData)
         {
-            inData.ToUpper();
             if (fileName == "null")
             {
                 if (!OpenFileDialog())
@@ -736,14 +800,23 @@ namespace ProposalGenerator
             Paragraph Header = doc.InsertParagraph("For the Property Located at", false, FormattingTypes.HeadLineFormatting());
             Header.Alignment = Alignment.center;
 
-            InsertBlankParagraph();
-
-            Paragraph L1 = doc.InsertParagraph(inData.street, false, FormattingTypes.InfoLineFormat());
+            Paragraph L1 = doc.InsertParagraph(inData.street.ToUpper(), false, FormattingTypes.InfoLineFormat());
             L1.Alignment = Alignment.center;
-            Paragraph L2 = doc.InsertParagraph(inData.town + ", " + inData.state + " " + inData.zip, false, FormattingTypes.InfoLineFormat());
-            L2.Alignment = Alignment.center;
-            Paragraph L3 = doc.InsertParagraph("(ASSESSOR'S MAP " + inData.map + ", LOT " + inData.lot + ")", false, FormattingTypes.InfoLineFormat());
+
+            Paragraph L3 = doc.InsertParagraph("ASSESSOR'S MAP " + inData.map, false, FormattingTypes.InfoLineFormat());
+            if (inData.block != null && inData.block != "")
+            {
+                L3.InsertText(", BLOCK " + inData.block.ToString(), false, FormattingTypes.InfoLineFormat());
+            }
+            if (inData.lot != null && inData.lot != "")
+            {
+                L3.InsertText(", LOT " + inData.lot.ToString(), false, FormattingTypes.InfoLineFormat());
+            }
             L3.Alignment = Alignment.center;
+
+            Paragraph L2 = doc.InsertParagraph(inData.town.ToUpper() + ", " + inData.state.ToUpper() + " " + inData.zip, false, FormattingTypes.InfoLineFormat());
+            L2.Alignment = Alignment.center;
+            
 
             InsertBlankParagraph();
 
@@ -759,7 +832,6 @@ namespace ProposalGenerator
         }
         static public bool WriteContractPrepLoc(ContactData inData)
         {
-            inData.ToUpper();
             if (fileName == "null")
             {
                 if (!OpenFileDialog())
@@ -770,15 +842,17 @@ namespace ProposalGenerator
             Paragraph Header = doc.InsertParagraph("Prepared for:", false, FormattingTypes.HeadLineFormatting());
             Header.Alignment = Alignment.center;
 
-            InsertBlankParagraph();
 
-            Paragraph L1 = doc.InsertParagraph(inData.FirstName + " " + inData.LastName, false, FormattingTypes.InfoLineFormat());
+            Paragraph L1 = doc.InsertParagraph(inData.FirstName.ToUpper() + " " + inData.LastName.ToUpper(), false, FormattingTypes.InfoLineFormat());
             L1.Alignment = Alignment.center;
-            Paragraph L2 = doc.InsertParagraph(inData.street, false, FormattingTypes.InfoLineFormat());
-            L2.Alignment = Alignment.center;
-            Paragraph L3 = doc.InsertParagraph(inData.town + ", " + inData.state + " " + inData.zip, false, FormattingTypes.InfoLineFormat());
+            if(inData.co != null && inData.co != "")
+            {
+                Paragraph L2 = doc.InsertParagraph(inData.co.ToUpper(), false, FormattingTypes.InfoLineFormat());
+                L2.Alignment = Alignment.center;
+            }
+            Paragraph L3 = doc.InsertParagraph(inData.street.ToUpper(), false, FormattingTypes.InfoLineFormat());
             L3.Alignment = Alignment.center;
-            Paragraph L4 = doc.InsertParagraph(inData.phone, false, FormattingTypes.InfoLineFormat());
+            Paragraph L4 = doc.InsertParagraph(inData.town.ToUpper() + ", " + inData.state.ToUpper() + " " + inData.zip, false, FormattingTypes.InfoLineFormat());
             L4.Alignment = Alignment.center;
 
             InsertBlankParagraph();
@@ -1501,6 +1575,31 @@ namespace ProposalGenerator
             }
             
         }
+
+        public static bool OpenFileDialogContract()
+        {
+            Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
+            dlg.InitialDirectory = Data.Settings.myData.DefaultOutputDirectory;
+            dlg.RestoreDirectory = true;
+            dlg.FileName = "Document";
+            dlg.DefaultExt = ".doc";
+            dlg.Filter = "Word documents (.doc)|*.doc";
+
+            //Show save file dialog box
+            Nullable<bool> result = dlg.ShowDialog();
+
+            if (result == true)
+            {
+                fileName = dlg.FileName;
+                return CreateContractDoc();
+
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public static bool CreateDoc()
         {
             //doc = DocX.Create(fileName);
@@ -1521,6 +1620,27 @@ namespace ProposalGenerator
                 return false;
             }
             
+        }
+        public static bool CreateContractDoc()
+        {
+            //doc = DocX.Create(fileName);
+            doc = DocX.Create(fileName);
+
+            //DocX tempdoc = DocX.Load("Data/MarginSettings.docx");
+            doc.ApplyTemplate("Data/ContractProposal.dotx");
+            try
+            {
+                doc.SaveAs(fileName);
+                return true;
+            }
+            catch
+            {
+
+                MessageBox.Show("An error has occured, most likely due to attempting to overwrite an open file. Please close any open word document and try again.");
+                fileName = "null";
+                return false;
+            }
+
         }
         #endregion
 

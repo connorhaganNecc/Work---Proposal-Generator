@@ -63,7 +63,6 @@ namespace ProposalGenerator
         {
             Paragraph HEADER = indoc.InsertParagraph("Submitted by:", false, FormattingTypes.HeadLineFormatting());
             HEADER.Alignment = Alignment.center;
-            DocumentController.InsertBlankParagraph();
             Paragraph L1 = indoc.InsertParagraph("THE MORIN-CAMERON GROUP, INC.", false, FormattingTypes.InfoLineFormat());
             L1.Alignment = Alignment.center;
             Paragraph L2 = indoc.InsertParagraph("447 BOSTON STREET", false, FormattingTypes.InfoLineFormat());

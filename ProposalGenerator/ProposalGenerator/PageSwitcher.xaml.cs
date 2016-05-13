@@ -21,11 +21,13 @@ namespace ProposalGenerator
     public partial class PageSwitcher : MetroWindow
     {
         public DataManager myData;
+        public ContractDataManager contractData;
 
         public PageSwitcher()
         {
             InitializeComponent();
             myData = new DataManager();
+            contractData = new ContractDataManager();
             Switcher.pageSwitcher = this;
             Switcher.Switch(new MainWindow());
         }

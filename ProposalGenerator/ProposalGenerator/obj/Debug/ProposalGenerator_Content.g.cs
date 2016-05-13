@@ -14,6 +14,8 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/marginsettings.docx")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/hourlyfeeschedule.docx")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/marginsettings.dotx")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/contractproposal.docx")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/contractproposal.dotx")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/tasks.xml")]
 
 

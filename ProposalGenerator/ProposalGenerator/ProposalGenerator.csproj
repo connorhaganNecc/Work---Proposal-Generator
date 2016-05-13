@@ -67,6 +67,7 @@
     <Compile Include="Controllers\RTFConverter.cs" />
     <Compile Include="Controllers\DocumentController.cs" />
     <Compile Include="DataStructures\ClosingTypes.cs" />
+    <Compile Include="DataStructures\ContractDataManager.cs" />
     <Compile Include="DataStructures\PresetP.cs" />
     <Compile Include="DataStructures\ProposalTypes.cs" />
     <Compile Include="DataStructures\DataManager.cs" />
@@ -96,6 +97,9 @@
     </Compile>
     <Compile Include="UserControls\Contract\UC_ContractP_Pg1.xaml.cs">
       <DependentUpon>UC_ContractP_Pg1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Contract\UC_ContractP_Pg2.xaml.cs">
+      <DependentUpon>UC_ContractP_Pg2.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Debug.xaml.cs">
       <DependentUpon>Debug.xaml</DependentUpon>
@@ -189,6 +193,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControls\Contract\UC_ContractP_Pg1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Contract\UC_ContractP_Pg2.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -342,6 +350,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\MarginSettings.dotx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\ContractProposal.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\ContractProposal.dotx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="packages.config">

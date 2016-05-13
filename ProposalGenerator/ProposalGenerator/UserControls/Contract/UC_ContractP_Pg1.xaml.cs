@@ -22,7 +22,7 @@ namespace ProposalGenerator
     public partial class ContractP_Pg1 : UserControl, ISwitchable
     {
         PageSwitcher myParent;
-        DataManager myData;
+        ContractDataManager myData;
         int comboStartIndex;
         int titleStartIndex;
         public ContractP_Pg1()
@@ -31,7 +31,7 @@ namespace ProposalGenerator
             InitializeComponent();
         }
 
-        public ContractP_Pg1(bool IGNORE, DataManager myData)
+        public ContractP_Pg1(bool IGNORE, ContractDataManager myData)
         {
             comboStartIndex = -1;
             InitializeComponent();
@@ -39,7 +39,7 @@ namespace ProposalGenerator
         }
 
 
-        private void AutoFillOldData(DataManager myData)
+        private void AutoFillOldData(ContractDataManager myData)
         {
             ForceComboLoad();
             //Handle Proposal Type
@@ -52,9 +52,14 @@ namespace ProposalGenerator
             }
 
             //Property stuff
-            propAddress.Text = myData.PropertyLocation.street;
-            propTown.Text = myData.PropertyLocation.town;
-            propZip.Text = myData.PropertyLocation.zip;
+            propAssMap.Text = myData.Property.map;
+            propAssBlock.Text = myData.Property.block;
+            propAssLot.Text = myData.Property.lot;
+
+
+            propAddress.Text = myData.Property.street;
+            propTown.Text = myData.Property.town;
+            propZip.Text = myData.Property.zip;
 
             FNAME.Text = myData.Client.FirstName;
             LNAME.Text = myData.Client.LastName;
@@ -114,21 +119,22 @@ namespace ProposalGenerator
 
 
             myParent = MetroWindow.GetWindow(this) as PageSwitcher;
-            myData = new DataManager();
-            myData = myParent.myData;
+            myData = new ContractDataManager();
+            myData = myParent.contractData;
 
             myData.PAGE1VISIT = true;
 
             AddressExData property = new AddressExData();
-            property.lot = "0";
-            property.map = "0";
+            property.lot = propAssLot.Text;
+            property.map = propAssMap.Text;
+            property.block = propAssBlock.Text;
             property.state = "MA";
             property.street = propAddress.Text;
             property.town = propTown.Text;
             property.zip = propZip.Text;
             
 
-            myData.PropertyLocation = property;
+            myData.Property = property;
 
             ContactData client = new ContactData();
             client.FirstName = FNAME.Text;
@@ -158,13 +164,15 @@ namespace ProposalGenerator
             }
 
             myData.ProposalType = Combo.SelectedItem.ToString();
+
+            //DocumentController.WriteContractProp(myData);
             if(!myData.PAGE2VISIT)
             {
-                Switcher.Switch(new ScottL_Pg2(myData));
+                Switcher.Switch(new ContractP_Pg2(myData));
             }
             else
             {
-                Switcher.Switch(new ScottL_Pg2(false, myData));
+                Switcher.Switch(new ContractP_Pg2(false, myData));
             }
 
             
