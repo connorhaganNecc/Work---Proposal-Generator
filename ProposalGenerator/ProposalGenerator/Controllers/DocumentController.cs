@@ -731,13 +731,14 @@ namespace ProposalGenerator
         {
             Paragraph header = doc.InsertParagraph("SCOPE OF SERVICES", false, FormattingTypes.DefaultBold());
             header.FontSize(12);
-            InsertBlankParagraph;
+            InsertBlankParagraph();
             int currLevel = 0;
 
             if(ContractTasklistContainsServiceNumber(myData.myTaskList, 300))
             {
                 doc.InsertParagraph("I.\tEXISTING CONDITIONS SURVEY AND PLAN", false, FormattingTypes.DefaultBold());
             }
+            List myList = doc.AddList(listType: ListItemType.Bulleted, level: 0);
 
             doc.InsertParagraph("I.   EXISTING CONDITIONS SURVEY AND PLAN", false, FormattingTypes.DefaultBold());
             currLevel++;
