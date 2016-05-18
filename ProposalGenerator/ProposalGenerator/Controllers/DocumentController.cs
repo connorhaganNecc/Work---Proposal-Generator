@@ -730,36 +730,43 @@ namespace ProposalGenerator
             header.FontSize(12);
             InsertBlankParagraph();
             int currLevel = 0;
-
-            if(ContractTasklistContainsServiceNumber(myData.myTaskList, 300))
+            
+            for(int i = 0; i < myData.myTaskList.Count; i++)
             {
+
+            }
+
+            //if(ContractTasklistContainsServiceNumber(myData.myTaskList, 300))
+            //{
                 
-            }
-            DocX temp = DocX.Load("Data/BulletPoints/TopRoman.docx");
-            temp.ReplaceText("%TEXTREPLACE%", "EXISTING CONDITIONS SURVEY AND PLAN",false);
+            //}
+            //DocX temp = DocX.Load("Data/BulletPoints/TopRoman.docx");
+            //temp.ReplaceText("%TEXTREPLACE%", "EXISTING CONDITIONS SURVEY AND PLAN",false);
 
-            doc.InsertDocument(temp);
+            //doc.InsertDocument(temp);
 
-            temp = DocX.Load("Data/BulletPoints/SecPlain.docx");
-            temp.ReplaceText("%TEXTREPLACE%", "MCG will perform a property line and existing conditions survey plan including the following:", false);
+            //temp = DocX.Load("Data/BulletPoints/SecPlain.docx");
+            //temp.ReplaceText("%TEXTREPLACE%", "MCG will perform a property line and existing conditions survey plan including the following:", false);
 
-            doc.InsertDocument(temp);
+            //doc.InsertDocument(temp);
 
 
-            temp = DocX.Load("Data/BulletPoints/SecBullet.docx");
-            temp.ReplaceText("%TEXTREPLACE%", "Perform research at the Registry of Deeds and City Hall offices.", false);
-            for(int i = 0; i < temp.Paragraphs.Count; i++)
-            {
-                temp.Paragraphs[i].Font(FormattingTypes.DefaultParagraph().FontFamily);
-            }
+            //temp = DocX.Load("Data/BulletPoints/SecBullet.docx");
+            //temp.ReplaceText("%TEXTREPLACE%", "Perform research at the Registry of Deeds and City Hall offices.", false);
+            //for(int i = 0; i < temp.Paragraphs.Count; i++)
+            //{
+            //    temp.Paragraphs[i].Font(FormattingTypes.DefaultParagraph().FontFamily);
+            //}
 
-            doc.InsertDocument(temp);
+            //doc.InsertDocument(temp);
 
-            temp = DocX.Load("Data/BulletPoints/SecLetter.docx");
-            temp.ReplaceText("%LET%", "\tA.", false);
-            temp.ReplaceText("%TEXTREPLACE%", "\t"+"Perform research at the Registry of Deeds and City Hall offices.", false);
+            //temp = DocX.Load("Data/BulletPoints/SecLetter.docx");
+            //temp.ReplaceText("%LET%", "\tA.", false);
+            //temp.ReplaceText("%TEXTREPLACE%", "\t"+"Perform research at the Registry of Deeds and City Hall offices.", false);
 
-            doc.InsertDocument(temp);
+            //doc.InsertDocument(temp);
+
+            //////////////////////////////
 
             //temp = DocX.Load("Data/BulletPoints/TopRoman.docx");
             //temp.ReplaceText("%TEXTREPLACE%", "EXISTING CONDITIONS SURVEY AND PLAN", false);

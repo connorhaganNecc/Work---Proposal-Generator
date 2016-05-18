@@ -246,7 +246,7 @@ namespace ProposalGenerator
                         if(OpL1.Visibility == Visibility.Visible)
                         {
                             DoReplacement(OpL1.Content.ToString(), OpF1.Text);
-                            if(OpL1.Content.ToString() == ReplacementTags.getTownFeeText() && myList.myTasks[currIndex].Header == "SSD (septic design repair)")
+                            if(OpL1.Content.ToString() == ReplacementTags.getTownFeeText() && myList.myTasks[currIndex].Header == "Septic System Design Plan")
                             {
                                 if(!string.IsNullOrEmpty(OpF1.Text))
                                 {

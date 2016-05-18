@@ -108,4 +108,39 @@ namespace ProposalGenerator
         }
     }
 
+    public static class ContractTaskSerializer
+    {
+        //static FileStream ReadFileStream;
+        //static TextWriter WriteFileStream;
+        static XmlSerializer serialObj;
+
+        static ContractTaskSerializer()
+        {
+            try
+            {
+                serialObj = new XmlSerializer(typeof(ProposalGenerator.ContractTaskList));
+                //WriteFileStream = new StreamWriter(System.AppDomain.CurrentDomain.BaseDirectory+ "tasks.xml");
+                //ReadFileStream = new FileStream(System.AppDomain.CurrentDomain.BaseDirectory + "tasks.xml", FileMode.Open, FileAccess.Read);
+            }
+            catch
+            {
+
+            }
+        }
+        public static void SerializeContractTasks(ProposalGenerator.ContractTaskList inTaskList)
+        {
+            TextWriter WriteFileStream = new StreamWriter("Data/ContractTasks.xml");
+            serialObj.Serialize(WriteFileStream, inTaskList);
+            WriteFileStream.Close();
+        }
+
+        public static ContractTaskList DeserializeContractTasks()
+        {
+            FileStream ReadFileStream = new FileStream("Data/ContractTasks.xml", FileMode.Open, FileAccess.Read);
+            ContractTaskList myData = serialObj.Deserialize(ReadFileStream) as ContractTaskList;
+            ReadFileStream.Close();
+            return myData;
+        }
+    }
+
 }

@@ -32,12 +32,22 @@
                 HorizontalAlignment="Center" Margin="10"
                 FontFamily="Leelawadee" FontSize="16"
                 Click="btn_CreateTask">
-                Create New Task</Button>
+                Create Letter Task</Button>
             <Button 
                 HorizontalAlignment="Center" Margin="10"
                 FontFamily="Leelawadee" FontSize="16"
                 Click="btn_EditTasks">
-                Edit Tasks</Button>
+                Edit Letter Tasks</Button>
+            <Button 
+                HorizontalAlignment="Center" Margin="10"
+                FontFamily="Leelawadee" FontSize="16"
+                Click="btn_AddContItems">
+                Add Contract Task</Button>
+            <Button 
+                HorizontalAlignment="Center" Margin="10"
+                FontFamily="Leelawadee" FontSize="16"
+                Click="btn_EditContItems">
+                Edit Contract Tasks</Button>
             <Button 
                 HorizontalAlignment="Center" Margin="10"
                 FontFamily="Leelawadee" FontSize="16"

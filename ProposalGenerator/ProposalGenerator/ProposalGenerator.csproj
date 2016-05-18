@@ -87,6 +87,15 @@
     <Compile Include="UserControls\AddData\AddAddItems.xaml.cs">
       <DependentUpon>AddAddItems.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\AddData\EditTasksCont_AddSubtasks.xaml.cs">
+      <DependentUpon>EditTasksCont_AddSubtasks.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddData\EditTasksCont_Subtasks.xaml.cs">
+      <DependentUpon>EditTasksCont_Subtasks.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddData\EditTasksCont.xaml.cs">
+      <DependentUpon>EditTasksCont.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\AddData\EditTaskText.xaml.cs">
       <DependentUpon>EditTaskText.xaml</DependentUpon>
     </Compile>
@@ -95,6 +104,9 @@
     </Compile>
     <Compile Include="UserControls\AddData\EditAddItems.xaml.cs">
       <DependentUpon>EditAddItems.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddData\NewContTask.xaml.cs">
+      <DependentUpon>NewContTask.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Contract\UC_ContractP_Pg1.xaml.cs">
       <DependentUpon>UC_ContractP_Pg1.xaml</DependentUpon>
@@ -187,6 +199,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="UserControls\AddData\EditTasksCont_AddSubtasks.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\AddData\EditTasksCont_Subtasks.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\AddData\EditTasksCont.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="UserControls\AddData\EditTaskText.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -196,6 +220,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControls\AddData\EditAddItems.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\AddData\NewContTask.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

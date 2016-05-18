@@ -28,26 +28,9 @@ namespace ProposalGenerator
 
         }
     }
-    [Serializable()]
-    public class ContractTaskStructure
-    {
-        public int ID;
-        public string rtftext;
-        public string fee;
-        public string Header { get; set; }
-        public string Body { get; set; }
-        public List<string> tags;
-        public int serviceItemNum;
-    }
-    [Serializable()]
-    public class ContractTaskList
-    {
-        public List<ContractTaskStructure> myTasks;
-        public ContractTaskList()
-        {
-            myTasks = new List<ContractTaskStructure>();
-        }
-    }
+
+    
+    
     [Serializable()]
     public class AdditionalServiceList
     {

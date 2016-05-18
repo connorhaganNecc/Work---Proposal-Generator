@@ -49,5 +49,15 @@ namespace ProposalGenerator
         {
             Switcher.Switch(new AddAddItems());
         }
+
+        private void btn_AddContItems(object sender, RoutedEventArgs e)
+        {
+            Switcher.Switch(new NewContTask());
+        }
+
+        private void btn_EditContItems(object sender, RoutedEventArgs e)
+        {
+            Switcher.Switch(new EditTasksCont());
+        }
     }
 }
