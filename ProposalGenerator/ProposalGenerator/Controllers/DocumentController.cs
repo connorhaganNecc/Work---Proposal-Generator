@@ -79,7 +79,7 @@ namespace ProposalGenerator
 
             if (myData.SelectedTasks.myTasks.Count > 0)
             {
-                doc.InsertParagraph("Scope of Services", false, FormattingTypes.DefaultBold());
+                //doc.InsertParagraph("Scope of Services", false, FormattingTypes.DefaultBold());
                 WriteTaskList(myData.SelectedTasks);
             }
             //WriteSLServicesNotInc(myData);
@@ -897,7 +897,7 @@ namespace ProposalGenerator
 
             Paragraph L1 = doc.InsertParagraph(inData.FirstName.ToUpper() + " " + inData.LastName.ToUpper(), false, FormattingTypes.InfoLineFormat());
             L1.Alignment = Alignment.center;
-            if(inData.co != null && inData.co != "")
+            if(!string.IsNullOrWhiteSpace(inData.co) && inData.co != "NULL")
             {
                 Paragraph L2 = doc.InsertParagraph(inData.co.ToUpper(), false, FormattingTypes.InfoLineFormat());
                 L2.Alignment = Alignment.center;
@@ -1196,8 +1196,12 @@ namespace ProposalGenerator
         }
         static public void WriteCustomArea(string inString)
         {
-            Paragraph L1 = doc.InsertParagraph(inString, false, FormattingTypes.DefaultParagraph());
-            L1.Alignment = Alignment.both;
+            string[] temp =inString.Split('\n');
+            for(int i = 0; i < temp.Length; i++)
+            {
+                Paragraph L1 = doc.InsertParagraph(temp[i], false, FormattingTypes.DefaultParagraph());
+                L1.Alignment = Alignment.both;
+            }
         }
         static public void WriteDate()
         {

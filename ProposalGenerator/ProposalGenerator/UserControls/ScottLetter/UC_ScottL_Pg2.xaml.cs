@@ -39,7 +39,7 @@ namespace ProposalGenerator
             }
             else
             {
-                CustomArea.Text = "The Morin-Cameron Group, Inc. is pleased to provide you with this proposal for engineering and surveying services, in connectgion with the replacement of the septic system at your proerpty, for the terms and conditions contained herewith.";
+                CustomArea.Text = "The Morin-Cameron Group, Inc. is pleased to provide you with this proposal for engineering and surveying services, in connection with the replacement of the septic system at your property, for the terms and conditions contained herewith.";
                 CustomArea.Text += "\n\nIt was a pleasure speaking with you the other day regarding your existing septic system. Based on our discussion you have indicated that your septic system failed a Title 5 inspection and, therefore, needs to be replaced.";
             }
             
@@ -155,7 +155,7 @@ namespace ProposalGenerator
         private void CheckBox_Checked_1(object sender, RoutedEventArgs e)
         {
 
-            CustomArea.Text = "The Morin-Cameron Group, Inc. is pleased to provide you with this proposal for engineering and surveying services, in connectgion with the replacement of the septic system at your proerpty, for the terms and conditions contained herewith.";
+            CustomArea.Text = "The Morin-Cameron Group, Inc. is pleased to provide you with this proposal for engineering and surveying services, in connection with the replacement of the septic system at your property, for the terms and conditions contained herewith.";
             CustomArea.Text += "\n\nIt was a pleasure speaking with you the other day regarding your existing septic system. Based on our discussion you have indicated that your septic system failed a Title 5 inspection and, therefore, needs to be replaced. Based on our review of available on-line data, it appears wetland resource areas exist at the rear of our property. Any work proposed within 100 feet of the wetlands requires a permit from the %TOWN% Conservation Commission. It appears that some work may be located within 100 feet of these wetlands; therefore, we have included a task to have the wetlands delineated and a task to file appropriate application with the %TOWN% Conservation Commission. Your property is also located within areas mapped by Natural Heritage as estimated habitat for rare wildlife and priority habitat for rare species. If a filing with the Conservation Commission is required additional information will be submitted to Natural Heritage, as required.";
             CustomArea.Text = CustomArea.Text.Replace("%TOWN%", myData.PropertyLocation.town);
 
@@ -163,7 +163,7 @@ namespace ProposalGenerator
 
         private void myCheck_Unchecked(object sender, RoutedEventArgs e)
         {
-            CustomArea.Text = "The Morin-Cameron Group, Inc. is pleased to provide you with this proposal for engineering and surveying services, in connectgion with the replacement of the septic system at your proerpty, for the terms and conditions contained herewith.";
+            CustomArea.Text = "The Morin-Cameron Group, Inc. is pleased to provide you with this proposal for engineering and surveying services, in connection with the replacement of the septic system at your property, for the terms and conditions contained herewith.";
             CustomArea.Text += "\n\nIt was a pleasure speaking with you the other day regarding your existing septic system. Based on our discussion you have indicated that your septic system failed a Title 5 inspection and, therefore, needs to be replaced.";
         }
     }

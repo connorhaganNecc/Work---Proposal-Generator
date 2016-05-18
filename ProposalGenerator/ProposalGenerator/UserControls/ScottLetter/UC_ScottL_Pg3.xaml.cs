@@ -254,13 +254,13 @@ namespace ProposalGenerator
             {
                 if(MessageBox.Show("You have no tasks selected, are you sure you want to continue?", "No Tasks", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
                 {
-                    if(!myData.PAGE5VISIT)
+                    if(!myData.PAGE6VISIT)
                     {
-                        Switcher.Switch(new ScottL_Pg5(myData));
+                        Switcher.Switch(new ScottL_Pg6(myData));
                     }
                     else
                     {
-                        Switcher.Switch(new ScottL_Pg5(false, myData));
+                        Switcher.Switch(new ScottL_Pg6(false, myData));
                     }
                 }
             }

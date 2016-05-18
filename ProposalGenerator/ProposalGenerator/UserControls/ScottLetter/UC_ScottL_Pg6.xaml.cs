@@ -155,7 +155,14 @@ namespace ProposalGenerator
             {
                 myData.retainerAmount = 50;
             }
-            Switcher.Switch(new ScottL_Pg4(false, myParent, myData));
+            if (myParent.myData.PAGE4VISIT)
+            {
+                Switcher.Switch(new ScottL_Pg4(false, myParent, myData));
+            }
+            else
+            {
+                Switcher.Switch(new ScottL_Pg3(false, myData));
+            }
         }
         #endregion
 
