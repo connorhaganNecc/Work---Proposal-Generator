@@ -82,13 +82,13 @@ namespace ProposalGenerator
                 doc.InsertParagraph("Scope of Services", false, FormattingTypes.DefaultBold());
                 WriteTaskList(myData.SelectedTasks);
             }
-            WriteSLServicesNotInc(myData);
-            InsertBlankParagraph();
-            if (myData.SelectedTasks.myTasks.Count > 0)
-            {
-                WriteSLCompensation(myData.SelectedTasks);
-            }
-            WriteSLHourlyFee();
+            //WriteSLServicesNotInc(myData);
+            //InsertBlankParagraph();
+            //if (myData.SelectedTasks.myTasks.Count > 0)
+            //{
+            //    WriteSLCompensation(myData.SelectedTasks);
+            //}
+            //WriteSLHourlyFee();
             float cost = 0;
             for (int i = 0; i < myData.SelectedTasks.myTasks.Count; i++)
             {
@@ -714,12 +714,9 @@ namespace ProposalGenerator
 
             WriteContractProjectDescription(myData);
 
-            myData.Assumptions.Add("The parcel is situated in the Industrial 1 (I-1) Zoning district.");
-            myData.Assumptions.Add("36 Crystal Street has a land area of 0.515 Acres according to record plans.");
-            myData.Assumptions.Add("The project will involve the design and permitting of an addition in accordance with the project description above.  The “Manufacturing and Repair” is allowed in the I-1 district in accordance with Section 300.3.5.2 of the Malden Zoning Ordinance (MZO).");
-
             WriteContractAssumptions(myData);
             //Write tasks
+            InsertBlankParagraph();
             WriteContractTasks(myData);
             SaveDocument();
 
@@ -736,16 +733,46 @@ namespace ProposalGenerator
 
             if(ContractTasklistContainsServiceNumber(myData.myTaskList, 300))
             {
-                doc.InsertParagraph("I.\tEXISTING CONDITIONS SURVEY AND PLAN", false, FormattingTypes.DefaultBold());
+                
             }
-            List myList = doc.AddList(listType: ListItemType.Bulleted, level: 0);
+            DocX temp = DocX.Load("Data/BulletPoints/TopRoman.docx");
+            temp.ReplaceText("%TEXTREPLACE%", "EXISTING CONDITIONS SURVEY AND PLAN",false);
 
-            doc.InsertParagraph("I.   EXISTING CONDITIONS SURVEY AND PLAN", false, FormattingTypes.DefaultBold());
-            currLevel++;
-            Paragraph t1 = doc.InsertParagraph("     MCG will perform a property line and existing conditions survey plan including the following:", false, FormattingTypes.DefaultParagraph());
-            
-            Paragraph t2 = doc.InsertParagraph("     " + bulletChar() + "   Perform research at the Registry of Deeds and City Hall offices.");
-            ///t2.IndentationBefore = 1f + (.25f * currLevel);
+            doc.InsertDocument(temp);
+
+            temp = DocX.Load("Data/BulletPoints/SecPlain.docx");
+            temp.ReplaceText("%TEXTREPLACE%", "MCG will perform a property line and existing conditions survey plan including the following:", false);
+
+            doc.InsertDocument(temp);
+
+
+            temp = DocX.Load("Data/BulletPoints/SecBullet.docx");
+            temp.ReplaceText("%TEXTREPLACE%", "Perform research at the Registry of Deeds and City Hall offices.", false);
+            for(int i = 0; i < temp.Paragraphs.Count; i++)
+            {
+                temp.Paragraphs[i].Font(FormattingTypes.DefaultParagraph().FontFamily);
+            }
+
+            doc.InsertDocument(temp);
+
+            temp = DocX.Load("Data/BulletPoints/SecLetter.docx");
+            temp.ReplaceText("%LET%", "\tA.", false);
+            temp.ReplaceText("%TEXTREPLACE%", "\t"+"Perform research at the Registry of Deeds and City Hall offices.", false);
+
+            doc.InsertDocument(temp);
+
+            //temp = DocX.Load("Data/BulletPoints/TopRoman.docx");
+            //temp.ReplaceText("%TEXTREPLACE%", "EXISTING CONDITIONS SURVEY AND PLAN", false);
+
+            //doc.InsertDocument(temp);
+
+
+            //doc.InsertParagraph("I.   EXISTING CONDITIONS SURVEY AND PLAN", false, FormattingTypes.DefaultBold());
+            //currLevel++;
+            //Paragraph t1 = doc.InsertParagraph("     MCG will perform a property line and existing conditions survey plan including the following:", false, FormattingTypes.DefaultParagraph());
+
+            //Paragraph t2 = doc.InsertParagraph("     " + bulletChar() + "   Perform research at the Registry of Deeds and City Hall offices.");
+            /////t2.IndentationBefore = 1f + (.25f * currLevel);
 
 
         }
@@ -1566,11 +1593,11 @@ namespace ProposalGenerator
             }
         }
 
-        static public bool ContractTasklistContainsServiceNumber(ContractTaskList inList, int inNum)
+        static public bool ContractTasklistContainsServiceNumber(List<ContractTask> inList, int inNum)
         {
-            for(int i = 0; i < inList.myTasks.Count; i++)
+            for(int i = 0; i < inList.Count; i++)
             {
-                if(inList.myTasks[i].serviceItemNum == inNum)
+                if(inList[i].ServiceItemNum == inNum)
                 {
                     return true;
                 }

@@ -19,18 +19,21 @@ namespace ProposalGenerator
 
         public List<string> Assumptions;
 
-        public ContractTaskList myTaskList;
+        public List<ContractTask> myTaskList;
 
         public bool PAGE1VISIT;
         public bool PAGE2VISIT;
         public bool PAGE3VISIT;
+        public bool PAGE4VISIT;
+        public bool PAGE5VISIT;
+        public bool PAGE6VISIT;
 
         public ContractDataManager()
         {
             Client = new ContactData();
             Property = new AddressExData();
             Assumptions = new List<string>();
-            myTaskList = new ContractTaskList();
+            myTaskList = new List<ContractTask>();
         }
     }
 }

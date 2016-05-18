@@ -19,65 +19,35 @@ namespace ProposalGenerator
     /// <summary>
     /// Interaction logic for ProposalTypePicker.xaml
     /// </summary>
-    public partial class ScottL_Pg5 : UserControl
+    public partial class ContractP_Pg3 : UserControl
     {
         int currTextBox = 0;
-        DataManager myData;
+        ContractDataManager myData;
 
-        public ScottL_Pg5()
+        public ContractP_Pg3()
         {
             InitializeComponent();
             startAdd("demo");
         }
-        public ScottL_Pg5(DataManager inData)
+        public ContractP_Pg3(ContractDataManager inData)
         {
             InitializeComponent();
             myData = inData;
             setupAddServ();
         }
-        public ScottL_Pg5(bool IGNORE, DataManager inData)
+        public ContractP_Pg3(bool IGNORE, ContractDataManager inData)
         {
             InitializeComponent();
             myData = inData;
-            for(int i = 0; i < myData.AdditServNotInc.Count; i++)
+            for(int i = 0; i < myData.Assumptions.Count; i++)
             {
-                startAdd(myData.AdditServNotInc[i]);
+                startAdd(myData.Assumptions[i]);
             }
         }
 
         private void setupAddServ()
         {
-            AdditionalServiceList myList = AdditionalItemsSerializer.DeserializeList();
-            bool ignore;
-            for(int i = 0; i < myList.itemList.Count; i++)
-            {
-                ignore = false;
-                for (int j = 0; j < myList.itemList[i].ignoreTaskTags.Count; j++)
-                {
-                    for (int k = 0; k < myData.SelectedTasks.myTasks.Count; k++)
-                    {
-                        if (myList.itemList[i].ignoreTaskTags[j] == myData.SelectedTasks.myTasks[k].Header)
-                        {
-                            ignore = true;
-                        }
-                    }
-                }
-                for(int j = 0; j < myList.itemList[i].ignoreTypeTags.Count; j++)
-                {
-                    if (myList.itemList[i].ignoreTypeTags[j] == myData.ProposalType)
-                    {
-                        ignore = true;
-                    }
-                }
-                if(!ignore)
-                {
-                    startAdd(myList.itemList[i].text);
-                }
-
-                
-                
-            }
-            startAdd("Any work not specifically described herein.");
+            
         }
 
         private void startAdd(string text)
@@ -129,15 +99,17 @@ namespace ProposalGenerator
             }
             PageSwitcher myParent = MetroWindow.GetWindow(this) as PageSwitcher;
 
-            myParent.myData.AdditServNotInc = AddServ;
-            myParent.myData.PAGE5VISIT = true;
-            if(!myData.PAGE6VISIT)
+            myParent.contractData.Assumptions = AddServ;
+            myParent.contractData.PAGE3VISIT = true;
+
+            DocumentController.WriteContractProp(myData);
+            if(false)
             {
-                Switcher.Switch(new ScottL_Pg6(myData));
+                //Switcher.Switch(new ScottL_Pg6());
             }
             else
             {
-                Switcher.Switch(new ScottL_Pg6(false, myData));
+                //Switcher.Switch(new ScottL_Pg6(false, myData));
             }
                 
         }
@@ -149,8 +121,8 @@ namespace ProposalGenerator
         {
             PageSwitcher myParent = MetroWindow.GetWindow(this) as PageSwitcher;
 
-            DataManager myData = myParent.myData;
-            myData.PAGE5VISIT = true;
+            ContractDataManager myData = myParent.contractData;
+            myData.PAGE3VISIT = true;
 
             List<string> AddServ = new List<string>();
             for (int i = 0; i < currTextBox; i++)
@@ -161,15 +133,15 @@ namespace ProposalGenerator
                     AddServ.Add(foundBox.Text);
                 }
             }
-            myData.AdditServNotInc = AddServ;
+            myData.Assumptions = AddServ;
 
-            if (myParent.myData.PAGE4VISIT)
+            if (myParent.contractData.PAGE2VISIT)
             {
-                Switcher.Switch(new ScottL_Pg4(false, myParent, myData));
+                Switcher.Switch(new ContractP_Pg2(false,myData));
             }
             else
             {
-                Switcher.Switch(new ScottL_Pg3(false, myData));
+                Switcher.Switch(new ContractP_Pg2( myData));
             }
         }
         

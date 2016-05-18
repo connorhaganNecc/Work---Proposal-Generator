@@ -438,13 +438,13 @@ namespace ProposalGenerator
                 myData.SelectedTasks = myList;
                 //myList.myTasks[currIndex - 1].Body = taskBody.Text;
                 //DocumentController.WriteLetterProposal(myData);
-                if(!myData.PAGE5VISIT)
+                if(!myData.PAGE6VISIT)
                 {
-                    Switcher.Switch(new ScottL_Pg5(myData));
+                    Switcher.Switch(new ScottL_Pg6(myData));
                 }
                 else
                 {
-                    Switcher.Switch(new ScottL_Pg5(false,myData));
+                    Switcher.Switch(new ScottL_Pg6(false,myData));
                 }
             }
         }

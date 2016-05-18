@@ -16,6 +16,11 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/marginsettings.dotx")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/contractproposal.docx")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/contractproposal.dotx")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/bulletpoints/secbullet.docx")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/bulletpoints/secletter.docx")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/bulletpoints/secplain.docx")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/bulletpoints/thirdbullet.docx")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/bulletpoints/toproman.docx")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/tasks.xml")]
 
 

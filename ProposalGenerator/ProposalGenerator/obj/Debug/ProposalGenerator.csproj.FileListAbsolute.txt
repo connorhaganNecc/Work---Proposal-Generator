@@ -178,3 +178,12 @@ C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGe
 C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\obj\Debug\UserControls\Contract\UC_ContractP_Pg2.g.cs
 C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\bin\Debug\Data\ContractProposal.docx
 C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\bin\Debug\Data\ContractProposal.dotx
+C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\bin\Debug\Data\BulletPoints\SecBullet.docx
+C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\bin\Debug\Data\BulletPoints\SecLetter.docx
+C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\bin\Debug\Data\BulletPoints\SecPlain.docx
+C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\bin\Debug\Data\BulletPoints\ThirdBullet.docx
+C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\bin\Debug\Data\BulletPoints\TopRoman.docx
+C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\obj\Debug\UserControls\Contract\UC_ContractP_Pg3.g.cs
+C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\obj\Debug\UserControls\Contract\UC_ContractP_Pg3.baml
+C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\obj\Debug\UserControls\Contract\UC_ContractP_Pg4.g.cs
+C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\obj\Debug\UserControls\Contract\UC_ContractP_Pg4.baml

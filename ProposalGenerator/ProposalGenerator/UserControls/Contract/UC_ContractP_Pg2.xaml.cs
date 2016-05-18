@@ -55,14 +55,14 @@ namespace ProposalGenerator
             myData.CustomParagraph = CustomArea.Text;
             myData.PAGE2VISIT = true;
 
-            DocumentController.WriteContractProp(myData);
+            //DocumentController.WriteContractProp(myData);
             if(myData.PAGE3VISIT)
             {
-                //Switcher.Switch(new ScottL_Pg3(false, myData));
+                Switcher.Switch(new ContractP_Pg3(false, myData));
             }
             else
             {
-                //Switcher.Switch(new ScottL_Pg3(myData));
+                Switcher.Switch(new ContractP_Pg3(myData));
             }
         }
 

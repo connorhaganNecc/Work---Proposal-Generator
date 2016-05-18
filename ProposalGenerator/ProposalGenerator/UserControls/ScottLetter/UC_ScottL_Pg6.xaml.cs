@@ -23,7 +23,7 @@ namespace ProposalGenerator
         int ClosingTypeIndex = 0;
         int TermsTypeIndex = 0;
 
-        public ScottL_Pg6()
+        public ScottL_Pg6(DataManager myData)
         {
             InitializeComponent();
         }
@@ -155,7 +155,7 @@ namespace ProposalGenerator
             {
                 myData.retainerAmount = 50;
             }
-            Switcher.Switch(new ScottL_Pg5(false, myData));
+            Switcher.Switch(new ScottL_Pg4(false, myParent, myData));
         }
         #endregion
 

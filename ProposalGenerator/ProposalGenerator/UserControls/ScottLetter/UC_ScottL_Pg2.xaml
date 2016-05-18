@@ -3,6 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             mc:Ignorable="d" 
+        d:DesignHeight="900" d:DesignWidth="900"
         >
     <Grid>
         <Grid.ColumnDefinitions>
@@ -73,6 +77,9 @@
                 <TextBox Name="CustomArea"  
                         Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="4" 
                          TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" AcceptsReturn="True"/>
+
+                <Label Name="myCheckLabel" Content="Septic Repair with Wetlands" FontSize="14" HorizontalAlignment="Left" Grid.Row="11" Grid.Column="0"></Label>
+                <CheckBox Checked="CheckBox_Checked_1" Unchecked="myCheck_Unchecked" Name="myCheck" Grid.Row="10" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Top"></CheckBox>
 
 
             </Grid>
