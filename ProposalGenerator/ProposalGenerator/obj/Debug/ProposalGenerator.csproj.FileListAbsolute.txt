@@ -195,3 +195,9 @@ C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGe
 C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\obj\Debug\UserControls\AddData\EditTasksCont_Subtasks.baml
 C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\obj\Debug\UserControls\AddData\EditTasksCont_AddSubtasks.g.cs
 C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\obj\Debug\UserControls\AddData\EditTasksCont_AddSubtasks.baml
+C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\obj\Debug\UserControls\AddData\EditSubSub.g.cs
+C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\obj\Debug\UserControls\AddData\EditSubSub.baml
+C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\obj\Debug\UserControls\AddData\EditTasksCont_AddSubSubtasks.g.cs
+C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\obj\Debug\UserControls\AddData\EditTasksCont_AddSubSubtasks.baml
+C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\obj\Debug\UserControls\Contract\UC_ContractP_Pg5.g.cs
+C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\obj\Debug\UserControls\Contract\UC_ContractP_Pg5.baml

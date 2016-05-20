@@ -87,8 +87,14 @@
     <Compile Include="UserControls\AddData\AddAddItems.xaml.cs">
       <DependentUpon>AddAddItems.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\AddData\EditTasksCont_AddSubSubtasks.xaml.cs">
+      <DependentUpon>EditTasksCont_AddSubSubtasks.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\AddData\EditTasksCont_AddSubtasks.xaml.cs">
       <DependentUpon>EditTasksCont_AddSubtasks.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddData\EditSubSub.xaml.cs">
+      <DependentUpon>EditSubSub.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\AddData\EditTasksCont_Subtasks.xaml.cs">
       <DependentUpon>EditTasksCont_Subtasks.xaml</DependentUpon>
@@ -116,6 +122,9 @@
     </Compile>
     <Compile Include="UserControls\Contract\UC_ContractP_Pg3.xaml.cs">
       <DependentUpon>UC_ContractP_Pg3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Contract\UC_ContractP_Pg5.xaml.cs">
+      <DependentUpon>UC_ContractP_Pg5.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Contract\UC_ContractP_Pg4.xaml.cs">
       <DependentUpon>UC_ContractP_Pg4.xaml</DependentUpon>
@@ -199,7 +208,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="UserControls\AddData\EditTasksCont_AddSubSubtasks.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="UserControls\AddData\EditTasksCont_AddSubtasks.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\AddData\EditSubSub.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -236,6 +253,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControls\Contract\UC_ContractP_Pg3.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Contract\UC_ContractP_Pg5.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

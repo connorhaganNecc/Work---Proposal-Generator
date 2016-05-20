@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="ProposalGenerator.EditTasksCont_Subtasks"
+﻿<UserControl x:Class="ProposalGenerator.EditSubSub"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -42,22 +42,17 @@
                       SelectionChanged="TaskSelector_SelectionChanged">
                 
             </ComboBox>
-            <Button Name="newSubtask" Click="btn_AddNewSubtask" Grid.Row="4" Grid.ColumnSpan="2" Width="150">Add New Subtask</Button>
+            <Button Name="newSubtask" Click="btn_AddNewSubtask" Grid.Row="4" Grid.ColumnSpan="2" Width="150">Add New Sub-Subtask</Button>
             <Label Content="" Name="Header" Target="{Binding ElementName=HeadText}"
                    FontSize="20" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
 
-            <ComboBox Name="SubtaskClass" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="6" SelectionChanged="ClassSelector_SelectionChanged">
-                <ComboBoxItem>Bulleted</ComboBoxItem>
-                <ComboBoxItem>Lettered</ComboBoxItem>
-            </ComboBox>
+            <Label Content="Title" Grid.Column="0" Grid.Row="6"></Label>
+            <TextBox Name="NameBox" Grid.Column="1" Grid.Row="6"></TextBox>
             
             <Label Content="Description" Grid.Column="0" Grid.Row="8"/>
             <TextBox Name="DescriptionBox" Grid.Column="1" Grid.Row="8" TextWrapping="Wrap" AcceptsReturn="True"/>
             
-            <Label Content="Allow Sub-Subtasks" Name="AllowSubSubtasksLabel" Grid.Column="0" Grid.Row="10" Visibility="Hidden"/>
-            <CheckBox Name="AllowSubSubtaks" Checked="subsubTasks_Checked" Unchecked="subsubTasks_Unchecked" Grid.Column="1" Grid.Row="10" Visibility="Hidden"/>
-
-            <Button Grid.ColumnSpan="2" Name="EditSubSub" Grid.Row="12" Visibility="Hidden" Click="editsubsub_Click">Edit Sub-SubTasks</Button>
+            
             <!--<Button Height="50" Padding="10" Margin="10" Width="200"
                     Grid.Row="8" Grid.Column="0"
                  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2"

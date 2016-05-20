@@ -18,7 +18,12 @@
           <text />
           <name>Site Development Permit Plans</name>
           <allowSubSub>true</allowSubSub>
-          <SubItems />
+          <SubItems>
+            <SubSubtask>
+              <name>Sheet</name>
+              <description>Sheet _:</description>
+            </SubSubtask>
+          </SubItems>
         </ContractSubTask>
         <ContractSubTask>
           <myClass>Letter</myClass>

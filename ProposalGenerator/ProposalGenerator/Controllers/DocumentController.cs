@@ -733,7 +733,72 @@ namespace ProposalGenerator
             
             for(int i = 0; i < myData.myTaskList.Count; i++)
             {
+                DocX headLevel = DocX.Load("Data/BulletPoints/TopRoman.docx");
+                headLevel.ReplaceText("%TEXTREPLACE%", myData.myTaskList[i].HeadLevelItem);
+                for(int j = 0; j < headLevel.Paragraphs.Count;j++)
+                {
+                    headLevel.Paragraphs[j].SpacingAfter(6);
+                }
+                doc.InsertDocument(headLevel);
+                if(myData.myTaskList[i].ServiceItemNum>0)
+                {
+                    DocX servNum = DocX.Load("Data/BulletPoints/SecPlain.docx");
+                    servNum.ReplaceText("%TEXTREPLACE%", "MCG Service Item " + myData.myTaskList[i].ServiceItemNum.ToString("###.##"));
+                    for (int j = 0; j < servNum.Paragraphs.Count; j++)
+                    {
+                        servNum.Paragraphs[j].SpacingAfter(6);
+                        servNum.Paragraphs[j].FontSize(9);
+                    }
+                    doc.InsertDocument(servNum);
+                }
+                if(!String.IsNullOrEmpty(myData.myTaskList[i].Description))
+                {
+                    DocX taskDescription = DocX.Load("Data/BulletPoints/SecPlain.docx");
+                    taskDescription.ReplaceText("%TEXTREPLACE% ", myData.myTaskList[i].Description);
 
+                    for (int j = 0; j < taskDescription.Paragraphs.Count; j++)
+                    {
+                        taskDescription.Paragraphs[j].SpacingAfter(6);
+                    }
+                    doc.InsertDocument(taskDescription);
+                }
+                if (myData.myTaskList[i].allowsSubTasks)
+                {
+                    for(int j = 0; j < myData.myTaskList[i].subTasks.Count;j++)
+                    {
+                        int currLetter = 0;
+                        if(myData.myTaskList[i].subTasks[j].myClass == ContractSubtaskClass.Bullet)
+                        {
+                            DocX bulletItem = DocX.Load("Data/BulletPoints/SecBullet.docx");
+                            bulletItem.ReplaceText("%TEXTREPLACE%", myData.myTaskList[i].subTasks[j].text);
+                            for (int k = 0; k < bulletItem.Paragraphs.Count; k++)
+                            {
+                                bulletItem.Paragraphs[k].SpacingAfter(6);
+                            }
+                            doc.InsertDocument(bulletItem);
+                        }
+                        else
+                        {
+                            string letter = indexToCharacter(currLetter, true);
+                            currLetter++;
+                            DocX letterItem = DocX.Load("Data/BulletPoints/SecLetter.docx");
+                            //temp.ReplaceText("%LET%", "\tA.", false);
+                            //temp.ReplaceText("%TEXTREPLACE%", "\t"+"Perform research at the Registry of Deeds and City Hall offices.", false);
+                            letterItem.ReplaceText("%LET%", "\t"+letter, false);
+                            letterItem.ReplaceText("%TEXTREPLACE%", "\t"+myData.myTaskList[i].subTasks[j].name);
+                            for (int k = 0; k < letterItem.Paragraphs.Count; k++)
+                            {
+                                letterItem.Paragraphs[k].SpacingAfter(6);
+                            }
+                            doc.InsertDocument(letterItem);
+
+                            if(!string.IsNullOrEmpty( myData.myTaskList[i].subTasks[j].text))
+                            {
+
+                            }
+                        }
+                    }
+                }
             }
 
             //if(ContractTasklistContainsServiceNumber(myData.myTaskList, 300))

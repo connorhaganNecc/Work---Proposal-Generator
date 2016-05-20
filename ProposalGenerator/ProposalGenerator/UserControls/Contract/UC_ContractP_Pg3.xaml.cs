@@ -66,7 +66,8 @@ namespace ProposalGenerator
 
             newB.Name = "addServB_" + currTextBox.ToString();
             newB.Content = "Remove Item";
-            newB.Margin = new Thickness(10);
+
+            newB.Margin = new Thickness(10.5);
             newB.FontSize = 9;
 
             newB.AddHandler(Button.ClickEvent, new RoutedEventHandler(buttonSPB_Click));
@@ -102,14 +103,14 @@ namespace ProposalGenerator
             myParent.contractData.Assumptions = AddServ;
             myParent.contractData.PAGE3VISIT = true;
 
-            DocumentController.WriteContractProp(myData);
-            if(false)
+            //DocumentController.WriteContractProp(myData);
+            if(!myData.PAGE4VISIT)
             {
-                //Switcher.Switch(new ScottL_Pg6());
+                Switcher.Switch(new ContractP_Pg4(myData));
             }
             else
             {
-                //Switcher.Switch(new ScottL_Pg6(false, myData));
+                Switcher.Switch(new ContractP_Pg4(false, myData));
             }
                 
         }
@@ -160,7 +161,7 @@ namespace ProposalGenerator
 
             newB.Name = "addServB_" + currTextBox.ToString();
             newB.Content = "Remove Item";
-            newB.Margin = new Thickness(10);
+            newB.Margin = new Thickness(10.5);
             newB.FontSize = 9;
 
             newB.AddHandler(Button.ClickEvent, new RoutedEventHandler(buttonSPB_Click));

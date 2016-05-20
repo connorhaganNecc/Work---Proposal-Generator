@@ -18,18 +18,15 @@ namespace ProposalGenerator
     /// <summary>
     /// Interaction logic for UserControl1.xaml
     /// </summary>
-    public partial class ContractP_Pg4 : UserControl
+    public partial class ContractP_Pg5 : UserControl
     {
         PageSwitcher myParent;
         ContractDataManager myData;
-        List<ContractTask> Unselect;
-        List<ContractTask> Select;
-        List<string> UnselectSource;
-        List<string> SelectSource;
+        int currIndex = 0;
 
         ContractTaskList officialList;
         
-        public ContractP_Pg4(ContractDataManager inData)
+        public ContractP_Pg5(ContractDataManager inData)
         {
             InitializeComponent();
             UnselectSource = new List<string>();
@@ -53,7 +50,7 @@ namespace ProposalGenerator
             Select = new List<ContractTask>();
             SelectedList.ItemsSource = SelectSource;
         }
-        public ContractP_Pg4(bool IGNORE, ContractDataManager inData)
+        public ContractP_Pg5(bool IGNORE, ContractDataManager inData)
         { 
             InitializeComponent();
 
@@ -72,21 +69,10 @@ namespace ProposalGenerator
                 }    
             }
             Unselect = myList.myTasks;
-            UnselectSource = new List<string>();
-            for (int i = 0; i < Unselect.Count; i++)
-            {
-                UnselectSource.Add(Unselect[i].HeadLevelItem);
 
-            }
-            UnselectedNormalList.ItemsSource = UnselectSource;
+            UnselectedNormalList.ItemsSource = Unselect;
             Select = myData.myTaskList;
-            SelectSource = new List<string>();
-            for (int i = 0; i < Select.Count; i++)
-            {
-                SelectSource.Add(Select[i].HeadLevelItem);
-
-            }
-            SelectedList.ItemsSource = SelectSource;
+            SelectedList.ItemsSource = Select;
         }
         private void btn_ReturnToMain(object sender, RoutedEventArgs e)
         {
@@ -268,25 +254,7 @@ namespace ProposalGenerator
             myParent = MetroWindow.GetWindow(this) as PageSwitcher;
             myData = new ContractDataManager();
             myData = myParent.contractData;
-            myData.PAGE4VISIT = true;
-
-            if (SelectSource.Count > 0)
-            {
-                List<ContractTask> MyTaskList = new List<ContractTask>();
-                for (int i = 0; i < SelectSource.Count; i++)
-                {
-                    for (int j = 0; j < officialList.myTasks.Count; j++)
-                    {
-                        if (SelectSource[i] == officialList.myTasks[j].HeadLevelItem)
-                        {
-                            MyTaskList.Add(officialList.myTasks[j]);
-                            j = 10000;
-                        }
-                    }
-                }
-
-                myData.myTaskList = MyTaskList;
-            }
+            myData.PAGE3VISIT = true;
             Switcher.Switch(new ContractP_Pg3(false, myData));
         }
 

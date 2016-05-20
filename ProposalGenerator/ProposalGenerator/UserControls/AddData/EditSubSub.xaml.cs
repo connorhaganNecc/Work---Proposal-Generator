@@ -19,42 +19,28 @@ namespace ProposalGenerator
     /// <summary>
     /// Interaction logic for EditTasks.xaml
     /// </summary>
-    public partial class EditTasksCont_Subtasks : UserControl, ISwitchable
+    public partial class EditSubSub : UserControl, ISwitchable
     {
         ContractTaskList myList;
         int currIndex;
+        int subIndex;
 
 
-
-        public EditTasksCont_Subtasks(int inIndex, ContractTaskList inList)
+        public EditSubSub(int inIndex, int subSubIndex, ContractTaskList inList)
         {
             InitializeComponent();
             myList = inList;
             currIndex = inIndex;
-            Header.Content = myList.myTasks[currIndex].HeadLevelItem;
+            subIndex = subSubIndex;
+            Header.Content = myList.myTasks[currIndex].subTasks[subSubIndex].name;
             List<string> tempStrings = new List<string>();
-            for(int i = 0; i < myList.myTasks[currIndex].subTasks.Count; i++)
+            for(int i = 0; i < myList.myTasks[currIndex].subTasks[subSubIndex].SubItems.Count; i++)
             {
-                tempStrings.Add(myList.myTasks[currIndex].subTasks[i].name);
+                tempStrings.Add(myList.myTasks[currIndex].subTasks[subSubIndex].SubItems[i].name);
             }
+            
             TaskSelector.ItemsSource = tempStrings;
-        }
-        public EditTasksCont_Subtasks(int inIndex, int subIndex,ContractTaskList inList)
-        {
-            InitializeComponent();
-            myList = inList;
-            currIndex = inIndex;
-            Header.Content = myList.myTasks[currIndex].HeadLevelItem;
-            List<string> tempStrings = new List<string>();
-            for (int i = 0; i < myList.myTasks[currIndex].subTasks.Count; i++)
-            {
-                tempStrings.Add(myList.myTasks[currIndex].subTasks[i].name);
-            }
-            TaskSelector.ItemsSource = tempStrings;
-            if(subIndex > 0 && subIndex < tempStrings.Count)
-            {
-                TaskSelector.SelectedIndex = subIndex;
-            }
+            
         }
         //public EditTasksCont(ContractTaskList inList, int inIndex)
         //{
@@ -97,32 +83,16 @@ namespace ProposalGenerator
             //}
             if(TaskSelector.SelectedIndex >=0)
             {
-                if (SubtaskClass.SelectedIndex == 0)
-                {
-                    myList.myTasks[currIndex].subTasks[TaskSelector.SelectedIndex].myClass = ContractSubtaskClass.Bullet;
-                }
-                else
-                {
-                    myList.myTasks[currIndex].subTasks[TaskSelector.SelectedIndex].myClass = ContractSubtaskClass.Letter;
-                }
-                myList.myTasks[currIndex].subTasks[TaskSelector.SelectedIndex].allowSubSub = (bool)AllowSubSubtaks.IsChecked;
-                myList.myTasks[currIndex].subTasks[TaskSelector.SelectedIndex].text = DescriptionBox.Text;
+                myList.myTasks[currIndex].subTasks[subIndex].SubItems[TaskSelector.SelectedIndex].name = NameBox.Text;
+                myList.myTasks[currIndex].subTasks[subIndex].SubItems[TaskSelector.SelectedIndex].description = DescriptionBox.Text;
             }
-            Switcher.Switch(new EditTasksCont(myList, currIndex));
+            Switcher.Switch(new EditTasksCont_Subtasks(currIndex, subIndex, myList));
         }
 
         private void TaskSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(myList.myTasks[currIndex].subTasks[TaskSelector.SelectedIndex].myClass == ContractSubtaskClass.Bullet)
-            {
-                SubtaskClass.SelectedIndex = 0;
-            }
-            else
-            {
-                SubtaskClass.SelectedIndex = 1;
-            }
-            AllowSubSubtaks.IsChecked = myList.myTasks[currIndex].subTasks[TaskSelector.SelectedIndex].allowSubSub;
-            DescriptionBox.Text = myList.myTasks[currIndex].subTasks[TaskSelector.SelectedIndex].text;
+            DescriptionBox.Text = myList.myTasks[currIndex].subTasks[subIndex].SubItems[TaskSelector.SelectedIndex].description;
+            NameBox.Text = myList.myTasks[currIndex].subTasks[subIndex].SubItems[TaskSelector.SelectedIndex].name;
             //for(int i = 0; i < myList.myTasks.Count; i++)
             //{
             //    if(TaskSelector.SelectedValue.ToString() ==  myList.myTasks[i].HeadLevelItem)
@@ -134,36 +104,15 @@ namespace ProposalGenerator
             //    }
             //}
         }
-        private void ClassSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (SubtaskClass.SelectedIndex == 1)
-            {
-                AllowSubSubtaks.Visibility = Visibility.Visible;
-                AllowSubSubtasksLabel.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                AllowSubSubtaks.Visibility = Visibility.Hidden;
-                AllowSubSubtasksLabel.Visibility = Visibility.Hidden;
-            }
-        }
+
         private void btn_AddNewSubtask(object sender, RoutedEventArgs e)
         {
-            Switcher.Switch(new EditTasksCont_AddSubtasks(currIndex, myList));
-        }
-
-        private void subsubTasks_Checked(object sender, RoutedEventArgs e)
-        {
-            EditSubSub.Visibility = Visibility.Visible;
-        }
-        private void subsubTasks_Unchecked(object sender, RoutedEventArgs e)
-        {
-            EditSubSub.Visibility = Visibility.Hidden;
+            Switcher.Switch(new EditTasksCont_AddSubSubtasks(currIndex, subIndex, myList));
         }
 
         private void editsubsub_Click(object sender, RoutedEventArgs e)
         {
-            Switcher.Switch(new EditSubSub(currIndex, TaskSelector.SelectedIndex, myList));
+
         }
 
 

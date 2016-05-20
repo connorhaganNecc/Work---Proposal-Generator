@@ -41,19 +41,23 @@ namespace ProposalGenerator
         public string name;
         public bool allowSubSub = false;
 
-        public List<string> SubItems;
+        public List<SubSubtask> SubItems;
 
         public ContractSubTask()
         {
-            SubItems = new List<string>();
+            SubItems = new List<SubSubtask>();
         }
         public ContractSubTask(ContractSubtaskClass inClass)
         {
             myClass = inClass;
-            SubItems = new List<string>();
+            SubItems = new List<SubSubtask>();
         }
     }
-
+    public class SubSubtask
+    {
+        public string name;
+        public string description;
+    }
     public enum ContractSubtaskClass
     {
         Bullet,
