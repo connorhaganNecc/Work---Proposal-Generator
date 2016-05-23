@@ -794,7 +794,7 @@ namespace ProposalGenerator
 
                             if(!string.IsNullOrEmpty( myData.myTaskList[i].subTasks[j].text))
                             {
-
+                                //Need third level free line with no bullet markings
                             }
                         }
                     }

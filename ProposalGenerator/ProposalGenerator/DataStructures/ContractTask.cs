@@ -53,6 +53,7 @@ namespace ProposalGenerator
             SubItems = new List<SubSubtask>();
         }
     }
+    [Serializable()]
     public class SubSubtask
     {
         public string name;

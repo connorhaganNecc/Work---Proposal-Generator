@@ -56,7 +56,7 @@ namespace ProposalGenerator
         public ContractP_Pg4(bool IGNORE, ContractDataManager inData)
         { 
             InitializeComponent();
-
+            officialList = ContractTaskSerializer.DeserializeContractTasks();
             myData = inData;
             ContractTaskList myList = ContractTaskSerializer.DeserializeContractTasks();
             List<string> tempList = new List<string>();
@@ -232,13 +232,30 @@ namespace ProposalGenerator
                     {
                         if(SelectSource[i] == officialList.myTasks[j].HeadLevelItem)
                         {
-                            MyTaskList.Add(officialList.myTasks[j]);
+                            bool fail = false;
+                            for(int k = 0; k < myData.myTaskList.Count; k++)
+                            {
+                                if(SelectSource[i] == myData.myTaskList[k].HeadLevelItem)
+                                {
+                                    fail = true;
+                                }
+                            }
+                            if(!fail)
+                            {
+                                ContractTask temp = new ContractTask();
+                                temp.allowsSubTasks = officialList.myTasks[j].allowsSubTasks;
+                                temp.Description = officialList.myTasks[j].Description;
+                                temp.HeadLevelItem = officialList.myTasks[j].HeadLevelItem;
+                                temp.ServiceItemNum = officialList.myTasks[j].ServiceItemNum;
+                                MyTaskList.Add(temp);
+                            }
                             j = 10000;
                         }
                     }
                 }
 
                 myData.myTaskList = MyTaskList;
+                
                 Switcher.Switch(new ContractP_Pg5(myData));
 
                 //    myData.myTaskList = Select;

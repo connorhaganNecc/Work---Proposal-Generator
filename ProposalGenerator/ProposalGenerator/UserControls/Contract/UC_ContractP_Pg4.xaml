@@ -34,8 +34,7 @@
                 <RowDefinition Height="50" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" FontWeight="Bold" VerticalAlignment="Bottom">Suggested Tasks</Label>
-            <Border Background="GhostWhite" BorderBrush="Silver" BorderThickness="2" Margin="10" Grid.Column="0" Grid.RowSpan="6" Grid.Row="1">
+            <Border Background="GhostWhite" BorderBrush="Silver" BorderThickness="2" Margin="10" Grid.Column="0" Grid.RowSpan="6" >
                 <ListBox Grid.Column="0" Margin="20" Name="UnselectedNormalList" HorizontalContentAlignment="Stretch" SelectionChanged="lb_NormalSelectChanged" FontWeight="Bold">
                     <!--<ListBox.ItemTemplate>
                         <DataTemplate>
