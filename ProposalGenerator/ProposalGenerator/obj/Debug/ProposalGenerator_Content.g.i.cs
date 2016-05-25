@@ -21,6 +21,7 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/bulletpoints/secplain.docx")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/bulletpoints/thirdbullet.docx")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/bulletpoints/toproman.docx")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/bulletpoints/thirdplain.docx")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/tasks.xml")]
 
 

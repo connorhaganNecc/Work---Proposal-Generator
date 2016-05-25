@@ -84,7 +84,7 @@
           <SubItems />
         </ContractSubTask>
         <ContractSubTask>
-          <myClass>Bullet</myClass>
+          <myClass>Letter</myClass>
           <text>MCG will assist the Client in preparing the special permit application to the Planning Board.  Scope includes providing information to help prepare the cover letter project narrative and time to reproduce plans and documents necessary for the application.</text>
           <name>Special Permit Application - Planning Board</name>
           <allowSubSub>false</allowSubSub>

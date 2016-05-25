@@ -50,13 +50,13 @@
                         <Setter Property="Margin" Value="0,0,15,8" />
                     </Style>
                 </Grid.Resources>
-
+                <Label Content="Opening Section" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" />
                 <Label Content="_Project Description:" Target="{Binding ElementName=CustomArea}"
                     FontSize="14" HorizontalAlignment="Left"
-                    Grid.Row="0" Grid.Column="0" />
+                    Grid.Row="2" Grid.Column="0" />
 
                 <TextBox Name="CustomArea"  
-                        Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="8" 
+                        Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="8" 
                          TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" AcceptsReturn="True"/>
 
 

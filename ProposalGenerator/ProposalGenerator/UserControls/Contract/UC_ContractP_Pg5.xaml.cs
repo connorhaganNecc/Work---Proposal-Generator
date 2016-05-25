@@ -16,11 +16,14 @@ using MahApps.Metro.Controls;
 namespace ProposalGenerator
 {
     /// <summary>
-    /// Interaction logic for UserControl1.xaml
+    /// Interaction logic for ContractP_Pg5.xaml
+    /// 
+    /// Subtask selection for each selected task
+    /// 
+    /// TODO: 
     /// </summary>
     public partial class ContractP_Pg5 : UserControl
     {
-        PageSwitcher myParent;
         ContractDataManager myData;
         int currIndex = 0;
         ContractTask curTask;
@@ -35,6 +38,7 @@ namespace ProposalGenerator
         public ContractP_Pg5(ContractDataManager inData)
         {
             InitializeComponent();
+            inData.PAGE5VISIT = true;
             myData = inData;
             officialList = ContractTaskSerializer.DeserializeContractTasks();
             UnselectSource = new List<string>();
@@ -49,6 +53,7 @@ namespace ProposalGenerator
                 {
                     if(officialList.myTasks[i].HeadLevelItem == myData.myTaskList[currIndex].HeadLevelItem)
                     {
+                        officialList.myTasks[i].HeadLevelItem = officialList.myTasks[i].HeadLevelItem;
                         curTask = officialList.myTasks[i];
                         found = true;
                     }
@@ -64,10 +69,38 @@ namespace ProposalGenerator
                 //If the task allows subtasks
                 if(curTask.allowsSubTasks)
                 {
-                    for(int i = 0; i < curTask.subTasks.Count; i++)
+                    HeaderLabel.Content = curTask.HeadLevelItem;
+                    if (myData.myTaskList[currIndex].subTasks.Count > 0)
                     {
-                        UnselectSource.Add(curTask.subTasks[i].name);
-                            
+                        for (int l = 0; l < myData.myTaskList[currIndex].subTasks.Count; l++)
+                        {
+                            //If its not already in the list, add it
+                            if (!SelectSource.Contains(myData.myTaskList[currIndex].subTasks[l].name))
+                                SelectSource.Add(myData.myTaskList[currIndex].subTasks[l].name);
+                        }
+                        for (int i = 0; i < curTask.subTasks.Count; i++)
+                        {
+                            bool match = false;
+                            for (int l = 0; l < SelectSource.Count; l++)
+                            {
+                                if (curTask.subTasks[i].name == SelectSource[l])
+                                {
+                                    match = true;
+                                }
+                            }
+                            if (!match)
+                            {
+                                UnselectSource.Add(curTask.subTasks[i].name);
+                            }
+
+                        }
+                    }
+                    else
+                    {
+                        for (int i = 0; i < curTask.subTasks.Count; i++)
+                        {
+                            UnselectSource.Add(curTask.subTasks[i].name);
+                        }
                     }
                 }
                 //Else move to the next one
@@ -76,6 +109,7 @@ namespace ProposalGenerator
                     btn_NextPage(null, null);
                 }
             }
+            SelectedList.ItemsSource = SelectSource;
             UnselectedNormalList.ItemsSource = UnselectSource;
 
             //            officialList = ContractTaskSerializer.DeserializeContractTasks();
@@ -99,7 +133,77 @@ namespace ProposalGenerator
         public ContractP_Pg5(bool IGNORE, ContractDataManager inData)
         {
             InitializeComponent();
+            myData = inData;
             officialList = ContractTaskSerializer.DeserializeContractTasks();
+            UnselectSource = new List<string>();
+            SelectSource = new List<string>();
+            UnselectedSubtasks = new List<ContractSubTask>();
+            SelectedSubtasks = new List<ContractSubTask>();
+            currIndex = 0;
+            if (myData.myTaskList.Count > 0)
+            {
+                bool found = false;
+                for (int i = 0; i < officialList.myTasks.Count; i++)
+                {
+                    if (officialList.myTasks[i].HeadLevelItem == myData.myTaskList[currIndex].HeadLevelItem)
+                    {
+                        curTask = officialList.myTasks[i];
+                        found = true;
+                    }
+                    else
+                    {
+
+                    }
+                }
+                if (!found)
+                {
+                    MessageBox.Show("MAJOR ERROR PLEASE CONTACT CONNOR");
+                }
+                //If the task allows subtasks
+                if (curTask.allowsSubTasks)
+                {
+                    HeaderLabel.Content = curTask.HeadLevelItem;
+                    if (myData.myTaskList[currIndex].subTasks.Count > 0)
+                    {
+                        for (int l = 0; l < myData.myTaskList[currIndex].subTasks.Count; l++)
+                        {
+                            //If its not already in the list, add it
+                            if (!SelectSource.Contains(myData.myTaskList[currIndex].subTasks[l].name))
+                                SelectSource.Add(myData.myTaskList[currIndex].subTasks[l].name);
+                        }
+                        for (int i = 0; i < curTask.subTasks.Count; i++)
+                        {
+                            bool match = false;
+                            for (int l = 0; l < SelectSource.Count; l++)
+                            {
+                                if (curTask.subTasks[i].name == SelectSource[l])
+                                {
+                                    match = true;
+                                }
+                            }
+                            if (!match)
+                            {
+                                UnselectSource.Add(curTask.subTasks[i].name);
+                            }
+
+                        }
+                    }
+                    else
+                    {
+                        for (int i = 0; i < curTask.subTasks.Count; i++)
+                        {
+                            UnselectSource.Add(curTask.subTasks[i].name);
+                        }
+                    }
+                }
+                //Else move to the next one
+                else
+                {
+                    btn_NextPage(null, null);
+                }
+            }
+            SelectedList.ItemsSource = SelectSource;
+            UnselectedNormalList.ItemsSource = UnselectSource;
             //            InitializeComponent();
 
             //            myData = inData;
@@ -283,7 +387,9 @@ namespace ProposalGenerator
                 }
             }
 
+
             currIndex++;
+            
             if (currIndex < myData.myTaskList.Count)
             {
                 bool found = false;
@@ -291,7 +397,6 @@ namespace ProposalGenerator
                 SelectSource = new List<string>();
                 UnselectedSubtasks = new List<ContractSubTask>();
                 SelectedSubtasks = new List<ContractSubTask>();
-
                 //Setting current task
                 for (int i = 0; i < officialList.myTasks.Count; i++)
                 {
@@ -308,11 +413,14 @@ namespace ProposalGenerator
                 //If the task allows subtasks
                 if (curTask.allowsSubTasks)
                 {
-                    if(myData.myTaskList[currIndex].subTasks.Count >0)
+                    HeaderLabel.Content = curTask.HeadLevelItem;
+                    if (myData.myTaskList[currIndex].subTasks.Count >0)
                     {
                         for(int l = 0; l < myData.myTaskList[currIndex].subTasks.Count; l++)
                         {
-                            SelectSource.Add(myData.myTaskList[currIndex].subTasks[l].name);
+                            //If its not already in the list, add it
+                            if(!SelectSource.Contains(myData.myTaskList[currIndex].subTasks[l].name))
+                                SelectSource.Add(myData.myTaskList[currIndex].subTasks[l].name);
                         }
                         for (int i = 0; i < curTask.subTasks.Count; i++)
                         {
@@ -344,6 +452,41 @@ namespace ProposalGenerator
                 else
                 {
                     btn_NextPage(null, null);
+                }
+            }
+            else
+            {
+                bool found = false;
+                for(int i = 0; i < myData.myTaskList.Count; i++)
+                {
+                    for(int j = 0; j < myData.myTaskList[i].subTasks.Count; j++)
+                    {
+                        if(myData.myTaskList[i].subTasks[j].allowSubSub)
+                        {
+                            myData.hasSubSubtasks = true;
+                            found = true;
+                        }
+                    }
+                }
+                if(!found)
+                {
+                    myData.hasSubSubtasks = false;
+                }
+                if(!myData.PAGE6VISIT && myData.hasSubSubtasks)
+                {
+                    Switcher.Switch(new ContractP_Pg6(myData));
+                }
+                else if(myData.PAGE6VISIT && myData.hasSubSubtasks)
+                {
+                    Switcher.Switch(new ContractP_Pg6(false, myData));
+                }
+                else if(!myData.PAGE7VISIT && !myData.hasSubSubtasks)
+                {
+                    Switcher.Switch(new ContractP_Pg7(myData));
+                }
+                else
+                {
+                    Switcher.Switch(new ContractP_Pg7(false, myData));
                 }
             }
             UnselectedNormalList.ItemsSource = null;
@@ -396,6 +539,10 @@ namespace ProposalGenerator
         }
         private void btn_Back(object sender, RoutedEventArgs e)
         {
+            if(currIndex >= myData.myTaskList.Count)
+            {
+                currIndex = myData.myTaskList.Count - 1;
+            }
             //STORE PERVIOUS STUFF HERE
             for (int i = 0; i < SelectSource.Count; i++)
             {
@@ -439,9 +586,38 @@ namespace ProposalGenerator
                 //If the task allows subtasks
                 if (curTask.allowsSubTasks)
                 {
-                    for (int i = 0; i < curTask.subTasks.Count; i++)
+                    HeaderLabel.Content = curTask.HeadLevelItem;
+                    if (myData.myTaskList[currIndex].subTasks.Count > 0)
                     {
-                        UnselectSource.Add(curTask.subTasks[i].name);
+                        for (int l = 0; l < myData.myTaskList[currIndex].subTasks.Count; l++)
+                        {
+                            //If its not already in the list, add it
+                            if (!SelectSource.Contains(myData.myTaskList[currIndex].subTasks[l].name))
+                                SelectSource.Add(myData.myTaskList[currIndex].subTasks[l].name);
+                        }
+                        for (int i = 0; i < curTask.subTasks.Count; i++)
+                        {
+                            bool match = false;
+                            for (int l = 0; l < SelectSource.Count; l++)
+                            {
+                                if (curTask.subTasks[i].name == SelectSource[l])
+                                {
+                                    match = true;
+                                }
+                            }
+                            if (!match)
+                            {
+                                UnselectSource.Add(curTask.subTasks[i].name);
+                            }
+
+                        }
+                    }
+                    else
+                    {
+                        for (int i = 0; i < curTask.subTasks.Count; i++)
+                        {
+                            UnselectSource.Add(curTask.subTasks[i].name);
+                        }
                     }
                 }
                 //Else move to the next one

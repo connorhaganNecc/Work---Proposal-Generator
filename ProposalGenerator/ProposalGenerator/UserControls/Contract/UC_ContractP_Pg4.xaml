@@ -78,7 +78,8 @@
                 Move Down
             </Button>
         </Grid>
-
+        <Label Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="Bold"
+               Name="HeaderLabel" Content="Select Tasks"/>
         <DockPanel Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3">
             <Button Height="50" Padding="10" Margin="10" FontSize="12" HorizontalContentAlignment="Center"
                 DockPanel.Dock="Top" VerticalAlignment="top" HorizontalAlignment="Right"

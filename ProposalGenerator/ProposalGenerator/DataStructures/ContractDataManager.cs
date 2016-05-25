@@ -18,6 +18,7 @@ namespace ProposalGenerator
         public string CustomParagraph;
 
         public List<string> Assumptions;
+        public List<string> AddServ;
 
         public List<ContractTask> myTaskList;
 
@@ -27,6 +28,10 @@ namespace ProposalGenerator
         public bool PAGE4VISIT;
         public bool PAGE5VISIT;
         public bool PAGE6VISIT;
+        public bool PAGE7VISIT;
+        public bool PAGE8VISIT;
+
+        public bool hasSubSubtasks;
 
         public ContractDataManager()
         {
@@ -34,6 +39,7 @@ namespace ProposalGenerator
             Property = new AddressExData();
             Assumptions = new List<string>();
             myTaskList = new List<ContractTask>();
+            AddServ = new List<string>();
         }
     }
 }

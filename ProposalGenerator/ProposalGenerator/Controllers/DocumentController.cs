@@ -729,10 +729,10 @@ namespace ProposalGenerator
             Paragraph header = doc.InsertParagraph("SCOPE OF SERVICES", false, FormattingTypes.DefaultBold());
             header.FontSize(12);
             InsertBlankParagraph();
-            int currLevel = 0;
             
             for(int i = 0; i < myData.myTaskList.Count; i++)
             {
+                int currLetter = 0;
                 DocX headLevel = DocX.Load("Data/BulletPoints/TopRoman.docx");
                 headLevel.ReplaceText("%TEXTREPLACE%", myData.myTaskList[i].HeadLevelItem);
                 for(int j = 0; j < headLevel.Paragraphs.Count;j++)
@@ -743,7 +743,7 @@ namespace ProposalGenerator
                 if(myData.myTaskList[i].ServiceItemNum>0)
                 {
                     DocX servNum = DocX.Load("Data/BulletPoints/SecPlain.docx");
-                    servNum.ReplaceText("%TEXTREPLACE%", "MCG Service Item " + myData.myTaskList[i].ServiceItemNum.ToString("###.##"));
+                    servNum.ReplaceText("%TEXTREPLACE%", "MCG Service Item " + myData.myTaskList[i].ServiceItemNum.ToString("###.##"),newFormatting:FormattingTypes.ServiceItemFormat());
                     for (int j = 0; j < servNum.Paragraphs.Count; j++)
                     {
                         servNum.Paragraphs[j].SpacingAfter(6);
@@ -754,7 +754,7 @@ namespace ProposalGenerator
                 if(!String.IsNullOrEmpty(myData.myTaskList[i].Description))
                 {
                     DocX taskDescription = DocX.Load("Data/BulletPoints/SecPlain.docx");
-                    taskDescription.ReplaceText("%TEXTREPLACE% ", myData.myTaskList[i].Description);
+                    taskDescription.ReplaceText("%TEXTREPLACE%", myData.myTaskList[i].Description);
 
                     for (int j = 0; j < taskDescription.Paragraphs.Count; j++)
                     {
@@ -766,14 +766,14 @@ namespace ProposalGenerator
                 {
                     for(int j = 0; j < myData.myTaskList[i].subTasks.Count;j++)
                     {
-                        int currLetter = 0;
+                        
                         if(myData.myTaskList[i].subTasks[j].myClass == ContractSubtaskClass.Bullet)
                         {
                             DocX bulletItem = DocX.Load("Data/BulletPoints/SecBullet.docx");
                             bulletItem.ReplaceText("%TEXTREPLACE%", myData.myTaskList[i].subTasks[j].text);
                             for (int k = 0; k < bulletItem.Paragraphs.Count; k++)
                             {
-                                bulletItem.Paragraphs[k].SpacingAfter(6);
+                                HandleFormatting(bulletItem.Paragraphs[k], FormattingTypes.DefaultParagraph());
                             }
                             doc.InsertDocument(bulletItem);
                         }
@@ -785,7 +785,7 @@ namespace ProposalGenerator
                             //temp.ReplaceText("%LET%", "\tA.", false);
                             //temp.ReplaceText("%TEXTREPLACE%", "\t"+"Perform research at the Registry of Deeds and City Hall offices.", false);
                             letterItem.ReplaceText("%LET%", "\t"+letter, false);
-                            letterItem.ReplaceText("%TEXTREPLACE%", "\t"+myData.myTaskList[i].subTasks[j].name);
+                            letterItem.ReplaceText("%TEXTREPLACE%", "\t"+myData.myTaskList[i].subTasks[j].name, newFormatting: FormattingTypes.DefaultBold());
                             for (int k = 0; k < letterItem.Paragraphs.Count; k++)
                             {
                                 letterItem.Paragraphs[k].SpacingAfter(6);
@@ -794,13 +794,23 @@ namespace ProposalGenerator
 
                             if(!string.IsNullOrEmpty( myData.myTaskList[i].subTasks[j].text))
                             {
-                                //Need third level free line with no bullet markings
+                                DocX thirdPlain = DocX.Load("Data/BulletPoints/ThirdPlain.docx");
+                                thirdPlain.ReplaceText("%TEXTREPLACE%", myData.myTaskList[i].subTasks[j].text);
+                                for (int k = 0; k < thirdPlain.Paragraphs.Count; k++)
+                                {
+                                    thirdPlain.Paragraphs[k].SpacingAfter(6);
+                                }
+                                doc.InsertDocument(thirdPlain);
                             }
                         }
                     }
                 }
             }
 
+            DocX finishDoc = DocX.Load("Data/BulletPoints/SecPlain.docx");
+
+            string lastSentance = "Scope of services includes time to prepare, drive to and attend up to two (2) hours at each meeting.  We are available to attend additional community, coordination, or agency meetings and if requested to do so, our efforts will be billed as incurred using MCG's standard billing rates.";
+            finishDoc.ReplaceText("%TEXTREPLACE%", lastSentance);
             //if(ContractTasklistContainsServiceNumber(myData.myTaskList, 300))
             //{
                 
@@ -863,6 +873,25 @@ namespace ProposalGenerator
             }
 
             for(int i = 0; i < bulletList.Items.Count; i++)
+            {
+                //bulletList.Items[i].IndentationHanging += .53f + .53f;
+                //bulletList.Items[i].IndentationFirstLine = .27f;
+                bulletList.Items[i].IndentationBefore = 1f + .27f;
+            }
+            doc.InsertList(bulletList);
+        }
+        static public void WriteContractAddServNotInc(ContractDataManager myData)
+        {
+            Paragraph head = doc.InsertParagraph("OTHER SERVICES NOT INCLUDED:", false, FormattingTypes.DefaultBold());
+
+            List bulletList = doc.AddList(listType: ListItemType.Bulleted);
+
+            for (int i = 0; i < myData.AddServ.Count; i++)
+            {
+                doc.AddListItem(bulletList, myData.AddServ[i]);
+            }
+
+            for (int i = 0; i < bulletList.Items.Count; i++)
             {
                 //bulletList.Items[i].IndentationHanging += .53f + .53f;
                 //bulletList.Items[i].IndentationFirstLine = .27f;

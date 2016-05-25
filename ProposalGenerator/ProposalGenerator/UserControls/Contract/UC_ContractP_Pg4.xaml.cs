@@ -226,21 +226,28 @@ namespace ProposalGenerator
             if (SelectSource.Count > 0)
             {
                 List<ContractTask> MyTaskList = new List<ContractTask>();
-                for(int i = 0; i < SelectSource.Count; i++)
+                for (int i = 0; i < SelectSource.Count; i++)
                 {
-                    for(int j = 0; j < officialList.myTasks.Count; j++)
+                    for (int j = 0; j < officialList.myTasks.Count; j++)
                     {
-                        if(SelectSource[i] == officialList.myTasks[j].HeadLevelItem)
+                        if (SelectSource[i] == officialList.myTasks[j].HeadLevelItem)
                         {
                             bool fail = false;
-                            for(int k = 0; k < myData.myTaskList.Count; k++)
+                            for (int k = 0; k < myData.myTaskList.Count; k++)
                             {
-                                if(SelectSource[i] == myData.myTaskList[k].HeadLevelItem)
+                                if (SelectSource[i] == myData.myTaskList[k].HeadLevelItem)
                                 {
                                     fail = true;
+                                    ContractTask temp = new ContractTask();
+                                    temp.allowsSubTasks = myData.myTaskList[k].allowsSubTasks;
+                                    temp.Description = myData.myTaskList[k].Description;
+                                    temp.HeadLevelItem = myData.myTaskList[k].HeadLevelItem;
+                                    temp.ServiceItemNum = myData.myTaskList[k].ServiceItemNum;
+                                    temp.subTasks = myData.myTaskList[k].subTasks;
+                                    MyTaskList.Add(temp);
                                 }
                             }
-                            if(!fail)
+                            if (!fail)
                             {
                                 ContractTask temp = new ContractTask();
                                 temp.allowsSubTasks = officialList.myTasks[j].allowsSubTasks;
@@ -255,8 +262,16 @@ namespace ProposalGenerator
                 }
 
                 myData.myTaskList = MyTaskList;
-                
-                Switcher.Switch(new ContractP_Pg5(myData));
+
+
+                if(!myData.PAGE5VISIT)
+                {
+                    Switcher.Switch(new ContractP_Pg5(myData));
+                }
+                else
+                {
+                    Switcher.Switch(new ContractP_Pg5(false, myData));
+                }
 
                 //    myData.myTaskList = Select;
 
