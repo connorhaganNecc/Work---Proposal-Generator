@@ -688,7 +688,6 @@ namespace ProposalGenerator
         #region ContractProposal
         static public bool WriteContractProp(ContractDataManager myData)
         {
-
             if (fileName == "null")
             {
                 if (!OpenFileDialogContract())
@@ -696,6 +695,12 @@ namespace ProposalGenerator
                     return false;
                 }
             }
+            InsertBlankParagraph();
+            InsertBlankParagraph();
+            InsertBlankParagraph();
+            InsertBlankParagraph();
+            InsertBlankParagraph();
+            
 
             SetupHeader(myData.Property, myData.Client);
             InsertBlankParagraph();
@@ -714,14 +719,103 @@ namespace ProposalGenerator
 
             WriteContractProjectDescription(myData);
 
+            InsertBlankParagraph();
+
             WriteContractAssumptions(myData);
             //Write tasks
             InsertBlankParagraph();
             WriteContractTasks(myData);
+            
+            InsertBlankParagraph();
+            WriteContractAddServNotInc(myData);
+            InsertBlankParagraph();
+            WriteSCCompensation(myData);
+            InsertBlankParagraph();
+            WriteContractHourlyFee(myData);
+            InsertBlankParagraph();
+            WriteContractAuthorizations(myData);
+
+            string headerText = myData.Client.FirstName;
+            DealWithHeaders(headerText);
+            if (myData.TermsType == "Short")
+            {
+                AddShortTerms(headerText);
+            }
+            else
+            {
+                AddLongTerms(headerText);
+            }
+
+            doc.ReplaceText("%TOWN%", myData.Property.town);
+
             SaveDocument();
-
-
+            Process.Start("WINWORD.EXE", "\"" + DocumentController.GetFilename() + "\"");
             return true;
+        }
+
+        static public void WriteContractAuthorizations(ContractDataManager myData)
+        {
+            Formatting UL = FormattingTypes.DefaultParagraph();
+            UL.UnderlineStyle = UnderlineStyle.singleLine;
+            doc = PresetParagraphs.ContractAuthorization(doc);
+            InsertBlankParagraph();
+            doc.InsertParagraph("The Morin-Cameron Group, Inc. Authorization", false, FormattingTypes.DefaultBold());
+            InsertBlankParagraph();
+            DocX temp = DocX.Load("Data/BulletPoints/ContractAuthorization.docx");
+            temp.ReplaceText("%NAME%", myData.author.name, newFormatting:FormattingTypes.DefaultParagraph());
+            temp.ReplaceText("%TITLE%", myData.author.title, newFormatting: UL);
+
+            string DateString = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(DateTime.Now.Month);
+            DateString += " " + DateTime.Now.Day + ", " + DateTime.Now.Year;
+            temp.ReplaceText("%DATE%", DateString, newFormatting: UL);
+
+            doc.InsertDocument(temp);
+
+            InsertBlankParagraph();
+
+
+            doc.InsertParagraph("Client Authorization", false, FormattingTypes.DefaultBold());
+            InsertBlankParagraph();
+            doc = PresetParagraphs.ClientAuthorization(doc, myData.Client.FirstName);
+            InsertBlankParagraph();
+            temp = DocX.Load("Data/BulletPoints/ContractAuthorization.docx");
+            temp.ReplaceText("%NAME%", "", newFormatting: UL);
+            temp.ReplaceText("%TITLE%", "", newFormatting: UL);
+            temp.ReplaceText("%DATE%", "", newFormatting: UL);
+
+            doc.InsertDocument(temp);          
+        }
+
+        static public void WriteContractHourlyFee(ContractDataManager inData)
+        {
+            doc.InsertDocument(DocX.Load("Data/HourlyFeeSchedule.docx"));
+            
+            InsertBlankParagraph();
+
+            float totalFee = 0;
+            for (int i = 0; i < inData.myTaskList.Count; i++)
+            {
+                if (inData.myTaskList[i].cost > 0)
+                {
+                    totalFee += inData.myTaskList[i].cost;
+                }
+                for(int j = 0; j < inData.myTaskList[i].subTasks.Count; j++)
+                {
+                    if(inData.myTaskList[i].subTasks[j].cost>0)
+                    {
+                        totalFee += inData.myTaskList[i].subTasks[j].cost;
+                    }
+                }
+            }
+            if(inData.retainer == 33)
+            {
+                inData.retainer = 33.3333333333333f;
+            }
+            else if(inData.retainer == 66)
+            {
+                inData.retainer = 66.66666666666f;
+            }
+            doc = PresetParagraphs.ContractFeePara(doc, totalFee, inData.retainer);
         }
 
         static public void WriteContractTasks(ContractDataManager myData)
@@ -743,7 +837,7 @@ namespace ProposalGenerator
                 if(myData.myTaskList[i].ServiceItemNum>0)
                 {
                     DocX servNum = DocX.Load("Data/BulletPoints/SecPlain.docx");
-                    servNum.ReplaceText("%TEXTREPLACE%", "MCG Service Item " + myData.myTaskList[i].ServiceItemNum.ToString("###.##"),newFormatting:FormattingTypes.ServiceItemFormat());
+                    servNum.ReplaceText("%TEXTREPLACE%", "MCG Service Item " + myData.myTaskList[i].ServiceItemNum.ToString("###.##") +".00",newFormatting:FormattingTypes.ServiceItemFormat());
                     for (int j = 0; j < servNum.Paragraphs.Count; j++)
                     {
                         servNum.Paragraphs[j].SpacingAfter(6);
@@ -769,13 +863,17 @@ namespace ProposalGenerator
                         
                         if(myData.myTaskList[i].subTasks[j].myClass == ContractSubtaskClass.Bullet)
                         {
-                            DocX bulletItem = DocX.Load("Data/BulletPoints/SecBullet.docx");
-                            bulletItem.ReplaceText("%TEXTREPLACE%", myData.myTaskList[i].subTasks[j].text);
-                            for (int k = 0; k < bulletItem.Paragraphs.Count; k++)
+                            if(!(myData.myTaskList[i].subTasks[j].text == null))
                             {
-                                HandleFormatting(bulletItem.Paragraphs[k], FormattingTypes.DefaultParagraph());
+                                DocX bulletItem = DocX.Load("Data/BulletPoints/SecBullet.docx");
+                                bulletItem.ReplaceText("%TEXTREPLACE%", myData.myTaskList[i].subTasks[j].text);
+                                for (int k = 0; k < bulletItem.Paragraphs.Count; k++)
+                                {
+                                    HandleFormatting(bulletItem.Paragraphs[k], FormattingTypes.DefaultParagraph());
+                                }
+                                doc.InsertDocument(bulletItem);
                             }
-                            doc.InsertDocument(bulletItem);
+                            
                         }
                         else
                         {
@@ -784,11 +882,12 @@ namespace ProposalGenerator
                             DocX letterItem = DocX.Load("Data/BulletPoints/SecLetter.docx");
                             //temp.ReplaceText("%LET%", "\tA.", false);
                             //temp.ReplaceText("%TEXTREPLACE%", "\t"+"Perform research at the Registry of Deeds and City Hall offices.", false);
-                            letterItem.ReplaceText("%LET%", "\t"+letter, false);
+                            letterItem.ReplaceText("%LET%", "\t"+letter+".)", false);
                             letterItem.ReplaceText("%TEXTREPLACE%", "\t"+myData.myTaskList[i].subTasks[j].name, newFormatting: FormattingTypes.DefaultBold());
                             for (int k = 0; k < letterItem.Paragraphs.Count; k++)
                             {
                                 letterItem.Paragraphs[k].SpacingAfter(6);
+                                HandleFormatting(letterItem.Paragraphs[k], FormattingTypes.DefaultParagraph());
                             }
                             doc.InsertDocument(letterItem);
 
@@ -802,15 +901,33 @@ namespace ProposalGenerator
                                 }
                                 doc.InsertDocument(thirdPlain);
                             }
+
+                            if(myData.myTaskList[i].subTasks[j].allowSubSub && myData.myTaskList[i].subTasks[j].SubItems.Count>0)
+                            {
+                                for(int v = 0; v < myData.myTaskList[i].subTasks[j].SubItems.Count; v++)
+                                {
+                                    DocX thirdBul = DocX.Load("Data/BulletPoints/ThirdBullet.docx");
+                                    thirdBul.ReplaceText("%TEXTREPLACE%", myData.myTaskList[i].subTasks[j].SubItems[v].description);
+                                    for (int k = 0; k < thirdBul.Paragraphs.Count; k++)
+                                    {
+                                        thirdBul.Paragraphs[k].SpacingAfter(6);
+                                        HandleFormatting(thirdBul.Paragraphs[k], FormattingTypes.DefaultParagraph());
+                                    }
+                                    doc.InsertDocument(thirdBul);
+                                }
+                            }
                         }
                     }
                 }
+                InsertBlankParagraph();
             }
 
             DocX finishDoc = DocX.Load("Data/BulletPoints/SecPlain.docx");
 
             string lastSentance = "Scope of services includes time to prepare, drive to and attend up to two (2) hours at each meeting.  We are available to attend additional community, coordination, or agency meetings and if requested to do so, our efforts will be billed as incurred using MCG's standard billing rates.";
             finishDoc.ReplaceText("%TEXTREPLACE%", lastSentance);
+            InsertBlankParagraph();
+            doc.InsertDocument(finishDoc);
             //if(ContractTasklistContainsServiceNumber(myData.myTaskList, 300))
             //{
                 
@@ -877,6 +994,7 @@ namespace ProposalGenerator
                 //bulletList.Items[i].IndentationHanging += .53f + .53f;
                 //bulletList.Items[i].IndentationFirstLine = .27f;
                 bulletList.Items[i].IndentationBefore = 1f + .27f;
+                bulletList.Items[i].ReplaceText(bulletList.Items[i].Text, bulletList.Items[i].Text, newFormatting:FormattingTypes.DefaultParagraph());
             }
             doc.InsertList(bulletList);
         }
@@ -896,6 +1014,7 @@ namespace ProposalGenerator
                 //bulletList.Items[i].IndentationHanging += .53f + .53f;
                 //bulletList.Items[i].IndentationFirstLine = .27f;
                 bulletList.Items[i].IndentationBefore = 1f + .27f;
+                bulletList.Items[i].ReplaceText(bulletList.Items[i].Text, bulletList.Items[i].Text, newFormatting: FormattingTypes.DefaultParagraph());
             }
             doc.InsertList(bulletList);
         }
@@ -967,7 +1086,7 @@ namespace ProposalGenerator
             }
             L3.Alignment = Alignment.center;
 
-            Paragraph L2 = doc.InsertParagraph(inData.town.ToUpper() + ", " + inData.state.ToUpper() + " " + inData.zip, false, FormattingTypes.InfoLineFormat());
+            Paragraph L2 = doc.InsertParagraph(inData.town.ToUpper() + ", " + "MASSACHUSETTS" + " " + inData.zip, false, FormattingTypes.InfoLineFormat());
             L2.Alignment = Alignment.center;
             
 
@@ -1013,7 +1132,7 @@ namespace ProposalGenerator
             SaveDocument();
             return true;
         }
-        static void WriteSCServicesNotInc(DataManager inData)
+        static public void WriteSCServicesNotInc(DataManager inData)
         {
             Paragraph p1 = doc.InsertParagraph("Other Services Not Included", false, FormattingTypes.DefaultBold());
             p1.Alignment = Alignment.both;
@@ -1025,6 +1144,10 @@ namespace ProposalGenerator
                 Paragraph temp = doc.InsertParagraph(writeString, false, FormattingTypes.DefaultParagraph());
                 temp.Alignment = Alignment.both;
             }
+
+            Paragraph p2 = doc.InsertParagraph("Should work be required in any of these areas, MCG will be pleased to provide you with a proposal amendment at the Client’s request that contains the Scope of Services, fee and schedule required to complete the additional work items.", false, FormattingTypes.DefaultParagraph());
+            p2.Alignment = Alignment.both;
+            p2.SpacingAfter(6);
         }
         static public void WriteAssumptions(List<string> Assumtions)
         {
@@ -1042,6 +1165,55 @@ namespace ProposalGenerator
                 myList.Items[i].Alignment = Alignment.both;
                 myList.Items[i].SetLineSpacing(LineSpacingType.After, 1);
             }
+        }
+        static public void WriteSCCompensation(ContractDataManager inData)
+        {
+            Paragraph p1 = doc.InsertParagraph("COMPENSATION", false, FormattingTypes.DefaultBold());
+            p1.Alignment = Alignment.both;
+            Paragraph p2 = doc.InsertParagraph("The following estimated fees have been prepared for the Scope of Services herein:", false, FormattingTypes.DefaultParagraph());
+            p2.Alignment = Alignment.both;
+            p2.SpacingAfter(6);
+
+            Paragraph p3 = doc.InsertParagraph("\tSurvey and Preliminary Engineering", false, FormattingTypes.DefaultParagraph());
+
+            for (int i = 0; i < inData.myTaskList.Count; i++)
+            {
+                DocX temp = DocX.Load("Data/BulletPoints/CompensationLines1.docx");
+                if (inData.myTaskList[i].cost > 0)
+                {
+                    temp.ReplaceText("%TEXT%", "Item " + indexToNumeral(i) + ": " + inData.myTaskList[i].CompensationText + "\t$" + inData.myTaskList[i].cost.ToString(), newFormatting: FormattingTypes.DefaultParagraph());
+                }
+                else
+                {
+                    temp.ReplaceText("%TEXT%", "Item " + indexToNumeral(i) + ": " + inData.myTaskList[i].CompensationText, newFormatting: FormattingTypes.DefaultParagraph());
+                }
+
+                doc.InsertDocument(temp);
+                if (inData.myTaskList[i].allowsSubTasks)
+                {
+                    for(int j = 0; j < inData.myTaskList[i].subTasks.Count; j++)
+                    {
+                        if(inData.myTaskList[i].subTasks[j].myClass == ContractSubtaskClass.Letter)
+                        {
+                            DocX subTemp = DocX.Load("Data/BulletPoints/CompensationLines2.docx");
+                            if(inData.myTaskList[i].subTasks[j].cost>0)
+                            {
+                                subTemp.ReplaceText("%TEXT%", indexToNumeral(i) + "-" + indexToCharacter(j, true) + "-" + inData.myTaskList[i].subTasks[j].CompensationText + "\t$" + inData.myTaskList[i].subTasks[j].cost.ToString(), newFormatting: FormattingTypes.DefaultParagraph());
+                            }
+                            else
+                            {
+                                subTemp.ReplaceText("%TEXT%", indexToNumeral(i) + "-" + indexToCharacter(j, true) + "-" + inData.myTaskList[i].subTasks[j].CompensationText, newFormatting: FormattingTypes.DefaultParagraph());
+                            }
+                            doc.InsertDocument(subTemp);
+                        }
+                    }
+                }
+            }
+
+            Paragraph p4 = doc.InsertParagraph("Above prices are exclusive of out of pocket expenses including, but not limited to, the cost for prints, postage and Police details which will be shown on your invoice as an extra under reimbursable expenses.", false, FormattingTypes.DefaultParagraph());
+            p4.Alignment = Alignment.both;
+            p4.SpacingBefore(6);
+            
         }
         #endregion
 
@@ -1109,7 +1281,15 @@ namespace ProposalGenerator
                 inPara.ReplaceText(Tags.StartCenter() + formattedText + Tags.EndCenter(), formattedText, false, System.Text.RegularExpressions.RegexOptions.None, paraFormatting);
                 inPara.Alignment = Alignment.center;
             }
-
+            while(inPara.Text.Contains(Tags.StartItalics()) && inPara.Text.Contains(Tags.EndItalics()))
+            {
+                Formatting tempFormat = paraFormatting;
+                tempFormat.Italic = true;
+                //Fee Line
+                int index = inPara.Text.IndexOf(Tags.StartItalics()) + Tags.StartItalics().Length;
+                string formattedText = inPara.Text.Substring(index, inPara.Text.IndexOf(Tags.EndItalics()) - index);
+                inPara.ReplaceText(Tags.StartItalics() + formattedText + Tags.EndItalics(), formattedText, false, System.Text.RegularExpressions.RegexOptions.None, tempFormat);
+            }
             while (inPara.Text.Contains(Tags.FeeIndent()))
             {
                 int index = inPara.Text.IndexOf(Tags.FeeIndent()) + Tags.FeeIndent().Length;
@@ -1697,7 +1877,54 @@ namespace ProposalGenerator
                     return "null";
             }
         }
-
+        static public string indexToNumeral(int index)
+        {
+            switch(index)
+            {
+                case 0:
+                    return "I";
+                case 1:
+                    return "II";
+                case 2:
+                    return "III";
+                case 3:
+                    return "IV";
+                case 4:
+                    return "V";
+                case 5:
+                    return "VI";
+                case 6:
+                    return "VII";
+                case 7:
+                    return "VIII";
+                case 8:
+                    return "IX";
+                case 9:
+                    return "X";
+                case 10:
+                    return "XI";
+                case 11:
+                    return "XII";
+                case 12:
+                    return "XIII";
+                case 13:
+                    return "XIV";
+                case 14:
+                    return "XV";
+                case 15:
+                    return "XVI";
+                case 16:
+                    return "XVII";
+                case 17:
+                    return "XVIII";
+                case 18:
+                    return "XIX";
+                case 19:
+                    return "XX";
+                default:
+                    return "I";
+            }
+        }
         static public bool ContractTasklistContainsServiceNumber(List<ContractTask> inList, int inNum)
         {
             for(int i = 0; i < inList.Count; i++)
@@ -1747,6 +1974,8 @@ namespace ProposalGenerator
             }
 
         }
+
+        
 
         #endregion
 

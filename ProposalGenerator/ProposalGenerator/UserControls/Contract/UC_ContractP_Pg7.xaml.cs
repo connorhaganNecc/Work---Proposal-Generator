@@ -106,13 +106,14 @@ namespace ProposalGenerator
             //DocumentController.WriteContractProp(myData);
             if(!myData.PAGE8VISIT)
             {
-                //Switcher.Switch(new ContractP_Pg4(myData));
+                Switcher.Switch(new ContractP_Pg8(myData));
             }
             else
             {
                 //Switcher.Switch(new ContractP_Pg4(false, myData));
             }
-                
+            //DocumentController.WriteContractProp(myData);
+
         }
         private void btn_Cancel(object sender, RoutedEventArgs e)
         {
@@ -134,22 +135,23 @@ namespace ProposalGenerator
             myParent.contractData.AddServ = AddServ;
             myParent.contractData.PAGE7VISIT = true;
 
-            if (myParent.contractData.hasSubSubtasks && !myParent.contractData.PAGE6VISIT)
-            {
-                Switcher.Switch(new ContractP_Pg6(myData));
-            }
-            else if(myParent.contractData.hasSubSubtasks && myParent.contractData.PAGE6VISIT)
-            {
-                Switcher.Switch(new ContractP_Pg6(false, myData));
-            }
-            else if (myParent.contractData.hasSubSubtasks && !myParent.contractData.PAGE5VISIT)
-            {
-                Switcher.Switch(new ContractP_Pg5( myData));
-            }
-            else
-            {
-                Switcher.Switch(new ContractP_Pg5(false, myData));
-            }
+            DocumentController.WriteContractProp(myData);
+            //if (myParent.contractData.hasSubSubtasks && !myParent.contractData.PAGE6VISIT)
+            //{
+            //    Switcher.Switch(new ContractP_Pg6(myData));
+            //}
+            //else if(myParent.contractData.hasSubSubtasks && myParent.contractData.PAGE6VISIT)
+            //{
+            //    Switcher.Switch(new ContractP_Pg6(false, myData));
+            //}
+            //else if (myParent.contractData.hasSubSubtasks && !myParent.contractData.PAGE5VISIT)
+            //{
+            //    Switcher.Switch(new ContractP_Pg5( myData));
+            //}
+            //else
+            //{
+            //    Switcher.Switch(new ContractP_Pg5(false, myData));
+            //}
         }
         
         private void btn_Add(object sender, RoutedEventArgs e)

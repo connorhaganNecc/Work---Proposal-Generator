@@ -21,7 +21,10 @@ namespace ProposalGenerator
         public string HeadLevelItem;
         public string Description;
         public int ServiceItemNum;
+        public string CompensationText;
         public List<ContractSubTask> subTasks;
+
+        public float cost = 0;
 
         public bool allowsSubTasks;
 
@@ -39,6 +42,9 @@ namespace ProposalGenerator
         public string text;
         public string rtfText;
         public string name;
+        public string CompensationText;
+        public float cost = 0;
+
         public bool allowSubSub = false;
 
         public List<SubSubtask> SubItems;

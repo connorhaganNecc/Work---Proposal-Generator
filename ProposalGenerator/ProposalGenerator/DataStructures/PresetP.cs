@@ -42,7 +42,7 @@ namespace ProposalGenerator
             myPara.InsertText("$" + TotalFee.ToString("N"), false, FormattingTypes.InfoLineFormat());
             myPara.InsertText(" (exclusive of out of pocket expenses including, but not limited, to the cost for prints and postage which will be shown on your invoice as an extra under reimbursable expenses).  It is our office policy to accept a " + retainer + "% retainer (which is ", false, FormattingTypes.DefaultParagraph());
             myPara.InsertText("$" + (retainer * .01f * TotalFee).ToString("N"), false, FormattingTypes.InfoLineFormat());
-            myPara.InsertText(" prior to the commencement of our services.)  You will be billed monthly for work in progress; a portion of your retainer will be applied to each bill.  ", false, FormattingTypes.DefaultParagraph());
+            myPara.InsertText(") prior to the commencement of our services.  You will be billed monthly for work in progress; a portion of your retainer will be applied to each bill.  ", false, FormattingTypes.DefaultParagraph());
             myPara.InsertText("If you prefer to pay by MasterCard or VISA, please contact our office.", false, FormattingTypes.InfoLineFormat());
             myPara.Alignment = Alignment.both;
             return inDoc;
@@ -147,6 +147,51 @@ namespace ProposalGenerator
                 L1.Alignment = Alignment.both;
             }
             return indoc;
+        }
+
+        public static DocX ContractFeePara(DocX inDoc, float totalCost, float retainer)
+        {
+            //for nice formatting
+            int newRetainer = (int)Math.Floor(retainer);
+            Paragraph L1 = inDoc.InsertParagraph("The fee for services specifically described herein listed amounts to ", false, FormattingTypes.DefaultParagraph());
+            L1.InsertText("$" + totalCost.ToString(), false, FormattingTypes.DefaultBold());
+            L1.InsertText(".  It is our office policy to accept a " + newRetainer.ToString() + "% retainer (which is ", false, FormattingTypes.DefaultParagraph());
+            L1.InsertText("$" + (retainer * .01f * totalCost).ToString("N0"), false, FormattingTypes.DefaultBold());
+            L1.InsertText(") prior to the commencement of our services.  You will be billed monthly for work in progress; a portion of your retainer will be applied to each bill.  ",false, FormattingTypes.DefaultParagraph());
+            L1.InsertText("If you prefer to pay by MasterCard or VISA, please contact our office.", false, FormattingTypes.DefaultBold());
+            L1.Alignment = Alignment.both;
+            inDoc.InsertParagraph();
+            Paragraph L2 = inDoc.InsertParagraph("The fee for the project is based upon our anticipated level of effort to complete the project scope described herein.  Any changes to the project scope, either as directed by the Client, by the approving agencies or by a 3", false, FormattingTypes.DefaultParagraph());
+            Formatting temp = FormattingTypes.DefaultParagraph();
+            temp.Script = Script.superscript;
+            L2.InsertText("rd", false, temp);
+            L2.InsertText(" party consultant will be considered a change in the scope of services and may be subject to additional charges if the time required to accommodate said changes exceeds the fees outlined herein.  Any changes to the project scope or fees will be discussed and approved by the Client prior to commencing with additional work.", false, FormattingTypes.DefaultParagraph());
+            L2.Alignment = Alignment.both;
+
+            return inDoc;
+        }
+
+        public static DocX ContractAuthorization(DocX inDoc)
+        {
+            Paragraph L1 = inDoc.InsertParagraph("If you are in agreement with this proposal kindly sign both copies below and return one to our office with your retainer.  If you should have any questions regarding this please do not hesitate to contact our office.", false, FormattingTypes.DefaultParagraph());
+            L1.Alignment = Alignment.both;
+            return inDoc;
+        }
+        public static DocX ClientAuthorization(DocX inDoc, string Client)
+        {
+            Paragraph L1 = inDoc.InsertParagraph(Client + " agrees with Scope of Services and Compensation herein and that this contract constitutes the entire agreement between The Morin-Cameron Group, Inc. and " + Client, false, FormattingTypes.DefaultParagraph());
+            L1.Alignment = Alignment.both;
+
+            inDoc.InsertParagraph();
+            Paragraph L2 = inDoc.InsertParagraph("Such acceptance provides full authorization for the Company to proceed with providing the Scope of Services under the terms and conditions stated herein.", false, FormattingTypes.DefaultParagraph());
+            L2.Alignment = Alignment.both;
+            return inDoc;
+        }
+        public static DocX ContractScopeOfServiceCloser(DocX inDoc)
+        {
+            Paragraph L1 = inDoc.InsertParagraph("Scope of services includes time to prepare, drive to and attend up to two (2) hours at each meeting.  We are available to attend additional community, coordination or agency meetings and if requested to do so, our efforts will be billed as incurred using MCG’s standard billing rates.", false, FormattingTypes.DefaultParagraph());
+            L1.Alignment = Alignment.both;
+            return inDoc;
         }
     }
 }

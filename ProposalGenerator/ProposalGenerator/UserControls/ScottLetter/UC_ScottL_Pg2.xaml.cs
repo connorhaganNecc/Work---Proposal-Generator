@@ -33,7 +33,7 @@ namespace ProposalGenerator
             ReLabel.Visibility = Visibility.Hidden;
             if(myData.ProposalType != "Septic Repair")
             {
-                CustomArea.Text = "The Morin-Cameron Group, Inc. is pleased to provide you with this proposal for engineering and surveying services, in connection with the above referenced lot, for the terms and conditions contained herewith. ";
+                CustomArea.Text = "The Morin-Cameron Group, Inc. is pleased to provide you with this proposal for engineering and surveying services, in connection with the above referenced lot, for the terms and conditions contained herewith. \n\nIt is our understanding that...";
                 myCheck.Visibility = Visibility.Hidden;
                 myCheckLabel.Visibility = Visibility.Hidden;
             }

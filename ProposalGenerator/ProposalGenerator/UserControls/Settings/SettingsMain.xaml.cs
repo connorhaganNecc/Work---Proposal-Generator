@@ -41,6 +41,10 @@ namespace ProposalGenerator
         {
             Data.Settings.OpenTaskFileDialog();
         }
+        private void btn_setContTasks(object sender, RoutedEventArgs e)
+        {
+            Data.Settings.OpenContractTaskFileDialog();
+        }
         private void btn_setAdd(object sedner, RoutedEventArgs e)
         {
             Data.Settings.OpenAddFileDialog();

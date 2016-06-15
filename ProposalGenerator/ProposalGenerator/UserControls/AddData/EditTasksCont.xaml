@@ -34,6 +34,8 @@
                 <RowDefinition Height="15" />
                 <RowDefinition Height="30" />
                 <RowDefinition Height="15" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="15" />
                 <RowDefinition Height="60" />
             </Grid.RowDefinitions>
             <ComboBox Name="TaskSelector" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0"
@@ -53,7 +55,12 @@
                        Grid.Column="1" Grid.Row="6"/>
             <Label Content="Allow Sub-Tasks" Grid.Column="0" Grid.Row="8"/>
             <CheckBox Grid.Column="1" Grid.Row="8" Name="AllowSubtasks" Checked="allowSubtasks_Checked" Unchecked="allowSubtasks_Unchecked" VerticalAlignment="Top"/>
-            <Button Width="200" Height="50" Grid.Row="10" Grid.ColumnSpan="2" Click="btn_EditSubtasks" Name="editSubtasks" Visibility="Hidden">Edit Sub-Tasks</Button>
+            <Label Content="Compensation Text:" Target="{Binding ElementName=CompensationText}"
+                   FontSize="14" Grid.Column="0" Grid.Row="10"/>
+            <TextBox Name="CompensationText"
+                       Grid.Column="1" Grid.Row="10"/>
+            <Button Width="200" Height="50" Grid.Row="12" Grid.ColumnSpan="2" Click="btn_EditSubtasks" Name="editSubtasks" Visibility="Hidden">Edit Sub-Tasks</Button>
+            
             <!--<Button Height="50" Padding="10" Margin="10" Width="200"
                     Grid.Row="8" Grid.Column="0"
                  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2"

@@ -381,6 +381,7 @@ namespace ProposalGenerator
                         tempSubtask.name = curTask.subTasks[k].name;
                         tempSubtask.text = curTask.subTasks[k].text;
                         tempSubtask.rtfText = curTask.subTasks[k].rtfText;
+                        tempSubtask.CompensationText = curTask.subTasks[k].CompensationText;
 
                         myData.myTaskList[currIndex].subTasks.Add(tempSubtask);
                     }
@@ -643,30 +644,31 @@ namespace ProposalGenerator
 
         private void btn_MoveUp(object sender, RoutedEventArgs e)
         {
-            //            int index = SelectedList.SelectedIndex;
-            //            if (index > 0)
-            //            {
-            //                string item = SelectedList.SelectedItem.ToString();
-            //                SelectSource[index] = SelectSource[index - 1];
-            //                SelectSource[index - 1] = item;
-            //                SelectedList.ItemsSource = null;
-            //                SelectedList.ItemsSource = SelectSource;
-            //                SelectedList.SelectedIndex = index - 1;
+            int index = SelectedList.SelectedIndex;
+            if (index > 0)
+            {
+                string item = SelectedList.SelectedItem.ToString();
+                SelectSource[index] = SelectSource[index - 1];
+                SelectSource[index - 1] = item;
+                SelectedList.ItemsSource = null;
+                SelectedList.ItemsSource = SelectSource;
+                SelectedList.SelectedIndex = index - 1;
+            }
         }
 
         //        }
         private void btn_MoveDown(object sender, RoutedEventArgs e)
         {
-            //            int index = SelectedList.SelectedIndex;
-            //            if (index < SelectSource.Count - 1)
-            //            {
-            //                string item = SelectedList.SelectedItem.ToString();
-            //                SelectSource[index] = SelectSource[index + 1];
-            //                SelectSource[index + 1] = item;
-            //                SelectedList.ItemsSource = null;
-            //                SelectedList.ItemsSource = SelectSource;
-            //                SelectedList.SelectedIndex = index + 1;
-            //            }
+            int index = SelectedList.SelectedIndex;
+            if (index < SelectSource.Count - 1)
+            {
+                string item = SelectedList.SelectedItem.ToString();
+                SelectSource[index] = SelectSource[index + 1];
+                SelectSource[index + 1] = item;
+                SelectedList.ItemsSource = null;
+                SelectedList.ItemsSource = SelectSource;
+                SelectedList.SelectedIndex = index + 1;
+            }
 
         }
 

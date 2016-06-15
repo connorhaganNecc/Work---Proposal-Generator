@@ -22,8 +22,12 @@ namespace ProposalGenerator
     /// 
     /// TODO: 
     /// </summary>
+    ///
+
+    
     public partial class ContractP_Pg6 : UserControl
     {
+        List<bool[]> hasChecked;
         ContractDataManager myData;
         int currentTaskIndex = 0;
         int currentSubtaskIndex = 0;
@@ -35,21 +39,33 @@ namespace ProposalGenerator
         public ContractP_Pg6(ContractDataManager inData)
         {
             InitializeComponent();
+            hasChecked = new List<bool[]>();
             myData = inData;
 
             myData.PAGE6VISIT = true;
             unselect = new List<string>();
             selectedList = new List<string>();
+            for(int i = 0; i < myData.myTaskList.Count; i++)
+            {
+                int count = myData.myTaskList[i].subTasks.Count;
+                hasChecked.Add(new bool[count]);
+            }
             nextItem();
         }
         public ContractP_Pg6(bool IGNORE, ContractDataManager inData)
         {
             InitializeComponent();
+            hasChecked = new List<bool[]>();
             myData = inData;
 
             myData.PAGE6VISIT = true;
             unselect = new List<string>();
             selectedList = new List<string>();
+            for (int i = 0; i < myData.myTaskList.Count; i++)
+            {
+                int count = myData.myTaskList[i].subTasks.Count;
+                hasChecked.Add(new bool[count]);
+            }
             nextItem();
         }
         private void nextItem()
@@ -81,7 +97,10 @@ namespace ProposalGenerator
                                                     if (selectedList[k] == officialList[i].subTasks[j].SubItems[p].name)
                                                     {
                                                         count++;
-                                                        myData.myTaskList[currentTaskIndex].subTasks[currentSubtaskIndex].SubItems.Add(officialList[i].subTasks[j].SubItems[p]);
+                                                        SubSubtask temp = new SubSubtask();
+                                                        temp.name = officialList[i].subTasks[j].SubItems[p].name;
+                                                        temp.description = officialList[i].subTasks[j].SubItems[p].description;
+                                                        myData.myTaskList[currentTaskIndex].subTasks[currentSubtaskIndex].SubItems.Add(temp);
                                                         count = myData.myTaskList[currentTaskIndex].subTasks[currentSubtaskIndex].SubItems.Count;
                                                     }
                                                 }
@@ -94,6 +113,7 @@ namespace ProposalGenerator
                     }
                 }
             }
+            
             while (!done)
             {
                 if (currentTaskIndex < myData.myTaskList.Count)
@@ -102,9 +122,10 @@ namespace ProposalGenerator
                     {
                         if (currentSubtaskIndex < myData.myTaskList[currentTaskIndex].subTasks.Count)
                         {
-                            if (myData.myTaskList[currentTaskIndex].subTasks[currentSubtaskIndex].allowSubSub)
+                            if (myData.myTaskList[currentTaskIndex].subTasks[currentSubtaskIndex].allowSubSub && !hasChecked[currentTaskIndex][currentSubtaskIndex])
                             {
                                 done = true;
+                                hasChecked[currentTaskIndex][currentSubtaskIndex] = true;
                             }
                             else
                             {
@@ -132,6 +153,8 @@ namespace ProposalGenerator
             if (done && !nextPage)
             {
                 HeaderLabel.Content = myData.myTaskList[currentTaskIndex].subTasks[currentSubtaskIndex].name;
+                unselect = new List<string>();
+                selectedList = new List<string>();
                 List<ContractTask> officialList = ContractTaskSerializer.DeserializeContractTasks().myTasks;
                 for (int i = 0; i < officialList.Count; i++)
                 {
@@ -224,15 +247,15 @@ namespace ProposalGenerator
         }
         private void navigateNext()
         {
-
-                if (!myData.PAGE7VISIT)
-                {
-                    Switcher.Switch(new ContractP_Pg7(myData));
-                }
-                else
-                {
-                    Switcher.Switch(new ContractP_Pg7(false, myData));
-                }
+            Switcher.Switch(new ContractP_Pg6_Branch(myData));
+            //if (!myData.PAGE7VISIT)
+            //{
+            //    Switcher.Switch(new ContractP_Pg7(myData));
+            //}
+            //else
+            //{
+            //    Switcher.Switch(new ContractP_Pg7(false, myData));
+            //}
         }
 }
 }

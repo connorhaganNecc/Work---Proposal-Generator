@@ -22,6 +22,9 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/bulletpoints/thirdbullet.docx")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/bulletpoints/toproman.docx")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/bulletpoints/thirdplain.docx")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/bulletpoints/compensationlines1.docx")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/bulletpoints/compensationlines2.docx")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/bulletpoints/contractauthorization.docx")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/tasks.xml")]
 
 

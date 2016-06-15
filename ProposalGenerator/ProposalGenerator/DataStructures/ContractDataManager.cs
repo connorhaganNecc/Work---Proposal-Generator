@@ -33,6 +33,24 @@ namespace ProposalGenerator
 
         public bool hasSubSubtasks;
 
+        public float retainer = 0;
+
+        public class Author
+        {
+            public string name;
+            public string title;
+
+            public Author()
+            {
+                name = "";
+                title = "";
+            }
+        }
+
+        public Author author;
+
+        public string TermsType;
+
         public ContractDataManager()
         {
             Client = new ContactData();
@@ -40,6 +58,7 @@ namespace ProposalGenerator
             Assumptions = new List<string>();
             myTaskList = new List<ContractTask>();
             AddServ = new List<string>();
+            author = new Author();
         }
     }
 }

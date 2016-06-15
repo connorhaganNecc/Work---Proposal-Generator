@@ -206,3 +206,12 @@ C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGe
 C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\obj\Debug\UserControls\Contract\UC_ContractP_Pg6.baml
 C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\obj\Debug\UserControls\Contract\UC_ContractP_Pg7.g.cs
 C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\obj\Debug\UserControls\Contract\UC_ContractP_Pg7.baml
+C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\obj\Debug\UserControls\Contract\UC_ContractP_Pg6-Branch.g.cs
+C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\obj\Debug\UserControls\Contract\UC_ContractP_Pg6-Branch.baml
+C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\obj\Debug\UserControls\Contract\UC_ContractP_Pg8.g.cs
+C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\obj\Debug\UserControls\Contract\UC_ContractP_Pg8.baml
+C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\bin\Debug\Data\BulletPoints\CompensationLines1.docx
+C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\bin\Debug\Data\BulletPoints\CompensationLines2.docx
+C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\bin\Debug\Data\BulletPoints\ContractAuthorization.docx
+C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\obj\Debug\UserControls\Contract\UC_ContractP_Pg9.g.cs
+C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\obj\Debug\UserControls\Contract\UC_ContractP_Pg9.baml

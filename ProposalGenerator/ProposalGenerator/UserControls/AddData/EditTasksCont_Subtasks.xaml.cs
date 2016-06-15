@@ -23,8 +23,8 @@ namespace ProposalGenerator
     {
         ContractTaskList myList;
         int currIndex;
-
-
+        int subIndex;
+        bool hasLoaded = false;
 
         public EditTasksCont_Subtasks(int inIndex, ContractTaskList inList)
         {
@@ -32,6 +32,7 @@ namespace ProposalGenerator
             myList = inList;
             currIndex = inIndex;
             Header.Content = myList.myTasks[currIndex].HeadLevelItem;
+            subIndex = TaskSelector.SelectedIndex; 
             List<string> tempStrings = new List<string>();
             for(int i = 0; i < myList.myTasks[currIndex].subTasks.Count; i++)
             {
@@ -81,6 +82,25 @@ namespace ProposalGenerator
             Switcher.Switch(new MainWindow());
         }
         
+        void SaveData()
+        {
+            if (subIndex >= 0)
+            {
+                if (SubtaskClass.SelectedIndex == 0)
+                {
+                    myList.myTasks[currIndex].subTasks[subIndex].myClass = ContractSubtaskClass.Bullet;
+                }
+                else
+                {
+                    myList.myTasks[currIndex].subTasks[subIndex].myClass = ContractSubtaskClass.Letter;
+                }
+                myList.myTasks[currIndex].subTasks[subIndex].allowSubSub = (bool)AllowSubSubtaks.IsChecked;
+                myList.myTasks[currIndex].subTasks[subIndex].text = DescriptionBox.Text;
+                myList.myTasks[currIndex].subTasks[subIndex].CompensationText = CompensationName.Text;
+                ContractTaskSerializer.SerializeContractTasks(myList);
+            }
+        }
+
         private void btn_Finish(object sender, RoutedEventArgs e)
         {
             //if(currIndex>=0 && currIndex<myList.myTasks.Count)
@@ -95,25 +115,19 @@ namespace ProposalGenerator
             //{
             //    Switcher.Switch(new AddData());
             //}
-            if(TaskSelector.SelectedIndex >=0)
-            {
-                if (SubtaskClass.SelectedIndex == 0)
-                {
-                    myList.myTasks[currIndex].subTasks[TaskSelector.SelectedIndex].myClass = ContractSubtaskClass.Bullet;
-                }
-                else
-                {
-                    myList.myTasks[currIndex].subTasks[TaskSelector.SelectedIndex].myClass = ContractSubtaskClass.Letter;
-                }
-                myList.myTasks[currIndex].subTasks[TaskSelector.SelectedIndex].allowSubSub = (bool)AllowSubSubtaks.IsChecked;
-                myList.myTasks[currIndex].subTasks[TaskSelector.SelectedIndex].text = DescriptionBox.Text;
-            }
+            SaveData();
             Switcher.Switch(new EditTasksCont(myList, currIndex));
         }
 
         private void TaskSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(myList.myTasks[currIndex].subTasks[TaskSelector.SelectedIndex].myClass == ContractSubtaskClass.Bullet)
+            if(hasLoaded)
+            {
+                SaveData();
+            }
+            
+            subIndex = TaskSelector.SelectedIndex;
+            if (myList.myTasks[currIndex].subTasks[TaskSelector.SelectedIndex].myClass == ContractSubtaskClass.Bullet)
             {
                 SubtaskClass.SelectedIndex = 0;
             }
@@ -123,6 +137,7 @@ namespace ProposalGenerator
             }
             AllowSubSubtaks.IsChecked = myList.myTasks[currIndex].subTasks[TaskSelector.SelectedIndex].allowSubSub;
             DescriptionBox.Text = myList.myTasks[currIndex].subTasks[TaskSelector.SelectedIndex].text;
+            CompensationName.Text = myList.myTasks[currIndex].subTasks[TaskSelector.SelectedIndex].CompensationText;
             //for(int i = 0; i < myList.myTasks.Count; i++)
             //{
             //    if(TaskSelector.SelectedValue.ToString() ==  myList.myTasks[i].HeadLevelItem)
@@ -133,6 +148,10 @@ namespace ProposalGenerator
             //        Description.Text = myList.myTasks[i].Description;
             //    }
             //}
+            if(!hasLoaded)
+            {
+                hasLoaded = true;
+            }
         }
         private void ClassSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

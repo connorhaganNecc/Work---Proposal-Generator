@@ -32,6 +32,21 @@ namespace ProposalGenerator.Data
                 myData.TaskFileLoc = dlg.FileName;
             }
         }
+        public static void OpenContractTaskFileDialog()
+        {
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            dlg.FileName = "ContractTasks";
+            dlg.DefaultExt = ".xml";
+            dlg.Filter = "ContractTasks.xml (.xml)|ContractTasks.xml";
+
+            //Show save file dialog box
+            Nullable<bool> result = dlg.ShowDialog();
+
+            if (result == true)
+            {
+                myData.ContractTaskLoc = dlg.FileName;
+            }
+        }
         public static void OpenAddFileDialog()
         {
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
@@ -64,12 +79,14 @@ namespace ProposalGenerator.Data
         public string TaskFileLoc;
         public string DefaultOutputDirectory;
         public string AddItemsFileLoc;
+        public string ContractTaskLoc;
 
         public SettingsData()
         {
             TaskFileLoc = "NOTHING";
             DefaultOutputDirectory = "NOTHING";
             AddItemsFileLoc = "NOTHING";
+            ContractTaskLoc = "NOTHING";
         }
     }
 }

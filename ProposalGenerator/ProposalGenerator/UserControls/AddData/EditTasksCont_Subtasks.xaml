@@ -37,6 +37,8 @@
                 <RowDefinition Height="30" /> 
                 <RowDefinition Height="15" />
                 <RowDefinition Height="30" />
+                <RowDefinition Height="15" />
+                <RowDefinition Height="30" />
             </Grid.RowDefinitions>
             <ComboBox Name="TaskSelector" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2"
                       SelectionChanged="TaskSelector_SelectionChanged">
@@ -54,10 +56,13 @@
             <Label Content="Description" Grid.Column="0" Grid.Row="8"/>
             <TextBox Name="DescriptionBox" Grid.Column="1" Grid.Row="8" TextWrapping="Wrap" AcceptsReturn="True"/>
             
-            <Label Content="Allow Sub-Subtasks" Name="AllowSubSubtasksLabel" Grid.Column="0" Grid.Row="10" Visibility="Hidden"/>
-            <CheckBox Name="AllowSubSubtaks" Checked="subsubTasks_Checked" Unchecked="subsubTasks_Unchecked" Grid.Column="1" Grid.Row="10" Visibility="Hidden"/>
+            <Label Content="Compensation Name" Grid.Column="0" Grid.Row="10"/>
+            <TextBox Name="CompensationName" Grid.Column="1" Grid.Row="10" TextWrapping="Wrap" AcceptsReturn="False"/>
 
-            <Button Grid.ColumnSpan="2" Name="EditSubSub" Grid.Row="12" Visibility="Hidden" Click="editsubsub_Click">Edit Sub-SubTasks</Button>
+            <Label Content="Allow Sub-Subtasks" Name="AllowSubSubtasksLabel" Grid.Column="0" Grid.Row="12" Visibility="Hidden"/>
+            <CheckBox Name="AllowSubSubtaks" Checked="subsubTasks_Checked" Unchecked="subsubTasks_Unchecked" Grid.Column="1" Grid.Row="12" Visibility="Hidden"/>
+
+            <Button Grid.ColumnSpan="2" Name="EditSubSub" Grid.Row="14" Visibility="Hidden" Click="editsubsub_Click">Edit Sub-SubTasks</Button>
             <!--<Button Height="50" Padding="10" Margin="10" Width="200"
                     Grid.Row="8" Grid.Column="0"
                  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2"
@@ -65,22 +70,8 @@
                     Edit Task Text
             </Button>-->
 
-            <Grid Grid.Column="0" Grid.ColumnSpan="2"
-                  Grid.Row="9" Margin="20">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="300" />
-                    <ColumnDefinition Width="300" />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="30" />
-                    <RowDefinition Height="200" />
-                    <RowDefinition Height="75" />
-                </Grid.RowDefinitions>
-
-     
-
-            </Grid>
             
+
         </Grid>
 
         <DockPanel Grid.Column="2" Grid.Row="0">

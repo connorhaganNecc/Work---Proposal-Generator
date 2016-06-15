@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SettingsData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <TaskFileLoc>C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\bin\Debug\Data\tasks.xml</TaskFileLoc>
-  <DefaultOutputDirectory>C:\Users\connor\Documents\SampleProposalStuff</DefaultOutputDirectory>
-  <AddItemsFileLoc>C:\Users\connor\Documents\Work---Proposal-Generator\ProposalGenerator\ProposalGenerator\bin\Debug\Data\AddServices.xml</AddItemsFileLoc>
+  <TaskFileLoc>F:\ConnorsStuff\ProposalSettings\tasks.xml</TaskFileLoc>
+  <DefaultOutputDirectory>F:\ConnorsStuff\ProposalSettings\DebugOutput</DefaultOutputDirectory>
+  <AddItemsFileLoc>F:\ConnorsStuff\ProposalSettings\AddServices.xml</AddItemsFileLoc>
+  <ContractTaskLoc>F:\ConnorsStuff\ProposalSettings\DebugOutput\ContractTasks.xml</ContractTaskLoc>
 </SettingsData>

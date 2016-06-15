@@ -23,7 +23,7 @@ namespace ProposalGenerator
     {
         ContractTaskList myList;
         int currIndex;
-
+        bool hasLoaded = false;
 
 
         public EditTasksCont()
@@ -65,15 +65,25 @@ namespace ProposalGenerator
             Switcher.Switch(new MainWindow());
         }
         
+        void SaveData()
+        {
+            myList.myTasks[currIndex].HeadLevelItem = HeadText.Text;
+            if(!String.IsNullOrWhiteSpace(ServiceItem.Text))
+            {
+                myList.myTasks[currIndex].ServiceItemNum = Convert.ToInt32(ServiceItem.Text);
+            }
+            
+            myList.myTasks[currIndex].Description = Description.Text;
+            myList.myTasks[currIndex].allowsSubTasks = (bool)AllowSubtasks.IsChecked;
+            myList.myTasks[currIndex].CompensationText = CompensationText.Text;
+            ContractTaskSerializer.SerializeContractTasks(myList);
+        }
+
         private void btn_Finish(object sender, RoutedEventArgs e)
         {
             if(currIndex>=0 && currIndex<myList.myTasks.Count)
             {
-                myList.myTasks[currIndex].HeadLevelItem = HeadText.Text;
-                myList.myTasks[currIndex].ServiceItemNum = Convert.ToInt32(ServiceItem.Text);
-                myList.myTasks[currIndex].Description = Description.Text;
-                myList.myTasks[currIndex].allowsSubTasks = (bool)AllowSubtasks.IsChecked;
-                ContractTaskSerializer.SerializeContractTasks(myList);
+                SaveData();
                 Switcher.Switch(new AddData());
             }
             else
@@ -84,6 +94,11 @@ namespace ProposalGenerator
 
         private void TaskSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if(currIndex>=0 && hasLoaded)
+            {
+                SaveData();
+            }
+            
             for(int i = 0; i < myList.myTasks.Count; i++)
             {
                 if(TaskSelector.SelectedValue.ToString() ==  myList.myTasks[i].HeadLevelItem)
@@ -93,6 +108,7 @@ namespace ProposalGenerator
                     currIndex = i;
                     Description.Text = myList.myTasks[i].Description;
                     AllowSubtasks.IsChecked = myList.myTasks[i].allowsSubTasks;
+                    CompensationText.Text = myList.myTasks[i].CompensationText;
 
                     if(AllowSubtasks.IsChecked == true)
                     {
@@ -100,16 +116,19 @@ namespace ProposalGenerator
                     }
                 }
             }
+
+            if(!hasLoaded)
+            {
+                hasLoaded = true;
+            }
         }
 
         private void btn_EditSubtasks(object sender, RoutedEventArgs e)
         {
             if(currIndex>=0)
             {
-                myList.myTasks[currIndex].HeadLevelItem = HeadText.Text;
-                myList.myTasks[currIndex].ServiceItemNum = Convert.ToInt32(ServiceItem.Text);
-                myList.myTasks[currIndex].Description = Description.Text;
-                myList.myTasks[currIndex].allowsSubTasks = (bool)AllowSubtasks.IsChecked;
+
+                SaveData();
                 Switcher.Switch(new EditTasksCont_Subtasks(currIndex, myList));
             }
         }

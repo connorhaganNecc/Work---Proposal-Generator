@@ -37,11 +37,6 @@
             <TextBox Name="HeadText"
                      Grid.Column="1" Grid.Row="0" />
             
-            <Label Content="Body: " Target="{Binding ElementName=BodyText}"
-                   FontSize="14" Grid.Column="0" Grid.Row="2" />
-            <TextBox Name="BodyText"
-                     TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" AcceptsReturn="True"
-                     Grid.Column="1" Grid.Row="2" />
             
         </Grid>
 

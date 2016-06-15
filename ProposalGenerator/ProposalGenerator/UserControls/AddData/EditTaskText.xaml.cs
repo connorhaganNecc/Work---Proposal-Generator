@@ -79,7 +79,8 @@ namespace ProposalGenerator
         {
             System.Diagnostics.Debug.WriteLine("============================================");
             System.Diagnostics.Debug.WriteLine("================Begin=======================");
-            
+            System.Diagnostics.Debug.WriteLine("============================================");
+
             string rtfText; //string to save to db
             TextRange tr = new TextRange(Editor.Document.ContentStart, Editor.Document.ContentEnd);
             

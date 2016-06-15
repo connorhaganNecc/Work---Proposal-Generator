@@ -152,107 +152,109 @@
             </Border>
             <Border Background="GhostWhite" BorderBrush="Silver" BorderThickness="2" CornerRadius="8,8,3,3"
                     Grid.Row="4">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="50" />
-                        <RowDefinition Height="30" />
-                        <RowDefinition Height="30" />
-                        <RowDefinition Height="30" />
-                        <RowDefinition Height="30" />
-                        <RowDefinition Height="30" />
-                        <RowDefinition Height="30" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="150" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="100" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <Grid.Resources>
-                        <Style TargetType="{x:Type TextBox}">
-                            <Setter Property="Margin" Value="0,0,15,8" />
-                        </Style>
-                    </Grid.Resources>
-                    <TextBlock Grid.Row="0"  Grid.ColumnSpan="4" HorizontalAlignment="Center" 
-                           FontWeight="Bold" FontSize="16">Enter Property Location</TextBlock>
-                    <Label Content="_Same as Client" Target="{Binding ElementName=sameClientCheck}"
-                           FontSize="14" HorizontalAlignment="Left"
-                            Grid.Row="1" Grid.Column="0"/>
-                    <CheckBox Name="sameClientCheck"
-                              Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"
-                              Grid.Row="1" Grid.Column="1"/>
+                <ScrollViewer>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50" />
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.Resources>
+                            <Style TargetType="{x:Type TextBox}">
+                                <Setter Property="Margin" Value="0,0,15,8" />
+                            </Style>
+                        </Grid.Resources>
+                        <TextBlock Grid.Row="0"  Grid.ColumnSpan="4" HorizontalAlignment="Center" 
+                               FontWeight="Bold" FontSize="16">Enter Property Location</TextBlock>
+                        <Label Content="_Same as Client" Target="{Binding ElementName=sameClientCheck}"
+                               FontSize="14" HorizontalAlignment="Left"
+                                Grid.Row="1" Grid.Column="0"/>
+                        <CheckBox Name="sameClientCheck"
+                                  Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"
+                                  Grid.Row="1" Grid.Column="1"/>
                            
-                    <Label Content="_Address:" Target="{Binding ElementName=propAddress}"
-                           Name="propAddressLabel"
-                       FontSize="14" HorizontalAlignment="Left"
-                       Grid.Row="2" Grid.Column="0" />
+                        <Label Content="_Address:" Target="{Binding ElementName=propAddress}"
+                               Name="propAddressLabel"
+                           FontSize="14" HorizontalAlignment="Left"
+                           Grid.Row="2" Grid.Column="0" />
 
-                    <TextBox Name="propAddress"  
-                         Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" />
+                        <TextBox Name="propAddress"  
+                             Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" />
 
-                    <Label Content="_Town:" Target="{Binding ElementName=propTown}"
-                           Name="propTownLabel"
-                       FontSize="14" HorizontalAlignment="Left"
-                       Grid.Row="3" Grid.Column="0"/>
+                        <Label Content="_Town:" Target="{Binding ElementName=propTown}"
+                               Name="propTownLabel"
+                           FontSize="14" HorizontalAlignment="Left"
+                           Grid.Row="3" Grid.Column="0"/>
 
-                    <TextBox Name="propTown" 
-                         Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"/>
+                        <TextBox Name="propTown" 
+                             Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"/>
 
-                    <Label Content="_Zip:" Target="{Binding ElementName=propZip}"
-                           Name="propZipLabel"
-                       FontSize="14" HorizontalAlignment="Left"
-                       Grid.Row="4" Grid.Column="0"/>
+                        <Label Content="_Zip:" Target="{Binding ElementName=propZip}"
+                               Name="propZipLabel"
+                           FontSize="14" HorizontalAlignment="Left"
+                           Grid.Row="4" Grid.Column="0"/>
 
-                    <TextBox Name="propZip" 
-                         Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3"/>
+                        <TextBox Name="propZip" 
+                             Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3"/>
 
-                    <Label Content="_ASSESSOR'S MAP:" Target="{Binding ElementName=propZip}"
-                           Name="propAssMapLabel"
-                       FontSize="14" HorizontalAlignment="Left"
-                       Grid.Row="5" Grid.Column="0"/>
+                        <Label Content="_Assessor's map:" Target="{Binding ElementName=propZip}"
+                               Name="propAssMapLabel"
+                           FontSize="14" HorizontalAlignment="Left"
+                           Grid.Row="5" Grid.Column="0"/>
 
-                    <TextBox Name="propAssMap" 
-                         Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3"/>
+                        <TextBox Name="propAssMap" 
+                             Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3"/>
 
-                    <Label Content="_ASSESSOR'S BLOCK:" Target="{Binding ElementName=propZip}"
-                           Name="propAssBlockLabel"
-                       FontSize="14" HorizontalAlignment="Left"
-                       Grid.Row="6" Grid.Column="0"/>
+                        <Label Content="_Assessor's block:" Target="{Binding ElementName=propZip}"
+                               Name="propAssBlockLabel"
+                           FontSize="14" HorizontalAlignment="Left"
+                           Grid.Row="6" Grid.Column="0"/>
 
-                    <TextBox Name="propAssBlock" 
-                         Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3"/>
+                        <TextBox Name="propAssBlock" 
+                             Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3"/>
 
-                    <Label Content="_ASSESSOR'S LOT:" Target="{Binding ElementName=propZip}"
-                           Name="propAssBlockLot"
-                       FontSize="14" HorizontalAlignment="Left"
-                       Grid.Row="7" Grid.Column="0"/>
+                        <Label Content="_Assessor's lot:" Target="{Binding ElementName=propZip}"
+                               Name="propAssBlockLot"
+                           FontSize="14" HorizontalAlignment="Left"
+                           Grid.Row="7" Grid.Column="0"/>
 
-                    <TextBox Name="propAssLot" 
-                         Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3"/>
+                        <TextBox Name="propAssLot" 
+                             Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3"/>
 
-                    <!--<Label Content="_Assessor's Map:" Target="{Binding ElementName=propMap}"
-                       FontSize="14" HorizontalAlignment="Left"
-                       Grid.Row="4" Grid.Column="0"/>
+                        <!--<Label Content="_Assessor's Map:" Target="{Binding ElementName=propMap}"
+                           FontSize="14" HorizontalAlignment="Left"
+                           Grid.Row="4" Grid.Column="0"/>
 
-                    <TextBox Name="propMap" 
-                         Grid.Row="4" Grid.Column="1" />
+                        <TextBox Name="propMap" 
+                             Grid.Row="4" Grid.Column="1" />
 
-                    <Label Content="_Assessor's Lot:" Target="{Binding ElementName=propLot}"
-                       FontSize="14" HorizontalAlignment="Left"
-                       Grid.Row="5" Grid.Column="0"/>
+                        <Label Content="_Assessor's Lot:" Target="{Binding ElementName=propLot}"
+                           FontSize="14" HorizontalAlignment="Left"
+                           Grid.Row="5" Grid.Column="0"/>
 
-                    <TextBox Name="propLot" 
-                         Grid.Row="5" Grid.Column="1" />
+                        <TextBox Name="propLot" 
+                             Grid.Row="5" Grid.Column="1" />
                     
-                    <Label Content="_Assessor's Block:" Target="{Binding ElementName=propBlock}"
-                       FontSize="14" HorizontalAlignment="Left"
-                       Grid.Row="6" Grid.Column="0"/>
+                        <Label Content="_Assessor's Block:" Target="{Binding ElementName=propBlock}"
+                           FontSize="14" HorizontalAlignment="Left"
+                           Grid.Row="6" Grid.Column="0"/>
 
-                    <TextBox Name="propBlock" 
-                         Grid.Row="6" Grid.Column="1" />-->
+                        <TextBox Name="propBlock" 
+                             Grid.Row="6" Grid.Column="1" />-->
 
-                </Grid>
+                    </Grid>
+                </ScrollViewer>
                 <!-- End Property Located -->
             </Border>
 

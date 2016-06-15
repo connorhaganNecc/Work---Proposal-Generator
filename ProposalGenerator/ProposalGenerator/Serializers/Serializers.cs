@@ -129,14 +129,14 @@ namespace ProposalGenerator
         }
         public static void SerializeContractTasks(ProposalGenerator.ContractTaskList inTaskList)
         {
-            TextWriter WriteFileStream = new StreamWriter("Data/ContractTasks.xml");
+            TextWriter WriteFileStream = new StreamWriter(Data.Settings.myData.ContractTaskLoc);
             serialObj.Serialize(WriteFileStream, inTaskList);
             WriteFileStream.Close();
         }
 
         public static ContractTaskList DeserializeContractTasks()
         {
-            FileStream ReadFileStream = new FileStream("Data/ContractTasks.xml", FileMode.Open, FileAccess.Read);
+            FileStream ReadFileStream = new FileStream(Data.Settings.myData.ContractTaskLoc, FileMode.Open, FileAccess.Read);
             ContractTaskList myData = serialObj.Deserialize(ReadFileStream) as ContractTaskList;
             ReadFileStream.Close();
             return myData;

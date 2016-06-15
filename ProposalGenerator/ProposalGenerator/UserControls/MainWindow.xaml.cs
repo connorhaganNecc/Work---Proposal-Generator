@@ -75,6 +75,7 @@ namespace ProposalGenerator
             myData = new DataManager();
             myData = myParent.myData;
             myParent.myData = new DataManager();
+            myParent.contractData = new ContractDataManager();
             DocumentController.ClearFilename();
         }
     }

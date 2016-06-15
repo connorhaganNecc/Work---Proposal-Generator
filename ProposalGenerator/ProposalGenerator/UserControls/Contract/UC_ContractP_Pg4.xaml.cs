@@ -244,6 +244,7 @@ namespace ProposalGenerator
                                     temp.HeadLevelItem = myData.myTaskList[k].HeadLevelItem;
                                     temp.ServiceItemNum = myData.myTaskList[k].ServiceItemNum;
                                     temp.subTasks = myData.myTaskList[k].subTasks;
+                                    temp.CompensationText = myData.myTaskList[k].CompensationText;
                                     MyTaskList.Add(temp);
                                 }
                             }
@@ -254,6 +255,7 @@ namespace ProposalGenerator
                                 temp.Description = officialList.myTasks[j].Description;
                                 temp.HeadLevelItem = officialList.myTasks[j].HeadLevelItem;
                                 temp.ServiceItemNum = officialList.myTasks[j].ServiceItemNum;
+                                temp.CompensationText = officialList.myTasks[j].CompensationText;
                                 MyTaskList.Add(temp);
                             }
                             j = 10000;

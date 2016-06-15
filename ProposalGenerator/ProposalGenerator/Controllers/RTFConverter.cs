@@ -16,6 +16,7 @@ namespace ProposalGenerator
         {
             System.Diagnostics.Debug.WriteLine("============================================");
             System.Diagnostics.Debug.WriteLine("================Begin=======================");
+            System.Diagnostics.Debug.WriteLine("============================================");
 
             string rtfText; //string to save to dbs
 
@@ -168,7 +169,7 @@ namespace ProposalGenerator
                                 if (useItalic)
                                 {
                                     tempArray[j] = tempArray[j].Insert(0, Tags.StartItalics());
-                                    tempArray[j] = tempArray[j].Insert(tempArray[j].Length - 1, Tags.EndItalics());
+                                    tempArray[j] = tempArray[j].Insert(tempArray[j].Length, Tags.EndItalics());
                                 }
 
                                 if (useBullets)
