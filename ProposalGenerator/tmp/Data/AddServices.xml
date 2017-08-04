@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AdditionalServiceList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <itemList>
+    <AdditionalServiceItem>
+      <name>Additional meetings</name>
+      <text>Additional meetings.</text>
+      <ignoreTaskTags />
+      <ignoreTypeTags />
+    </AdditionalServiceItem>
+    <AdditionalServiceItem>
+      <name>Analysis of development</name>
+      <text>Analysis of development potential for contiguous land under the same ownership.</text>
+      <ignoreTaskTags />
+      <ignoreTypeTags />
+    </AdditionalServiceItem>
+    <AdditionalServiceItem>
+      <name>Changes requested after substantial completion.</name>
+      <text>Changes to the plan requested by any Board, 3rd party reviewer or the Client after substantial completion.</text>
+      <ignoreTaskTags />
+      <ignoreTypeTags />
+    </AdditionalServiceItem>
+    <AdditionalServiceItem>
+      <name>Construction layout services</name>
+      <text>Construction layout services may be required by your contractor.  We will provide you with an estimate for the layout work if this is necessary.</text>
+      <ignoreTaskTags />
+      <ignoreTypeTags />
+    </AdditionalServiceItem>
+    <AdditionalServiceItem>
+      <name>Demo</name>
+      <text>Demo</text>
+      <ignoreTaskTags>
+        <string>ANR</string>
+      </ignoreTaskTags>
+      <ignoreTypeTags>
+        <string>ANR</string>
+        <string>General</string>
+        <string>LOMA Application</string>
+        <string>LOMA with Flood Plain Elevation</string>
+        <string>LOMA Zone AE</string>
+        <string>NOI</string>
+        <string>Septic Repair</string>
+        <string>Site Plan</string>
+        <string>Survey</string>
+      </ignoreTypeTags>
+    </AdditionalServiceItem>
+    <AdditionalServiceItem>
+      <name>Landscape Design</name>
+      <text>Landscape Design.</text>
+      <ignoreTaskTags />
+      <ignoreTypeTags />
+    </AdditionalServiceItem>
+    <AdditionalServiceItem>
+      <name>Leeching facility</name>
+      <text>At times sanitary disposal systems involve pumping to the leaching facility.  If your system requires a pump an additional $250 will be charged.</text>
+      <ignoreTaskTags />
+      <ignoreTypeTags>
+        <string>ANR</string>
+        <string>General</string>
+        <string>LOMA Application</string>
+        <string>LOMA with Flood Plain Elevation</string>
+        <string>LOMA Zone AE</string>
+        <string>NOI</string>
+        <string>Site Plan</string>
+        <string>Survey</string>
+      </ignoreTypeTags>
+    </AdditionalServiceItem>
+    <AdditionalServiceItem>
+      <name>Local Upgrade Approval Application</name>
+      <text>If a Local Upgrade Approval Application with the %TOWN% Board of Health is necessary for this septic system repair, abutters will be notified of the hearing by certified mail/return receipt requested and we shall attend the public hearing (estimate of 1 hearing).  The fee for this service is $500 exclusive of postage to notify abutters.</text>
+      <ignoreTaskTags />
+      <ignoreTypeTags>
+        <string>ANR</string>
+        <string>General</string>
+        <string>LOMA Application</string>
+        <string>LOMA with Flood Plain Elevation</string>
+        <string>LOMA Zone AE</string>
+        <string>NOI</string>
+        <string>Site Plan</string>
+        <string>Survey</string>
+      </ignoreTypeTags>
+    </AdditionalServiceItem>
+    <AdditionalServiceItem>
+      <name>Resolve property line or title error</name>
+      <text>Work required to resolve a property line or title error is not included.  We have assumed that records deeds and plans are free from error and that property line monuments can be reasonably located near the premises.</text>
+      <ignoreTaskTags />
+      <ignoreTypeTags />
+    </AdditionalServiceItem>
+    <AdditionalServiceItem>
+      <name>Survey or wetland delineation with snow ground cover</name>
+      <text>Survey or wetland delineation with snow ground cover.</text>
+      <ignoreTaskTags />
+      <ignoreTypeTags />
+    </AdditionalServiceItem>
+    <AdditionalServiceItem>
+      <name>Temp</name>
+      <text>Temp</text>
+      <ignoreTaskTags />
+      <ignoreTypeTags>
+        <string>ANR</string>
+        <string>General</string>
+        <string>LOMA Application</string>
+        <string>LOMA with Flood Plain Elevation</string>
+        <string>LOMA Zone AE</string>
+        <string>NOI</string>
+        <string>Septic Repair</string>
+        <string>Site Plan</string>
+        <string>Survey</string>
+      </ignoreTypeTags>
+    </AdditionalServiceItem>
+    <AdditionalServiceItem>
+      <name>Wetland delineation or mitigation.</name>
+      <text>Wetland delineation or mitigation.</text>
+      <ignoreTaskTags />
+      <ignoreTypeTags />
+    </AdditionalServiceItem>
+    <AdditionalServiceItem>
+      <name>Work associated with any other offsite mitigation.</name>
+      <text>Work associated with any other offsite mitigation.</text>
+      <ignoreTaskTags />
+      <ignoreTypeTags />
+    </AdditionalServiceItem>
+    <AdditionalServiceItem>
+      <name>Architectural or structural drawings.</name>
+      <text>Architectural or structural drawings.</text>
+      <ignoreTaskTags />
+      <ignoreTypeTags />
+    </AdditionalServiceItem>
+  </itemList>
+</AdditionalServiceList>

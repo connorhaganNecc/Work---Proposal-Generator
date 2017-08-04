@@ -190,7 +190,7 @@ namespace ProposalGenerator
                             {
                                 if(!string.IsNullOrEmpty(OpF1.Text))
                                 {
-                                    myData.septicReviewFee = Convert.ToSingle(OpF1.Text);
+                                    myData.septicReviewFee = Convert.ToSingle(HelperFunctions.StripAlphabetic(OpF1.Text));
                                 }
                                 
                                 myData.septicReviewNum = currIndex;
@@ -199,7 +199,7 @@ namespace ProposalGenerator
                             {
                                 if(!string.IsNullOrEmpty(OpF1.Text))
                                 {
-                                    myData.soilTestingFee = Convert.ToSingle(OpF1.Text);
+                                    myData.soilTestingFee = Convert.ToSingle(HelperFunctions.StripAlphabetic(OpF1.Text));
                                 }
                                
                             }
@@ -213,7 +213,7 @@ namespace ProposalGenerator
                             {
                                 if(!string.IsNullOrEmpty(OpF2.Text))
                                 {
-                                    myData.septicReviewFee = Convert.ToSingle(OpF2.Text);
+                                    myData.septicReviewFee = Convert.ToSingle(HelperFunctions.StripAlphabetic(OpF2.Text));
                                 }
                                 
                                 myData.septicReviewNum = currIndex;
@@ -222,7 +222,7 @@ namespace ProposalGenerator
                             {
                                 if(!string.IsNullOrEmpty(OpF2.Text))
                                 {
-                                    myData.soilTestingFee = Convert.ToSingle(OpF2.Text);
+                                    myData.soilTestingFee = Convert.ToSingle(HelperFunctions.StripAlphabetic(OpF2.Text));
                                 }
                                
                             }
@@ -236,7 +236,7 @@ namespace ProposalGenerator
                             {
                                 if(!string.IsNullOrEmpty(OpF3.Text))
                                 {
-                                    myData.septicReviewFee = Convert.ToSingle(OpF3.Text);
+                                    myData.septicReviewFee = Convert.ToSingle(HelperFunctions.StripAlphabetic(OpF3.Text));
                                 }
                                 
                                 myData.septicReviewNum = currIndex;
@@ -245,7 +245,7 @@ namespace ProposalGenerator
                             {
                                 if(!string.IsNullOrEmpty(OpF3.Text))
                                 {
-                                    myData.soilTestingFee = Convert.ToSingle(OpF3.Text);
+                                    myData.soilTestingFee = Convert.ToSingle(HelperFunctions.StripAlphabetic(OpF3.Text));
                                 }
                                
                             }
@@ -259,7 +259,7 @@ namespace ProposalGenerator
                             {
                                 if(!string.IsNullOrEmpty(OpF4.Text))
                                 {
-                                    myData.septicReviewFee = Convert.ToSingle(OpF4.Text);
+                                    myData.septicReviewFee = Convert.ToSingle(HelperFunctions.StripAlphabetic(OpF4.Text));
                                 }
                                 
                                 myData.septicReviewNum = currIndex;
@@ -268,7 +268,7 @@ namespace ProposalGenerator
                             {
                                 if(!string.IsNullOrEmpty(OpF4.Text))
                                 {
-                                    myData.soilTestingFee = Convert.ToSingle(OpF4.Text);
+                                    myData.soilTestingFee = Convert.ToSingle(HelperFunctions.StripAlphabetic(OpF4.Text));
                                 }
                                 
                             }

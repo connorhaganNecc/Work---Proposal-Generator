@@ -251,7 +251,7 @@ namespace ProposalGenerator
                 tempTable.Rows[i].Cells[2].Width = 200;
                 if (!String.IsNullOrWhiteSpace(inList.myTasks[i].fee))
                 {
-                    tempTable.Rows[i].Cells[2].Paragraphs[0].InsertText("$" + Convert.ToSingle(inList.myTasks[i].fee).ToString("N"), false, FormattingTypes.DefaultParagraph());
+                    tempTable.Rows[i].Cells[2].Paragraphs[0].InsertText("$" + Convert.ToSingle(HelperFunctions.StripAlphabetic(inList.myTasks[i].fee)).ToString("N"), false, FormattingTypes.DefaultParagraph());
                 }
             }
             //for(int i = 0; i < inList.myTasks.Count; i++)
@@ -636,7 +636,7 @@ namespace ProposalGenerator
                     Paragraph newPara;
                     if (!string.IsNullOrEmpty(inTask.fee))
                     {
-                        newPara = doc.InsertParagraph("\t\t\t\tThe fee for this service is " + PresetParagraphs.GetTab() + "$" + Convert.ToSingle(inTask.fee).ToString("N"), false, FormattingTypes.DefaultParagraph());
+                        newPara = doc.InsertParagraph("\t\t\t\tThe fee for this service is " + PresetParagraphs.GetTab() + "$" + Convert.ToSingle(HelperFunctions.StripAlphabetic(inTask.fee)).ToString("N"), false, FormattingTypes.DefaultParagraph());
                     }
                     else
                     {

@@ -43,13 +43,7 @@ namespace ProposalGenerator
         {
             ForceComboLoad();
             //Handle Proposal Type
-            for (int i = 0; i < Combo.Items.Count; i++)
-            {
-                if(Combo.Items[i].ToString() == myData.ProposalType.ToString())
-                {
-                    comboStartIndex = i;
-                }
-            }
+            
 
             //Property stuff
             propAssMap.Text = myData.Property.map;
@@ -163,7 +157,7 @@ namespace ProposalGenerator
                 property.zip = client.zip;
             }
 
-            myData.ProposalType = Combo.SelectedItem.ToString();
+            
 
             //DocumentController.WriteContractProp(myData);
             if(!myData.PAGE2VISIT)
@@ -195,8 +189,7 @@ namespace ProposalGenerator
 
         private void ForceComboLoad()
         { 
-            Combo.ItemsSource = new ProposalTypes().myList;
-            Combo.SelectedIndex = 0;
+
         }
 
         private void ComboBox_Loaded(object sender, RoutedEventArgs e)

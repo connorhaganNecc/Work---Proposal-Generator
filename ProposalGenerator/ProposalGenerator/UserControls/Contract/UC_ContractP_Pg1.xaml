@@ -33,7 +33,7 @@
                 <RowDefinition Height="30" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <Border Background="GhostWhite" BorderBrush="Silver" BorderThickness="2" CornerRadius="8,8,3,3" Grid.Row="0">
+            <!--<Border Background="GhostWhite" BorderBrush="Silver" BorderThickness="2" CornerRadius="8,8,3,3" Grid.Row="0">
                 <Grid Grid.Row="0">
 
                     <Grid.ColumnDefinitions>
@@ -55,7 +55,7 @@
                     SelectionChanged="ComboBox_SelectionChanged" />
 
                 </Grid>
-            </Border>
+            </Border>-->
             <!-- Client Section -->
             <Border Background="GhostWhite" BorderBrush="Silver" BorderThickness="2" CornerRadius="8,8,3,3" Grid.Row="2">
 

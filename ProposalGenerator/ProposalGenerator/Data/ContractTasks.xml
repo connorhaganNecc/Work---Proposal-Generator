@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContractTaskList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <myTasks>
+    <ContractTask>
+      <HeadLevelItem>Administration</HeadLevelItem>
+      <Description>MCG will provide up to forty (40) hours of construction oversight consulting to review the bid package, review shop drawings, provide assistance to clarify plan/specification questions during construction and similar administrative assistance.  </Description>
+      <ServiceItemNum>900</ServiceItemNum>
+      <CompensationText>Administration</CompensationText>
+      <subTasks />
+      <cost>0</cost>
+      <allowsSubTasks>false</allowsSubTasks>
+    </ContractTask>
+    <ContractTask>
+      <HeadLevelItem>CLOSE OUT DOCUMENTS</HeadLevelItem>
+      <Description>MCG will prepare a request for Certificate of Compliance from the Conservation Commission and file along with the as-built drawing prepared above.  Scope of Services includes performing an as-built survey of the constructed site and preparation of an as-built plan. It is assumed that the site will be constructed within substantial compliance with the approved plans and Order of Conditions.  Scope includes attendance at one (1) meeting with the Conservation Commission.</Description>
+      <ServiceItemNum>0</ServiceItemNum>
+      <CompensationText>Close out documents</CompensationText>
+      <subTasks />
+      <cost>0</cost>
+      <allowsSubTasks>false</allowsSubTasks>
+    </ContractTask>
+    <ContractTask>
+      <HeadLevelItem>CONCEPT PLAN</HeadLevelItem>
+      <Description>Utilizing record and non-record information obtained from various sources, MCG will prepare a conceptual development plan illustrating the proposed commercial development.  The concept will illustrate the development potential of the site taking into consideration the proposed building size, wetlands constraints and applicable zoning constraints.  The concept plan will be used for preliminary discussions with the client and potentially the Town of %TOWN%.</Description>
+      <ServiceItemNum>0</ServiceItemNum>
+      <CompensationText>Concept Plan</CompensationText>
+      <subTasks />
+      <cost>0</cost>
+      <allowsSubTasks>false</allowsSubTasks>
+    </ContractTask>
+    <ContractTask>
+      <HeadLevelItem>CONSTRUCTION ADMINISTRATION</HeadLevelItem>
+      <Description>MCG will provide construction phase administration services during the pre-bid, bid and construction phase of the project.  These services will generally include preparation of construction specifications in support of the site plans, minor revisions to the permit drawings in accordance with the final building permit plans, meetings with the development team, review of shop drawings and other submittals during construction and addressing requests for information (RFI’s) during construction.</Description>
+      <ServiceItemNum>900</ServiceItemNum>
+      <CompensationText>Construction Administration</CompensationText>
+      <subTasks />
+      <cost>0</cost>
+      <allowsSubTasks>false</allowsSubTasks>
+    </ContractTask>
+    <ContractTask>
+      <HeadLevelItem>CONSTRUCTION DOCUMENTS</HeadLevelItem>
+      <Description>MCG will reconcile the approved permit drawings with the final architectural plans.  Scope of work includes verifying the building footprint and placement on the property and adjusting grades around the perimeter of the building in accordance with the architect’s recommendations and adjusting the utility service connections based on the results of the video inspection provided by the Client and the MEP Engineers recommendations.   A total of eight (8) hours by a professional engineer, four ($) hours by a staff engineer and four (4) hours by an administrative assistant have been included in the Scope of Services.</Description>
+      <ServiceItemNum>0</ServiceItemNum>
+      <CompensationText>Construction Documents</CompensationText>
+      <subTasks />
+      <cost>0</cost>
+      <allowsSubTasks>false</allowsSubTasks>
+    </ContractTask>
+    <ContractTask>
+      <HeadLevelItem>CONSTRUCTION SURVEY</HeadLevelItem>
+      <Description>MCG will provide construction phase surveying services including layout of the foundation, foundation certification and a final as-built plan to be submitted to the town. </Description>
+      <ServiceItemNum>0</ServiceItemNum>
+      <CompensationText>Construction Survey</CompensationText>
+      <subTasks />
+      <cost>0</cost>
+      <allowsSubTasks>false</allowsSubTasks>
+    </ContractTask>
+    <ContractTask>
+      <HeadLevelItem>DESIGN DEVELOPMENT</HeadLevelItem>
+      <Description>Utilizing the design concept approved by the Client, MCG will prepare and include the following as part of the definitive subdivision plan submission to the %TOWN% Planning Board:</Description>
+      <ServiceItemNum>400</ServiceItemNum>
+      <CompensationText>Design Development</CompensationText>
+      <subTasks>
+        <ContractSubTask>
+          <myClass>Letter</myClass>
+          <text />
+          <name>Definitive Subdivision Plan</name>
+          <CompensationText>Definitive Subdivision Plan</CompensationText>
+          <cost>0</cost>
+          <allowSubSub>true</allowSubSub>
+          <SubItems>
+            <SubSubtask>
+              <name>Plan Sheet</name>
+              <description>&lt;BOLD&gt;Sheet _: (Sheet name here)&lt;/BOLD&gt;</description>
+            </SubSubtask>
+          </SubItems>
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Letter</myClass>
+          <text>MCG will prepare an Environmental Impact Statement in accordance with the NSR including a discussion on the impacts to environment, traffic (generally), stormwater (referencing the drainage report above), wastewater disposal and water supply.  Scope includes time to coordinate with the Client.</text>
+          <name>Environmental Analysis</name>
+          <CompensationText>Environmental Analysis</CompensationText>
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Letter</myClass>
+          <text>MCG will prepare a SWPPP to EPA stormwater requirements to control erosion and sedimentation during construction.  This is required for all projects which exceed 1 acre of land disturbance.  Scope includes preparation of an Erosion and Sediment Control Plan and details illustrating the location, type and construction requirements for best management practices including, but not limited to, haybales/silt fence/mulch socks, stabilized construction entrances, inlet/outlet protection, slope stabilization and stockpiling of materials.  A Best Management Practices – Construction Phase Operations and Maintenance Plan will also be prepared to be incorporated into the permitting documents.</text>
+          <name>Stormwater Pollution Prevention Plan (SWPPP)</name>
+          <CompensationText>SWPPP</CompensationText>
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Letter</myClass>
+          <text>Upon obtaining approval of the definitive subdivision, MCG will prepare individual lot designs for the house lots.  Scope of work includes fine grading the lots, designing a conventional septic system (no alternative systems or pumps), water connections, landscape areas (provided by the Client), house footprint (provided by the Client) and other site improvement features requested by the Client.  The plans will be suitable for filing for permits from the Board of Health, Conservation Commission and Building Inspector.</text>
+          <name>Individual Lot Designs</name>
+          <CompensationText>Individual Lot Designs</CompensationText>
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Letter</myClass>
+          <text>Utilizing the design concept approved by the Client and incorporating comments from the town staff, MCG will prepare and include the following as part of the site development permit plans for submittal to the %TOWN% Planning Board.  The plans will be suitable for permitting and construction:</text>
+          <name>Site Development Permit Plans</name>
+          <CompensationText>Site Development Permit Plans</CompensationText>
+          <cost>0</cost>
+          <allowSubSub>true</allowSubSub>
+          <SubItems>
+            <SubSubtask>
+              <name>Plan Sheet</name>
+              <description>&lt;BOLD&gt;Sheet _: (Sheet name here)&lt;/BOLD&gt;</description>
+            </SubSubtask>
+          </SubItems>
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Bullet</myClass>
+          <text />
+          <name>Plan Sheet</name>
+          <CompensationText />
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Letter</myClass>
+          <text>MCG will prepare a Drainage Calculations and Stormwater Management Plan in accordance with the %TOWN% Site Plan Approval Bylaw and following the Department of Environmental Protection’s (DEP’s) Stormwater Management Regulations (SMR) as revised Jan. 2, 2008 as a guideline. It is presumed that the development will result in an increase in paved/building surfaces and therefore must fully comply with the SMR and be in accordance with the %TOWN% Zoning By-Law.  Scope includes design of a subsurface mitigation system to mitigate peak rates of runoff for up to a 100-year storm event, sizing calculations for the proposed drainage system, pre- vs. post-development watershed analysis using the software program HydroCAD, TSS Removal and water quality calculations, groundwater recharge calculations and preparation of a Stormwater Management Form.  The report will include all calculations prepared above, drainage narrative, locus figures, pre- and post-development watershed plans and a Best Management Practices (BMP) Post-Development Operation and Construction Phase Maintenance Plan. </text>
+          <name>Drainage Calculations, Stormwater Management Plan and Operations and Maintenance Plans</name>
+          <CompensationText>Drainage Calculations</CompensationText>
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Letter</myClass>
+          <text>MCG will prepare a Sanitary Disposal System Design in accordance with the local Board of Health Regulations and the State Environmental Code, Title 5.</text>
+          <name>Sanitary Disposal System Design</name>
+          <CompensationText>Sanitary System Design</CompensationText>
+          <cost>0</cost>
+          <allowSubSub>true</allowSubSub>
+          <SubItems>
+            <SubSubtask>
+              <name>Sieve Analysis</name>
+              <description>At times a sieve analysis (conducted by a certified lab) is used in lieu of a percolation test due to saturated soil conditions on site.  If it is determined that a sieve analysis is required, then an additional $150/soil sample will be charged.  Generally 1-2 soil samples are required. 
+</description>
+            </SubSubtask>
+            <SubSubtask>
+              <name>Alternative Technology</name>
+              <description>If an alternative technology component is required as part of the system design we shall contact you prior to the commencement of any design work and will inform you of expected additional costs which would be shown as “extras” on your invoices.</description>
+            </SubSubtask>
+          </SubItems>
+        </ContractSubTask>
+      </subTasks>
+      <cost>0</cost>
+      <allowsSubTasks>true</allowsSubTasks>
+    </ContractTask>
+    <ContractTask>
+      <HeadLevelItem>EXISTING CONDITIONS SURVEY AND PLAN</HeadLevelItem>
+      <Description>MCG will prepare an Existing Conditions Plan to illustrate existing site features and property lines.  Scope includes:</Description>
+      <ServiceItemNum>300</ServiceItemNum>
+      <CompensationText>Existing Conditions</CompensationText>
+      <subTasks>
+        <ContractSubTask>
+          <myClass>Bullet</myClass>
+          <text>Perform research at the Registry of Deeds and City Hall offices.</text>
+          <name>Research</name>
+          <CompensationText>Research</CompensationText>
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Bullet</myClass>
+          <text>Compile all research data and perform property line calculations.</text>
+          <name>Compile Research &amp; Property Line Calculation</name>
+          <CompensationText>Property Line Calculation</CompensationText>
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Bullet</myClass>
+          <text>Download and compile all data obtained during the field survey and research.</text>
+          <name>Download and Compile Survey Info</name>
+          <CompensationText>Compile Data</CompensationText>
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Bullet</myClass>
+          <text>Preparation of an existing conditions plot plan which will include all information collected during research and field survey, property line information and information furnished by Client.</text>
+          <name>Existing Conditions Plot Plan</name>
+          <CompensationText />
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+      </subTasks>
+      <cost>0</cost>
+      <allowsSubTasks>true</allowsSubTasks>
+    </ContractTask>
+    <ContractTask>
+      <HeadLevelItem>PERMITTING  </HeadLevelItem>
+      <Description />
+      <ServiceItemNum>500</ServiceItemNum>
+      <CompensationText>Permitting</CompensationText>
+      <subTasks>
+        <ContractSubTask>
+          <myClass>Letter</myClass>
+          <text>MCG will assist the Client and permitting attorney with the preparation of a Project Starts Application.  Scope includes reviewing the project narrative, providing statistical information, zoning analysis, preparing resumes in support of the development team and coordination with other team members.  </text>
+          <name>Assist with Project Eligibility Letter</name>
+          <CompensationText>Project Eligibility Letter</CompensationText>
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Letter</myClass>
+          <text>MCG will prepare a WPA Form 3 Notice of Intent Application and related documents under the Mass. Wetlands Protection Act (MGL Ch. 131 s. 40) and its Regulations (310 CMR 10.00) to be filed with the %TOWN% Conservation Commission and the Department of Environmental Protection Northeast Regional Office (DEP-NERO).  Scope of services also includes preparing a project narrative, certified abutter notices, legal advertisement, reproduction of plans, application and stormwater reports and coordination as necessary to complete the application.   </text>
+          <name>Notice of Intent Application</name>
+          <CompensationText>NOI Application</CompensationText>
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Letter</myClass>
+          <text>MCG will provide engineering consulting services in a supporting role to the permitting attorney in preparing and filing an Application for the project with the %TOWN% Zoning Board of Appeals in accordance with the requirements of 760 CMR 56.05 (2).  Scope will include reproduction of plans and reports and coordination with the permitting attorney to review project narratives and other submittal information. </text>
+          <name>Assist with Application to %TOWN% Zoning Board of Appeals </name>
+          <CompensationText>ZBA Application</CompensationText>
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Letter</myClass>
+          <text>Preparation of the Definitive Subdivision Application.  Scope of Services includes a total of eight (8) hours by a staff administrator and eight (8) hours by a project manager to coordinate the submittal including cover letter, abutters, applications, delivery to town departments and reproduction of plans and reports. </text>
+          <name>Preparation of Form C: Definitive Subdivision Application</name>
+          <CompensationText>Prep of Form C</CompensationText>
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Letter</myClass>
+          <text />
+          <name>Notice of Intent Application for House Lot</name>
+          <CompensationText>Notice of Intent</CompensationText>
+          <cost>0</cost>
+          <allowSubSub>true</allowSubSub>
+          <SubItems>
+            <SubSubtask>
+              <name>Prep of WPA Form 3</name>
+              <description>Preparation of WPA Form 3: Notice of Intent.</description>
+            </SubSubtask>
+            <SubSubtask>
+              <name>Prep of FEMA Figures</name>
+              <description>Preparation of FEMA, and NHESP Figures.</description>
+            </SubSubtask>
+            <SubSubtask>
+              <name>Certified List of Abutters</name>
+              <description>Obtain a certified list of abutters from the Assessor’s Office and send notification to abutters by certified mail.</description>
+            </SubSubtask>
+            <SubSubtask>
+              <name>Wetland Fee Transmittal</name>
+              <description>Preparation of Wetland Fee Transmittal Form and submit fee and form to DEP.</description>
+            </SubSubtask>
+            <SubSubtask>
+              <name>Submittal of WPA Form 3</name>
+              <description>Submittal of the WPA Form 3, Drainage Calculations and Stormwater Management Plan and Operations &amp; Maintenance and supporting documents to the Newbury Conservation Commission and DEP Northeast Regional Office (NERO).</description>
+            </SubSubtask>
+          </SubItems>
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Letter</myClass>
+          <text>MCG will submit the lot design plans prepared above with a disposal works construction permit and fee to the Board of Health. </text>
+          <name>Septic System Permitting for House Lots</name>
+          <CompensationText>Septic System Permitting</CompensationText>
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Letter</myClass>
+          <text>Upon completion of project permitting and confirmation of the project start of construction, MCG will prepare an application to the Environmental Protection Agency as required under the National Pollutant Discharge Elimination System Construction General Permit (NPDES-CGP) for all projects exceeding 1 acre in total site disturbance.  Scope includes preparation of a construction binder inclusive of all required documents under the NPDES-CGP and SWPPP.</text>
+          <name>NPDES – EPA Notice of Intent</name>
+          <CompensationText>NPDES</CompensationText>
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Letter</myClass>
+          <text>Assist permitting attorney with submission of the Definitive Subdivision Application.  Scope of Services includes a total of four (4) hours by a staff administrator and four (4) hours by a project manager for coordination with the permitting attorney, reproduction of plans and reports and hand delivery to the permitting attorney. </text>
+          <name>Assist in Preparation of Form C: Definitive Subdivision Application</name>
+          <CompensationText>Form C</CompensationText>
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Letter</myClass>
+          <text>MCG will file a notification to the Army Corps of Engineers for filling of a federally jurisdictional wetland resource area (bordering vegetated wetland) under 5,000 square feet.  Scope includes submittal of the subdivision plans and documents, cover letter description of the resource alteration and mitigation.  This process may result in a finding for additional permitting or investigation of the project.  If so, a separate scope of work and estimated fee will be provided for approval.</text>
+          <name>Army Corp of Engineers Notification</name>
+          <CompensationText>Army Corp of Engineers</CompensationText>
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Letter</myClass>
+          <text>MCG will prepare a special permit application to the Planning Board.  The cover letter prepared for the pre-application meeting will be updated based on the final design and submitted with other required documents to the Planning Board. </text>
+          <name>FRD Special Permit Application – Planning Board</name>
+          <CompensationText>FRD Special Permit</CompensationText>
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Letter</myClass>
+          <text>MCG will prepare a WPA Form 3A – Notice of Intent Application and associated documents including USGS, NHESP, FEMA and Soils Figures, Stormwater Report Checklist and abutter notices.  The drainage report prepared above will be filed with the NOI along with the Plans to the %TOWN% Conservation Commission and DEP NERO.  </text>
+          <name>Notice of Intent – Conservation Commission</name>
+          <CompensationText>Notice of Intent - ConCom</CompensationText>
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Letter</myClass>
+          <text>MCG will assist the Client in preparing the variance application to the Zoning Board of Appeals for relief on lot coverage and side yard setbacks (as well as any other relief that is determined during design development).  Scope includes providing information to help prepare the cover letter project narrative and time to reproduce plans and documents necessary for the application.</text>
+          <name>Variance Application – Zoning Board of Appeals</name>
+          <CompensationText>Variance Application</CompensationText>
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Letter</myClass>
+          <text>MCG will assist the Client in preparing the special permit application to the Planning Board.  Scope includes providing information to help prepare the cover letter project narrative and time to reproduce plans and documents necessary for the application.</text>
+          <name>Special Permit Application – Planning Board</name>
+          <CompensationText>Special Permit Application</CompensationText>
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Letter</myClass>
+          <text>MCG will prepare a Major Site Plan Review application to the Planning Board.  Scope includes preparation of a cover letter project narrative meeting the requirements for the Major Project submittal including surface and groundwater pollution, soils, environmental and community impact analysis, traffic (general) and architectural style.  The application will be submitted with the required fees (provided by the Client) and supporting documents to the %TOWN% Planning Board.  The Client will be responsible for providing a traffic access and impact study if required by the Board.  MCG will coordinate with the project team disciplines in preparing the narrative.</text>
+          <name>Major Site Plan Review Application – Planning Board</name>
+          <CompensationText>Major Site Plan Review</CompensationText>
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+      </subTasks>
+      <cost>0</cost>
+      <allowsSubTasks>true</allowsSubTasks>
+    </ContractTask>
+    <ContractTask>
+      <HeadLevelItem>PERMITTING ASSISTANCE</HeadLevelItem>
+      <Description>MCG will assist the permitting attorney with the site plan approval application.  Scope of services includes reconciling plans and drainage reports with the permit application and narrative.  MCG will provide all reproduction of plans and reports necessary for the application as well as a digital (PDF) backup that will be distributed to the town electronically.  Scope also includes time for MCG to coordinate with the Client and project consultants to reconcile the civil, lighting, landscaping and elevation drawings required for the permitting plan set.</Description>
+      <ServiceItemNum>500</ServiceItemNum>
+      <CompensationText>Permitting Assistance</CompensationText>
+      <subTasks />
+      <cost>0</cost>
+      <allowsSubTasks>false</allowsSubTasks>
+    </ContractTask>
+    <ContractTask>
+      <HeadLevelItem>PRELIMINARY ENGINEERING AND SURVEYING</HeadLevelItem>
+      <Description>MCG will prepare a conceptual site plan illustrating the maximum development potential for the premises.  Scope includes evaluation of design alternatives for a single, 5 story building with drive under parking.  MCG will perform a topographic survey to locate spot grades at critical high and low points on the premises and also to locate the ridge of the nearest abutting structures using a reflectorless total station.  The ridge line of existing buildings will be used for evaluating the project massing within the neighborhood.  A total of three (3) conceptual plans are included in the scope of services.  </Description>
+      <ServiceItemNum>400</ServiceItemNum>
+      <CompensationText>Preliminary Engineering</CompensationText>
+      <subTasks />
+      <cost>0</cost>
+      <allowsSubTasks>false</allowsSubTasks>
+    </ContractTask>
+    <ContractTask>
+      <HeadLevelItem>PROJECT MEETINGS </HeadLevelItem>
+      <Description />
+      <ServiceItemNum>0</ServiceItemNum>
+      <CompensationText>Meetings</CompensationText>
+      <subTasks>
+        <ContractSubTask>
+          <myClass>Bullet</myClass>
+          <text>&lt;BOLD&gt;Project Team Meetings -&lt;/BOLD&gt; We have included preparation for and attendance at six (6) project team meetings or conference calls as part of our scope of services.   We are available to attend additional development team meetings and if requested to do so, our efforts will be billed as incurred using MCG’s standard billing rates.  </text>
+          <name>Project Team Meetings</name>
+          <CompensationText>Project Team Meetings</CompensationText>
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Bullet</myClass>
+          <text>&lt;BOLD&gt;Prepare for and attend Zoning Board and Conservation Commission public meetings - &lt;/BOLD&gt;  We have included six (6) meetings as part of our scope of services.  We are available to attend additional community, coordination or agency meetings and if requested to do so, our efforts will be billed as incurred using MCG’s standard billing rates. </text>
+          <name>Zoning Board of Appeals and Conservation Commission Meetings </name>
+          <CompensationText>ZBA/ConCom Meetings</CompensationText>
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Bullet</myClass>
+          <text>&lt;BOLD&gt;Definitive Subdivision Meetings - &lt;/BOLD&gt;Prepare for and attend two (2) public Definitive Subdivision meetings with the Planning Board.</text>
+          <name>Definitive Subdivision Meetings </name>
+          <CompensationText>Definitive Subdivision Meeting</CompensationText>
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Bullet</myClass>
+          <text>&lt;BOLD&gt;Notice of Intent Meetings - &lt;/BOLD&gt;Prepare for and attend two (2) public meetings with the Conservation Commission and one (1) site walk.</text>
+          <name>Notice of Intent Meetings </name>
+          <CompensationText>Notice of Intent Meeting</CompensationText>
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Bullet</myClass>
+          <name>Planning Board</name>
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Bullet</myClass>
+          <text>&lt;BOLD&gt;Conservation Commission – &lt;/BOLD&gt;Prepare for and attend up to two (2) public meetings with the Conservation Commission and one (1) site walk.</text>
+          <name>Conservation Commission</name>
+          <CompensationText />
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+      </subTasks>
+      <cost>0</cost>
+      <allowsSubTasks>true</allowsSubTasks>
+    </ContractTask>
+    <ContractTask>
+      <HeadLevelItem>REVIEW AND DELINEATE WETLAND RESOURCE AREAS</HeadLevelItem>
+      <Description>MCG will coordinate with DeRosa Environmental Consulting, Inc (DEC) to delineate the limit of jurisdictional resource areas on the entire property.  At the completion of the delineation, DEC will prepare a wetland report for use with the Notice of Intent Application.</Description>
+      <ServiceItemNum>0</ServiceItemNum>
+      <CompensationText>Wetland Delineation</CompensationText>
+      <subTasks />
+      <cost>0</cost>
+      <allowsSubTasks>false</allowsSubTasks>
+    </ContractTask>
+    <ContractTask>
+      <HeadLevelItem>SOILS ANALYSIS </HeadLevelItem>
+      <Description>The scope of work includes eight (8) hours for a DEP Licensed Soil Evaluator to perform on-site soils analysis to confirm the suitability of the soils to support the proposed stormwater management systems.  Scope also includes time to coordinate with the backhoe operator and Digsafe and prepare DEP Form 11 (Test Pit Logs).  </Description>
+      <ServiceItemNum>400</ServiceItemNum>
+      <CompensationText>Soil Analysis</CompensationText>
+      <subTasks />
+      <cost>0</cost>
+      <allowsSubTasks>false</allowsSubTasks>
+    </ContractTask>
+    <ContractTask>
+      <HeadLevelItem>SURVEY AND EXISTING CONDITIONS PLAN</HeadLevelItem>
+      <Description />
+      <ServiceItemNum>0</ServiceItemNum>
+      <CompensationText />
+      <subTasks />
+      <cost>0</cost>
+      <allowsSubTasks>false</allowsSubTasks>
+    </ContractTask>
+  </myTasks>
+</ContractTaskList>

@@ -64,6 +64,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controllers\HelperFunctionscs.cs" />
     <Compile Include="Controllers\RTFConverter.cs" />
     <Compile Include="Controllers\DocumentController.cs" />
     <Compile Include="DataStructures\ClosingTypes.cs" />
@@ -431,6 +432,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Resource Include="Data\JohnLTasks.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Data\settings.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Content Include="Data\ShortTermCond.docx">

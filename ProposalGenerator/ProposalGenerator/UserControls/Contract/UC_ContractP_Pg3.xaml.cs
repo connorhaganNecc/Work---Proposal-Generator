@@ -181,7 +181,7 @@ namespace ProposalGenerator
             string name = send.Name;
             string[] splitted = name.Split('_');
 
-            int number = Convert.ToInt32(splitted[splitted.Length - 1]);
+            int number = Convert.ToInt32(HelperFunctions.StripAlphabetic(splitted[splitted.Length - 1]));
 
 
             if (number >= 0 && number < currTextBox)

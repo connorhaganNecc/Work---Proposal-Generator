@@ -70,7 +70,7 @@ namespace ProposalGenerator
             myList.myTasks[currIndex].HeadLevelItem = HeadText.Text;
             if(!String.IsNullOrWhiteSpace(ServiceItem.Text))
             {
-                myList.myTasks[currIndex].ServiceItemNum = Convert.ToInt32(ServiceItem.Text);
+                myList.myTasks[currIndex].ServiceItemNum = Convert.ToInt32(HelperFunctions.StripAlphabetic(ServiceItem.Text));
             }
             
             myList.myTasks[currIndex].Description = Description.Text;

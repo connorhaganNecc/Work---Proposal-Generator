@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SettingsData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TaskFileLoc>F:\ConnorsStuff\ProposalSettings\tasks.xml</TaskFileLoc>
+  <DefaultOutputDirectory>F:\KATHYM\_PROPOSALS</DefaultOutputDirectory>
+  <AddItemsFileLoc>F:\ConnorsStuff\ProposalSettings\AddServices.xml</AddItemsFileLoc>
+  <ContractTaskLoc>F:\ConnorsStuff\ProposalSettings\ContractTasks.xml</ContractTaskLoc>
+</SettingsData>

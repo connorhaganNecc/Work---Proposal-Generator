@@ -99,6 +99,12 @@
                 Return to Main Menu
             </Button>
         </DockPanel>
+        <DockPanel Grid.Column="1" Grid.Row="2">
+            <Button Height="50" Padding="10" Margin="10" Click="btn_DeleteTask"
+                    DockPanel.Dock="Bottom" VerticalAlignment="Center" HorizontalAlignment="Center">
+                Delete Task
+            </Button>
+        </DockPanel>
         <DockPanel Grid.Column="2" Grid.Row="2">
             <Button Height="50" Padding="10" Margin="10"
             DockPanel.Dock="Bottom" VerticalAlignment="Bottom" HorizontalAlignment="Right"

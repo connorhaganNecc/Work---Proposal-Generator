@@ -21,7 +21,6 @@ namespace ProposalGenerator
     /// </summary>
     public partial class ContractP_Pg8 : UserControl
     {
-        int currTextBox = 0;
         ContractDataManager myData;
 
         public ContractP_Pg8(ContractDataManager inData)

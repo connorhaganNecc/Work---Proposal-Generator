@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 using MahApps.Metro.Controls;
+
 namespace ProposalGenerator
 {
     /// <summary>
@@ -83,7 +84,7 @@ namespace ProposalGenerator
                 Selected = SelectedTags.ItemsSource as List<string>;
                 myList.myTasks[currIndex].tags = Selected;
                 myList.myTasks[currIndex].fee = Fee.Text;
-                myList.myTasks[currIndex].serviceItemNum = Convert.ToInt32(ServiceItem.Text);
+                myList.myTasks[currIndex].serviceItemNum = Convert.ToInt32(HelperFunctions.StripAlphabetic(ServiceItem.Text));
                 TaskSerializer.SerializeTaskList(myList);
                 Switcher.Switch(new AddData());
             }
@@ -153,6 +154,21 @@ namespace ProposalGenerator
             }
 
         }
+
+        private void btn_DeleteTask(object sender, RoutedEventArgs e)
+        {
+            if(TaskSelector.SelectedIndex>=0)
+            {
+                MessageBoxResult dialogResult = System.Windows.MessageBox.Show("Are you sure you want to delete task?", "Delete Task", MessageBoxButton.YesNo);
+                if(dialogResult == MessageBoxResult.Yes)
+                {
+                    myList.myTasks.RemoveAt(TaskSelector.SelectedIndex);
+                    TaskSerializer.SerializeTaskList(myList);
+                    Switcher.Switch(new EditTasks());
+                }
+            }
+        }
+
         private void btn_RemoveTask(object sender, RoutedEventArgs e)
         {
             if(SelectedTags.SelectedValue != null)
@@ -179,7 +195,7 @@ namespace ProposalGenerator
                 Switcher.Switch(new EditTaskText(myList, TaskSelector.SelectedIndex));
             else
             {
-                MessageBox.Show("Please select a task first");
+                System.Windows.MessageBox.Show("Please select a task first");
             }
         }
     }

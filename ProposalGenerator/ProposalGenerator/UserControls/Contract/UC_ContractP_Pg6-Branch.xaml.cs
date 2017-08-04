@@ -38,8 +38,6 @@ namespace ProposalGenerator
         
         
         bool nextPage = false;
-        List<string> selectedList;
-        List<string> unselect;
 
         public ContractP_Pg6_Branch(ContractDataManager inData)
         {

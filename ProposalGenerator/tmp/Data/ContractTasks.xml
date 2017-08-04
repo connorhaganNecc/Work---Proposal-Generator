@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContractTaskList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <myTasks>
+    <ContractTask>
+      <HeadLevelItem>CONCEPT PLAN</HeadLevelItem>
+      <Description>MCG will prepare two (2) subdivision plans.  The first plan will illustrate a subdivision in full compliance with applicable zoning and subdivision regulations.  The “by-right” concept will illustrate the maximum development potential of the site taking into consideration soil information, wetlands and applicable zoning constraints.  The second concept plan will incorporate waivers under the subdivision regulations to minimize the development footprint.  Anticipated waivers may include but not be limited to roadway width, right of way width, sidewalks, curbing, stormwater management (country drainage) and reduced cul-de-sac diameter and off-centerline alignment.  Once the client approves the 2 concept plans, they will be updated to presentation quality format in color for use in informal meetings with the Conservation Commission and Planning Board.</Description>
+      <ServiceItemNum>0</ServiceItemNum>
+      <CompensationText>Concept Plan</CompensationText>
+      <subTasks />
+      <cost>0</cost>
+      <allowsSubTasks>false</allowsSubTasks>
+    </ContractTask>
+    <ContractTask>
+      <HeadLevelItem>DESIGN DEVELOPMENT</HeadLevelItem>
+      <Description>Utilizing the design concept approved by the Client an, MCG will prepare and include the following as part of the site development permit plans for submittal to the %TOWN% Boards:</Description>
+      <ServiceItemNum>400</ServiceItemNum>
+      <CompensationText>Design Development</CompensationText>
+      <subTasks>
+        <ContractSubTask>
+          <myClass>Letter</myClass>
+          <text />
+          <name>Site Development Permit Plans</name>
+          <CompensationText>Site Plan</CompensationText>
+          <cost>0</cost>
+          <allowSubSub>true</allowSubSub>
+          <SubItems>
+            <SubSubtask>
+              <name>Sheet</name>
+              <description>Sheet _:</description>
+            </SubSubtask>
+          </SubItems>
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Letter</myClass>
+          <text>MCG will prepare a Drainage Calculations and Stormwater Management Plan in accordance with the Malden Ordinances and generally following the Department of Environmental Protection’s (DEP’s) Stormwater Management Regulations (SMR) as revised Jan. 2, 2008 as a guideline.  Scope includes design of drainage infrastructure to ensure no adverse impacts to the municipal drain system.  This is generally anticipated to be water quality calculations, pipe sizing calculations and the like.  We anticipate a reduction in impervious area therefore calculations for mitigation of post-development rates of runoff will not be necessary.  The report will include a Best Management Practices (BMP) Post-Development Operation and Construction Phase Maintenance Plan.  It is assumed that catch basins will be installed in the existing parking area to remain and connected to the municipal drain system as is a customary, minimum improvement to stormwater quality and surface flow mitigation to the roadway.</text>
+          <name>Drainage Calculations, Stormwater Management Plan and Operations and Maintenance Plans</name>
+          <CompensationText>Drainage Calculations</CompensationText>
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+      </subTasks>
+      <cost>0</cost>
+      <allowsSubTasks>true</allowsSubTasks>
+    </ContractTask>
+    <ContractTask>
+      <HeadLevelItem>EXISTING CONDITIONS SURVEY AND PLAN</HeadLevelItem>
+      <Description>MCG will perform a property line and existing conditions surveys plan including the following:</Description>
+      <ServiceItemNum>300</ServiceItemNum>
+      <CompensationText>Existing Conditions Survey/Plan</CompensationText>
+      <subTasks>
+        <ContractSubTask>
+          <myClass>Bullet</myClass>
+          <text>Perform research at the Registry of Deeds and City Hall offices.</text>
+          <name>Research</name>
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Bullet</myClass>
+          <text>Compile all research data and perform property line calculations.</text>
+          <name>Property line calculations.</name>
+          <CompensationText />
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Bullet</myClass>
+          <text>Download and compile all data obtained during the field survey and research.</text>
+          <name>Download + Compile Data</name>
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Bullet</myClass>
+          <text>Preparation of an existing conditions plot plan which will include all information collected during research and field survey, property line information and information furnished by Client.</text>
+          <name>Existing Conditions Plot Plan</name>
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+      </subTasks>
+      <cost>0</cost>
+      <allowsSubTasks>true</allowsSubTasks>
+    </ContractTask>
+    <ContractTask>
+      <HeadLevelItem>PERMITTING</HeadLevelItem>
+      <Description />
+      <ServiceItemNum>500</ServiceItemNum>
+      <CompensationText>Permitting</CompensationText>
+      <subTasks>
+        <ContractSubTask>
+          <myClass>Letter</myClass>
+          <text>MCG will assist the Client in preparing the variance application to the Zoning Board of Appeals for relief on lot coverage and side yard setbacks (as well as any other relief that is determined during design development).  Scope includes providing information to help prepare the cover letter project narrative and time to reproduce plans and documents necessary for the application.</text>
+          <name>Variance Application - Zoning Board of Appeals</name>
+          <CompensationText>Variance App.</CompensationText>
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Letter</myClass>
+          <text>MCG will assist the Client in preparing the special permit application to the Planning Board.  Scope includes providing information to help prepare the cover letter project narrative and time to reproduce plans and documents necessary for the application.</text>
+          <name>Special Permit Application - Planning Board</name>
+          <CompensationText>Special Permit App.</CompensationText>
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+      </subTasks>
+      <cost>0</cost>
+      <allowsSubTasks>true</allowsSubTasks>
+    </ContractTask>
+    <ContractTask>
+      <HeadLevelItem>PROJECT MEETINGS &amp; PREPARATION</HeadLevelItem>
+      <Description>A project manager or professional engineer will attend the meetings.</Description>
+      <ServiceItemNum>600</ServiceItemNum>
+      <CompensationText>Meetings</CompensationText>
+      <subTasks>
+        <ContractSubTask>
+          <myClass>Bullet</myClass>
+          <text>&lt;BOLD&gt;Planning Board -&lt;/BOLD&gt; Prepare for and attend up to two (2) public meetings with the Planning Board.</text>
+          <name>Planning Board </name>
+          <CompensationText />
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+        <ContractSubTask>
+          <myClass>Bullet</myClass>
+          <text>&lt;BOLD&gt;Project/Team Meetings –&lt;/BOLD&gt; Prepare for and attend up to two (2) meetings with project team members or city officials.</text>
+          <name>Project/Team Meetings </name>
+          <cost>0</cost>
+          <allowSubSub>false</allowSubSub>
+          <SubItems />
+        </ContractSubTask>
+      </subTasks>
+      <cost>0</cost>
+      <allowsSubTasks>true</allowsSubTasks>
+    </ContractTask>
+    <ContractTask>
+      <HeadLevelItem>SOIL TESTING</HeadLevelItem>
+      <Description>MCG will perform soil testing to verify soil conditions on the site for the purpose of siting proposed on-site wastewater disposal systems and demonstrating that the parcels are buildable.  Scope includes researching and review of NRCS Soil Conservation Service (SCS) soil maps, groundwater conditions and surface geological maps.  A total of 20 hours of field time by a certified soil evaluator plus time to prepare test hole forms has been included in the scope of services.</Description>
+      <ServiceItemNum>0</ServiceItemNum>
+      <CompensationText>Soil Testing</CompensationText>
+      <subTasks />
+      <cost>0</cost>
+      <allowsSubTasks>false</allowsSubTasks>
+    </ContractTask>
+  </myTasks>
+</ContractTaskList>
